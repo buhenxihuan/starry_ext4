@@ -53,7 +53,7 @@ members = [
 
     "api/axfeat",
     "api/arceos_api",
-    
+
     "api/arceos_posix_api",
 
     "ulib/axstd",
@@ -85,7 +85,7 @@ members = [
     "apps/ostrain/filewrite",
     "apps/ostrain/taskyield",
     "apps/ostrain/task_single_yield",
-    "apps/ostrain/danger_access"
+    "apps/ostrain/danger_access",
 ]
 
 [profile.release]
