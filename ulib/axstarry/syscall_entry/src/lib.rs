@@ -9,7 +9,9 @@ extern crate axruntime;
 
 mod trap;
 
+mod fake_shell;
 mod syscall;
 mod test;
 
+pub use fake_shell::run_shell;
 pub use test::run_testcases;

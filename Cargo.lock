@@ -1939,6 +1939,7 @@ dependencies = [
  "crate_interface",
  "kernel_guard",
  "lazy_init",
+ "riscv",
  "spinlock",
  "syscall_fs",
  "syscall_mem",

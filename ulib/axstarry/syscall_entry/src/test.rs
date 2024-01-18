@@ -455,7 +455,7 @@ pub fn show_result() {
 }
 #[allow(unused)]
 /// 分割命令行参数
-fn get_args(command_line: &[u8]) -> Vec<String> {
+pub fn get_args(command_line: &[u8]) -> Vec<String> {
     let mut args = Vec::new();
     // 需要判断是否存在引号，如busybox_cmd.txt的第一条echo指令便有引号
     // 若有引号时，不能把引号加进去，同时要注意引号内的空格不算是分割的标志
