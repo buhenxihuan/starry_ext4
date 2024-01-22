@@ -19,7 +19,8 @@ ext4fs = ["dep:ext4fs"]
 myfs = ["dep:crate_interface"]
 use-ramdisk = []
 monolithic = []
-default = ["devfs", "ramfs", "fatfs", "procfs", "sysfs"]
+# default = ["devfs", "ramfs", "fatfs", "procfs", "sysfs"]
+default = ["devfs", "ramfs", "ext4fs", "procfs", "sysfs"]
 
 [dependencies]
 log = "0.4"
@@ -36,7 +37,7 @@ axdriver = { path = "../axdriver", features = ["block"] }
 axsync = { path = "../axsync" }
 crate_interface = { path = "../../crates/crate_interface", optional = true }
 bitflags = "2.0"
-ext4fs = { path = "../../crates/ext4fs" , optional = true}
+ext4fs = { path = "../../crates/ext4fs", optional = true }
 
 [dependencies.fatfs]
 git = "https://github.com/rafalh/rust-fatfs"
