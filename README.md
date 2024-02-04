@@ -1,5 +1,6 @@
 # StarryOS
 test1
+test2
 ## 简介
 
 这里是StarryOS，一个基于ArceOS实现的宏内核。
