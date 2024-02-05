@@ -47,7 +47,7 @@ jobs:
 
       - name: Prepare ext4fs-img
         # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-        run: ./1.sh libc-static
+        run: ./1.sh sdcard
 
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
@@ -58,7 +58,7 @@ jobs:
       - name: Run tests
         # # if: github.event_name != 'schedule'
         # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-        run: ./1.sh libc-static&&make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
+        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
 
       # - name: Run full tests
       #   if: github.event_name == 'schedule'
