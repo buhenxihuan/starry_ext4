@@ -55,6 +55,9 @@ jobs:
           crate: cargo-binutils
           version: latest
 
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
+
       - name: Run tests
         # # if: github.event_name != 'schedule'
         # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
