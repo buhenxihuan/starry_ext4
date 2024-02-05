@@ -9,7 +9,7 @@ env:
 jobs:
   Fake-Test:
     name: Linux Application Image Test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-20.04
     strategy:
       fail-fast: false
       matrix:
@@ -45,9 +45,9 @@ jobs:
           cd qemu-${{ env.qemu-version }} && sudo make install
           qemu-system-${{ matrix.arch }} --version
 
-      - name: Prepare ext4fs-img
-        # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-        run: ls -lh&& ./1.sh libc-static && ls -lh
+      # - name: Prepare ext4fs-img
+      #   # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
+      #   run: ls -lh&& ./1.sh libc-static && ls -lh
           
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
