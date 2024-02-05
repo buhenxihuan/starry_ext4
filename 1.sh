@@ -1,3 +1,4 @@
+#/bin/bash
 rm -rf disk.img
 dd if=/dev/zero of=disk.img bs=3M count=24
 mkfs.ext4  disk.img
