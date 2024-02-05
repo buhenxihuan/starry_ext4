@@ -47,13 +47,13 @@ jobs:
 
       - name: Prepare ext4fs-img
         # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-        run: ls && ./1.sh sdcard && ls
+        run: ls && ./1.sh libc-static && ls
 
       - name: upload result
         uses: actions/upload-artifact@v1
         with:
           name: disk.img
-          path: ${{ github.workspace }}/
+          path: ${{ github.workspace }}/disk.img
           
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
