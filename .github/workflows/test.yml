@@ -47,7 +47,7 @@ jobs:
 
       - name: Prepare ext4fs-img
         # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-        run: ls && ./1.sh sdcard
+        run: ls && ./1.sh sdcard && ls
 
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
