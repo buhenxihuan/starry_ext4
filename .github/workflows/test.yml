@@ -9,7 +9,7 @@ env:
 jobs:
   Fake-Test:
     name: Linux Application Image Test
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     strategy:
       fail-fast: false
       matrix:
@@ -55,14 +55,14 @@ jobs:
           crate: cargo-binutils
           version: latest
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
 
-      - name: upload result
-        uses: actions/upload-artifact@v1
-        with:
-          name: disk.img
-          path: ${{ github.workspace }}/disk.img
+      # - name: upload result
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: disk.img
+      #     path: ${{ github.workspace }}/disk.img
 
       - name: Run tests
         # # if: github.event_name != 'schedule'
