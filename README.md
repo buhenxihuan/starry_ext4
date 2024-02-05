@@ -2,6 +2,7 @@
 test1
 test2
 test3
+test4
 ## 简介
 
 这里是StarryOS，一个基于ArceOS实现的宏内核。
