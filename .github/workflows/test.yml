@@ -42,7 +42,7 @@ jobs:
 
       - name: Install QEMU
         run: |
-          cd qemu-${{ env.qemu-version }} && ./configure --target-list=aarch64-softmmu && sudo make install
+          cd qemu-${{ env.qemu-version }} && ./configure --target-list=riscv64-softmmu && sudo make install
           qemu-system-${{ matrix.arch }} --version
 
       - name: Prepare ext4fs-img
