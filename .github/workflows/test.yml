@@ -52,7 +52,7 @@ jobs:
       - name: upload result
         uses: actions/download-artifact@v4
         with:
-          name: my-artifact
+          name: disk.img
 
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
