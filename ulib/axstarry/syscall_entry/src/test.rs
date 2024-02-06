@@ -54,6 +54,7 @@ const JUNIOR_TESTCASES: &[&str] = &[
 
 /// libc静态测例
 pub const LIBC_STATIC_TESTCASES: &[&str] = &[
+    "python -V",
     "./runtest.exe -w entry-static.exe argv",
     "./runtest.exe -w entry-static.exe basename",
     "./runtest.exe -w entry-static.exe clocale_mbfuncs",
