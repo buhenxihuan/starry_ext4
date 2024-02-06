@@ -67,7 +67,7 @@ jobs:
       - name: Run tests
         # # if: github.event_name != 'schedule'
         # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run
+        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
       # - name: Run full tests
       #   if: github.event_name == 'schedule'
       #   run: cd tests && python3 linux_libc_test-qemu.py --arch ${{ matrix.arch }}
