@@ -1,7 +1,7 @@
 name: Test CI
 
 on: 
-  [push, pull_request]
+  [pull_request]
 
 env:
   qemu-version: 7.1.0
@@ -68,7 +68,7 @@ jobs:
       - name: Run tests
         # # if: github.event_name != 'schedule'
         # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
+        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run
       # - name: Run full tests
       #   if: github.event_name == 'schedule'
       #   run: cd tests && python3 linux_libc_test-qemu.py --arch ${{ matrix.arch }}
