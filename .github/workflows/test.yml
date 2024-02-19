@@ -45,9 +45,9 @@ jobs:
           cd qemu-${{ env.qemu-version }} && sudo make install
           qemu-system-${{ matrix.arch }} --version
 
-      # - name: Prepare ext4fs-img
-      #   # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-      #   run: ls -lh&& ./1.sh libc-static && ls -lh
+      - name: Prepare ext4fs-img
+        # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
+        run: ls -lh&& ./1.sh libc-static && ls -lh
           
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
@@ -67,7 +67,7 @@ jobs:
       - name: Run tests
         # # if: github.event_name != 'schedule'
         # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run
+        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
       # - name: Run full tests
       #   if: github.event_name == 'schedule'
       #   run: cd tests && python3 linux_libc_test-qemu.py --arch ${{ matrix.arch }}
