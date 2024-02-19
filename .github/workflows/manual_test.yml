@@ -56,10 +56,20 @@ jobs:
           crate: cargo-binutils
           version: latest
 
-      - name:
+      - name: Install dependence
+        run: |
+          sudo apt install openjdk-17-jdk
+          sudo apt install nodejs
+          wget https://registry.npmjs.org/allure-commandline/-/allure-commandline-2.24.1.tgz
+          mkdir allure-com
+          tar -zxvf allure-commandline-2.24.1.tgz -C allure-comm
+          sudo ln -s /home/runner/work/starry_ext4/starry_ext4/allure-com/package/bin/allure /usr/bin/allure
+      
+      - name: install pytest
         run: |
           cd pytest
-          ls -lh
+          sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+          python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 
 
       - name: Setup tmate session
