@@ -32,7 +32,7 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 
 @allure.step("测试步骤一：执行测试")
 def step_01(cmdRun, cmdApp):
-    _, res = cmdRun.run_cmd('cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh sdcard && make A=%s ARCH=riscv64 run' %cmdApp)
+    _, res = cmdRun.run_cmd('cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh sdcard && /home/runner/.cargo/bin/cargo --version && make A=%s ARCH=riscv64 run' %cmdApp)
     logging.info("res=" + res)
     assert res
 
