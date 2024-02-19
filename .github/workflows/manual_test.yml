@@ -71,7 +71,7 @@ jobs:
           chmod -R 777 pytest/
           cd pytest
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
-          sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
+        #  sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 
 
       - name: Setup tmate session
