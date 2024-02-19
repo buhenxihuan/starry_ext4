@@ -65,6 +65,9 @@ jobs:
           sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
           ls -lh
           sudo ln -s /home/runner/work/starry_ext4/starry_ext4/allure-com/package/bin/allure /usr/bin/allure
+          wget https://musl.cc/riscv64-linux-musl-cross.tgz
+          sudo tar xzvf riscv64-linux-musl-cross.tgz
+          sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin' >> ~/.bashrc
       
       - name: install pytest
         run: |
@@ -74,15 +77,18 @@ jobs:
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
 
+      - name: archive
+        run: |
+          cd /home/runner/work/starry_ext4/starry_ext4/pytest/report
+          sudo tar czvf allure.log ./*
+      # - name: Setup tmate session
+      #   uses: mxschmitt/action-tmate@v3
 
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v3
-
-      # - name: upload result
-      #   uses: actions/upload-artifact@v1
-      #   with:
-      #     name: disk.img
-      #     path: ${{ github.workspace }}/disk.img
+      - name: upload result
+        uses: actions/upload-artifact@v1
+        with:
+          name: allure.log
+          path: ${{ github.workspace }}/pytest/report/allure.log
 
       # - name: Run tests
       #   # # if: github.event_name != 'schedule'
