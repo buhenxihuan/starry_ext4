@@ -76,6 +76,7 @@ jobs:
           export PATH=$PATH:/home/runner/.cargo/bin/
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
+          allure generate ./report/result -o ./report/html --clean
 
 
 
@@ -108,18 +109,18 @@ jobs:
 
 
 
-      - name: archive
-        run: |
-          cd /home/runner/work/starry_ext4/starry_ext4/pytest/report
-          sudo tar czvf allure.log ./*
+      # - name: archive
+      #   run: |
+      #     cd /home/runner/work/starry_ext4/starry_ext4/pytest/report
+      #     sudo tar czvf allure.log ./*
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
 
-      - name: upload result
-        uses: actions/upload-artifact@v1
-        with:
-          name: allure.log
-          path: ${{ github.workspace }}/pytest/report/allure.log
+      # - name: upload result
+      #   uses: actions/upload-artifact@v1
+      #   with:
+      #     name: allure.log
+      #     path: ${{ github.workspace }}/pytest/report/allure.log
 
       # - name: Run tests
       #   # # if: github.event_name != 'schedule'
