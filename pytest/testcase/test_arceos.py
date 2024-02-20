@@ -20,7 +20,7 @@ from config import *
 
 # cmd_list = ["apps/helloworld", "apps/memtest", "apps/exception", "apps/task/yield", "apps/task/parallel", "apps/task/sleep", "apps/task/priority", "apps/task/tls", "apps/net/httpclient", "apps/c/helloworld", "apps/c/memtest", "apps/c/sqlite3", "apps/c/httpclient", "apps/c/pthread/basic", "apps/c/pthread/sleep", "apps/c/pthread/pipe", "apps/c/pthread/parallel"]
 
-cmd_list = ["apps/display", "apps/exception", "apps/helloworld", "apps/memtest", "apps/oscomp", "apps/net/echoserver", "apps/net/httpclient", "apps/net/httpserver", "apps/net/udpserver", "apps/net/bwbench", "apps/task/parallel", "apps/task/sleep", "apps/task/yield", "apps/task/priority", "apps/task/tls", "apps/ostrain/fileopen", "apps/ostrain/fileread", "apps/ostrain/filewrite", "apps/ostrain/taskyield", "apps/ostrain/task_single_yield", "apps/ostrain/danger_access"]
+cmd_list = ["apps/oscomp"]
 
 # cmd_list = ["apps/helloworld"]
 
