@@ -1,0 +1,137 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/c/httpclient ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: httpclient, Arch: riscv64, Platform: riscv64-qemu-virt, App type: c
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  -p axlibc --features "axfeat/log-level-warn axfeat/paging axlibc/alloc axlibc/net axlibc/fd"[0m
+   Compiling driver_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_net)
+   Compiling hash32 v0.2.1
+   Compiling stable_deref_trait v1.2.0
+   Compiling managed v0.8.0
+   Compiling bitflags v1.3.2
+   Compiling driver_virtio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_virtio)
+   Compiling arceos_posix_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_posix_api)
+   Compiling heapless v0.7.16
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling axlibc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc)
+   Compiling smoltcp v0.10.0 (https://github.com/c0per/smoltcp?branch=starryos#a2e59192)
+   Compiling axnet v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axnet)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+    Finished release [optimized] target(s) in 4.50s
+CFLAGS changed, rebuild
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/assert.o ulib/axlibc/c/assert.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/c/ctype.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/c/dirent.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/c/dlfcn.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/env.o ulib/axlibc/c/env.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/c/fcntl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/c/flock.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/c/fnmatch.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/c/glob.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/c/ioctl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/c/libgen.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/c/libm.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/c/locale.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/log.o ulib/axlibc/c/log.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/math.o ulib/axlibc/c/math.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/c/mmap.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/network.o ulib/axlibc/c/network.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/c/poll.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/c/pow.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/c/printf.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/c/pthread.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/c/pwd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/c/resource.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/c/sched.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/select.o ulib/axlibc/c/select.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/c/signal.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/c/socket.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/c/stat.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/c/stdio.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/c/stdlib.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/string.o ulib/axlibc/c/string.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/c/syslog.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/time.o ulib/axlibc/c/time.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/c/unistd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/c/utsname.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/wait.o ulib/axlibc/c/wait.c[0m
+[37mriscv64-linux-musl-ar[0m [90mrcs ulib/axlibc/build_riscv64/libc.a ulib/axlibc/build_riscv64/assert.o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/build_riscv64/env.o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/build_riscv64/log.o ulib/axlibc/build_riscv64/math.o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/build_riscv64/network.o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/build_riscv64/select.o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/build_riscv64/string.o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/build_riscv64/time.o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/build_riscv64/wait.o[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_CONFIG_NET -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany  -c -o apps/c/httpclient/httpclient.o apps/c/httpclient/httpclient.c[0m
+    [96;1mLinking[0m apps/c/httpclient/httpclient_riscv64-qemu-virt.elf
+[37mrust-lld -flavor gnu[0m [90m-nostdlib -static -no-pie --gc-sections -T/home/runner/work/starry_ext4/starry_ext4/modules/axhal/linker_riscv64-qemu-virt.lds ulib/axlibc/build_riscv64/libc.a target/riscv64gc-unknown-none-elf/release/libaxlibc.a apps/c/httpclient/httpclient.o -o apps/c/httpclient/httpclient_riscv64-qemu-virt.elf[0m
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/c/httpclient/httpclient_riscv64-qemu-virt.elf --strip-all -O binary apps/c/httpclient/httpclient_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/c/httpclient/httpclient_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+Hello, ArceOS C HTTP client!
+IP: 49.12.234.183
+HTTP/1.1 200 OK
+Server: nginx
+Date: Tue, 20 Feb 2024 10:09:48 GMT
+Content-Type: text/plain
+Content-Length: 12
+Connection: keep-alive
+Access-Control-Allow-Origin: *
+Cache-Control: no-cache, no-store, must-revalidate
+
+20.172.46.73
