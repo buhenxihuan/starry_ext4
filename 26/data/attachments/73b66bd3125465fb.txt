@@ -1,0 +1,191 @@
+INFO     root:test_arceos.py:25 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:26 Setup for class with cmd
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/helloworld ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: helloworld, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/helloworld/Cargo.toml --features "axstd/log-level-warn"[0m
+info: syncing channel updates for 'nightly-2023-11-30-x86_64-unknown-linux-gnu'
+info: latest update on 2023-11-30, rust version 1.76.0-nightly (b10cfcd65 2023-11-29)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'llvm-tools'
+info: downloading component 'rust-src'
+info: downloading component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: downloading component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: downloading component 'rust-std'
+info: downloading component 'rust-std' for 'x86_64-unknown-none'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'llvm-tools'
+info: installing component 'rust-src'
+info: installing component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: installing component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: installing component 'rust-std'
+info: installing component 'rust-std' for 'x86_64-unknown-none'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+    Updating git repository `https://github.com/c0per/smoltcp`
+    Updating git repository `https://github.com/rcore-os/bitmap-allocator.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/lhw2002426/bcm2835-sdhci.git`
+    Updating git repository `https://github.com/KuangjuX/ixgbe-driver.git`
+    Updating git repository `https://github.com/rcore-os/virtio-drivers.git`
+    Updating git repository `https://github.com/mexus/numeric-enum-macro`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+ Downloading crates ...
+  Downloaded cfg-if v1.0.0
+  Downloaded static_assertions v1.1.0
+  Downloaded void v1.0.2
+  Downloaded bit v0.1.1
+  Downloaded equivalent v1.0.1
+  Downloaded sbi-rt v0.0.2
+  Downloaded nb v1.1.0
+  Downloaded nb v0.1.3
+  Downloaded tock-registers v0.8.1
+  Downloaded volatile v0.4.6
+  Downloaded critical-section v1.1.2
+  Downloaded paste v1.0.14
+  Downloaded embedded-hal v0.2.7
+  Downloaded proc-macro2 v1.0.69
+  Downloaded serde v1.0.185
+  Downloaded syn v2.0.39
+  Downloaded x86 v0.52.0
+  Downloaded toml_edit v0.19.14
+  Downloaded winnow v0.5.14
+  Downloaded raw-cpuid v11.0.1
+  Downloaded raw-cpuid v10.7.0
+  Downloaded hashbrown v0.14.0
+  Downloaded unicode-ident v1.0.11
+  Downloaded indexmap v2.0.0
+  Downloaded x86_64 v0.14.10
+  Downloaded log v0.4.19
+  Downloaded memchr v2.5.0
+  Downloaded quote v1.0.33
+  Downloaded aarch64-cpu v9.3.1
+  Downloaded bitflags v2.4.0
+  Downloaded spin v0.9.8
+  Downloaded x2apic v0.4.2
+  Downloaded lock_api v0.4.10
+  Downloaded sbi-spec v0.0.4
+  Downloaded bit_field v0.10.2
+  Downloaded riscv v0.10.1
+  Downloaded bitflags v1.3.2
+  Downloaded rustversion v1.0.14
+  Downloaded autocfg v1.1.0
+  Downloaded scopeguard v1.2.0
+  Downloaded toml_datetime v0.6.3
+   Compiling proc-macro2 v1.0.69
+   Compiling serde v1.0.185
+   Compiling hashbrown v0.14.0
+   Compiling unicode-ident v1.0.11
+   Compiling equivalent v1.0.1
+   Compiling toml_datetime v0.6.3
+   Compiling winnow v0.5.14
+   Compiling indexmap v2.0.0
+   Compiling quote v1.0.33
+   Compiling cfg-if v1.0.0
+   Compiling nb v1.1.0
+   Compiling log v0.4.19
+   Compiling syn v2.0.39
+   Compiling nb v0.1.3
+   Compiling riscv v0.10.1
+   Compiling percpu v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu)
+   Compiling static_assertions v1.1.0
+   Compiling tock-registers v0.8.1
+   Compiling void v1.0.2
+   Compiling embedded-hal v0.2.7
+   Compiling toml_edit v0.19.14
+   Compiling aarch64-cpu v9.3.1
+   Compiling sbi-spec v0.0.4
+   Compiling memory_addr v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/memory_addr)
+   Compiling bitflags v2.4.0
+   Compiling bit_field v0.10.2
+   Compiling critical-section v1.1.2
+   Compiling page_table_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table_entry)
+   Compiling sbi-rt v0.0.2
+   Compiling axerrno v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axerrno)
+   Compiling ratio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/ratio)
+   Compiling handler_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/handler_table)
+   Compiling lazy_init v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/lazy_init)
+   Compiling axio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axio)
+   Compiling axconfig v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axconfig)
+   Compiling crate_interface v0.1.1 (/home/runner/work/starry_ext4/starry_ext4/crates/crate_interface)
+   Compiling percpu_macros v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu_macros)
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling kernel_guard v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/kernel_guard)
+   Compiling spinlock v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/spinlock)
+   Compiling axlog v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axlog)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling axstd v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstd)
+   Compiling arceos-helloworld v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/helloworld)
+    Finished release [optimized] target(s) in 15.00s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/helloworld/helloworld_riscv64-qemu-virt.elf --strip-all -O binary apps/helloworld/helloworld_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/helloworld/helloworld_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+Hello, world!
