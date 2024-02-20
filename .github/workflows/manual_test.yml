@@ -76,7 +76,7 @@ jobs:
           export PATH=$PATH:/home/runner/.cargo/bin/
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
-          allure generate report/result -o report/html --clean
+          sudo allure generate report/result -o report/html --clean
 
 
 
