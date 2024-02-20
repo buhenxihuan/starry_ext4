@@ -1,0 +1,40 @@
+INFO     root:test_arceos.py:30 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:31 Setup for class with cmd
+INFO     root:test_arceos.py:40 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0713988 s, 1.1 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: allocator, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path crates/allocator/Cargo.toml --features "axstd/log-level-warn"[0m
+info: syncing channel updates for 'nightly-2023-11-30-x86_64-unknown-linux-gnu'
+info: latest update on 2023-11-30, rust version 1.76.0-nightly (b10cfcd65 2023-11-29)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'llvm-tools'
+info: downloading component 'rust-src'
+info: downloading component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: downloading component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: downloading component 'rust-std'
+info: downloading component 'rust-std' for 'x86_64-unknown-none'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'llvm-tools'
+info: installing component 'rust-src'
+info: installing component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: installing component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: installing component 'rust-std'
+info: installing component 'rust-std' for 'x86_64-unknown-none'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+error: none of the selected packages contains these features: axstd/log-level-warn
+make: *** [scripts/make/build.mk:36: _cargo_build] Error 101

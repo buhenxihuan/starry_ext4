@@ -1,0 +1,16 @@
+INFO     root:test_arceos.py:40 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0716053 s, 1.1 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: memory_addr, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path crates/memory_addr/Cargo.toml --features "axstd/log-level-warn"[0m
+error: none of the selected packages contains these features: axstd/log-level-warn
+make: *** [scripts/make/build.mk:36: _cargo_build] Error 101

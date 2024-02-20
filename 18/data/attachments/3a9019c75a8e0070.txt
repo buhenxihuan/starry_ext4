@@ -1,0 +1,135 @@
+INFO     root:test_arceos.py:40 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.071737 s, 1.1 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: display, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/display/Cargo.toml --features "axstd/log-level-warn"[0m
+ Downloading crates ...
+  Downloaded unicode-width v0.1.10
+  Downloaded byteorder v1.4.3
+  Downloaded const-default v1.0.0
+  Downloaded float-cmp v0.9.0
+  Downloaded svgbobdoc v0.3.0
+  Downloaded az v1.2.1
+  Downloaded embedded-graphics-core v0.4.0
+  Downloaded base64 v0.13.1
+  Downloaded zerocopy v0.7.26
+  Downloaded micromath v2.0.0
+  Downloaded libc v0.2.147
+  Downloaded embedded-graphics v0.8.1
+  Downloaded syn v1.0.109
+  Downloaded zerocopy-derive v0.7.26
+  Downloaded rlsf v0.2.1
+  Downloaded num-traits v0.2.16
+   Compiling syn v1.0.109
+   Compiling base64 v0.13.1
+   Compiling unicode-width v0.1.10
+   Compiling const-default v1.0.0
+   Compiling bitmap-allocator v0.1.0 (https://github.com/rcore-os/bitmap-allocator.git?rev=88e871a#88e871a5)
+   Compiling byteorder v1.4.3
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling page_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table)
+   Compiling zerocopy-derive v0.7.26
+   Compiling driver_common v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_common)
+   Compiling driver_display v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_display)
+   Compiling numeric-enum-macro v0.2.0 (https://github.com/mexus/numeric-enum-macro#20aef288)
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling autocfg v1.1.0
+   Compiling az v1.2.1
+   Compiling num-traits v0.2.16
+   Compiling zerocopy v0.7.26
+   Compiling virtio-drivers v0.7.1 (https://github.com/rcore-os/virtio-drivers.git?rev=4b60f5d#4b60f5d3)
+   Compiling embedded-graphics-core v0.4.0
+   Compiling float-cmp v0.9.0
+   Compiling micromath v2.0.0
+   Compiling embedded-graphics v0.8.1
+   Compiling svgbobdoc v0.3.0
+   Compiling driver_virtio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_virtio)
+   Compiling rlsf v0.2.1
+   Compiling allocator v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/allocator)
+   Compiling axalloc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axalloc)
+   Compiling axtask v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axtask)
+   Compiling axsync v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axsync)
+   Compiling axdisplay v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdisplay)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling axstd v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstd)
+   Compiling arceos-display v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/display)
+    Finished release [optimized] target(s) in 5.28s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/display/display_riscv64-qemu-virt.elf --strip-all -O binary apps/display/display_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/display/display_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+[37m[  0.309380 0 axruntime::lang_items:5] [31mpanicked at modules/axdisplay/src/lib.rs:23:39:
+No graphics device found![m
+[m

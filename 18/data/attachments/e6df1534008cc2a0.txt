@@ -1,0 +1,112 @@
+INFO     root:test_arceos.py:40 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0719955 s, 1.0 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: axstd, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path ulib/axstd/Cargo.toml --features "axstd/log-level-warn"[0m
+    Updating git repository `https://github.com/c0per/smoltcp`
+    Updating git repository `https://github.com/rcore-os/bitmap-allocator.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/lhw2002426/bcm2835-sdhci.git`
+    Updating git repository `https://github.com/KuangjuX/ixgbe-driver.git`
+    Updating git repository `https://github.com/rcore-os/virtio-drivers.git`
+    Updating git repository `https://github.com/mexus/numeric-enum-macro`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+ Downloading crates ...
+  Downloaded static_assertions v1.1.0
+  Downloaded bit v0.1.1
+  Downloaded sbi-rt v0.0.2
+  Downloaded bitflags v1.3.2
+  Downloaded nb v1.1.0
+  Downloaded scopeguard v1.2.0
+  Downloaded rustversion v1.0.14
+  Downloaded bitflags v2.4.0
+  Downloaded paste v1.0.14
+  Downloaded toml_datetime v0.6.3
+  Downloaded spin v0.9.8
+  Downloaded aarch64-cpu v9.3.1
+  Downloaded raw-cpuid v10.7.0
+  Downloaded serde v1.0.185
+  Downloaded x86 v0.52.0
+  Downloaded toml_edit v0.19.14
+  Downloaded indexmap v2.0.0
+  Downloaded x86_64 v0.14.10
+  Downloaded hashbrown v0.14.0
+  Downloaded winnow v0.5.14
+  Downloaded syn v2.0.39
+  Downloaded raw-cpuid v11.0.1
+  Downloaded unicode-ident v1.0.11
+  Downloaded x2apic v0.4.2
+  Downloaded volatile v0.4.6
+  Downloaded log v0.4.19
+  Downloaded lock_api v0.4.10
+  Downloaded embedded-hal v0.2.7
+  Downloaded critical-section v1.1.2
+  Downloaded tock-registers v0.8.1
+  Downloaded nb v0.1.3
+  Downloaded autocfg v1.1.0
+  Downloaded quote v1.0.33
+  Downloaded riscv v0.10.1
+  Downloaded void v1.0.2
+  Downloaded cfg-if v1.0.0
+  Downloaded equivalent v1.0.1
+  Downloaded proc-macro2 v1.0.69
+  Downloaded bit_field v0.10.2
+  Downloaded memchr v2.5.0
+  Downloaded sbi-spec v0.0.4
+   Compiling proc-macro2 v1.0.69
+   Compiling equivalent v1.0.1
+   Compiling unicode-ident v1.0.11
+   Compiling hashbrown v0.14.0
+   Compiling serde v1.0.185
+   Compiling toml_datetime v0.6.3
+   Compiling winnow v0.5.14
+   Compiling indexmap v2.0.0
+   Compiling quote v1.0.33
+   Compiling cfg-if v1.0.0
+   Compiling log v0.4.19
+   Compiling syn v2.0.39
+   Compiling nb v1.1.0
+   Compiling nb v0.1.3
+   Compiling riscv v0.10.1
+   Compiling tock-registers v0.8.1
+   Compiling static_assertions v1.1.0
+   Compiling void v1.0.2
+   Compiling percpu v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu)
+   Compiling toml_edit v0.19.14
+   Compiling embedded-hal v0.2.7
+   Compiling sbi-spec v0.0.4
+   Compiling aarch64-cpu v9.3.1
+   Compiling bitflags v2.4.0
+   Compiling critical-section v1.1.2
+   Compiling bit_field v0.10.2
+   Compiling memory_addr v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/memory_addr)
+   Compiling sbi-rt v0.0.2
+   Compiling axerrno v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axerrno)
+   Compiling page_table_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table_entry)
+   Compiling lazy_init v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/lazy_init)
+   Compiling handler_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/handler_table)
+   Compiling ratio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/ratio)
+   Compiling axio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axio)
+   Compiling axconfig v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axconfig)
+   Compiling crate_interface v0.1.1 (/home/runner/work/starry_ext4/starry_ext4/crates/crate_interface)
+   Compiling percpu_macros v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu_macros)
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling kernel_guard v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/kernel_guard)
+   Compiling spinlock v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/spinlock)
+   Compiling axlog v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axlog)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling axstd v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstd)
+    Finished release [optimized] target(s) in 11.44s
+cp: cannot stat '/home/runner/work/starry_ext4/starry_ext4/target/riscv64gc-unknown-none-elf/release/axstd': No such file or directory
+make: *** [scripts/make/build.mk:37: _cargo_build] Error 1
