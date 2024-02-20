@@ -1,0 +1,3 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /mnt/d/DevRust/starry_ext4 && make A=apps/c/memtest ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=/bin/sh: 1: cd: can't cd to /mnt/d/DevRust/starry_ext4

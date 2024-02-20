@@ -1,0 +1,4 @@
+INFO     root:test_arceos.py:39 kernel_type=monokernel
+INFO     root:test_arceos.py:40 test_cmd=cd /mnt/d/DevRust/starry_ext4 && ./1.sh libc-static && make A=apps/oscomp ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=/bin/sh: 1: cd: can't cd to /mnt/d/DevRust/starry_ext4
+INFO     root:test_arceos.py:29 测试后置步骤：打印日志
