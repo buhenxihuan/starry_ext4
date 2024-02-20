@@ -93,6 +93,7 @@ jobs:
         uses: simple-elf/allure-report-action@v1.7
         if: always()
         with:
+          keep_reports: 1000
           gh_pages: gh-pages
           allure_history: allure-history
           allure_results: /home/runner/work/starry_ext4/starry_ext4/pytest/report/result
