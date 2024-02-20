@@ -18,12 +18,6 @@ from lib import db
 
 from config import *
 
-# cmd_list = ["apps/helloworld", "apps/memtest", "apps/exception", "apps/task/yield", "apps/task/parallel", "apps/task/sleep", "apps/task/priority", "apps/task/tls", "apps/net/httpclient", "apps/c/helloworld", "apps/c/memtest", "apps/c/sqlite3", "apps/c/httpclient", "apps/c/pthread/basic", "apps/c/pthread/sleep", "apps/c/pthread/pipe", "apps/c/pthread/parallel"]
-
-cmd_list = ["apps/oscomp"]
-
-# cmd_list = ["apps/helloworld"]
-
 @allure.step("测试前置步骤一：SSH登录域控204")
 @pytest.fixture(scope='module', name='cmdRun', autouse=True)
 def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识别为自动化用例
@@ -36,9 +30,13 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 
 @allure.step("测试步骤一：执行测试")
 def step_01(cmdRun, cmdApp):
-    _, res = cmdRun.run_cmd('cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh sdcard && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp)
+    if kernel_Type == "unikernel":
+        _, res = cmdRun.run_cmd('cd /mnt/d/DevRust/starry_ext4 && make A=%s ARCH=riscv64 run' %cmdApp)
+    else:
+        _, res = cmdRun.run_cmd('cd /mnt/d/DevRust/starry_ext4 && ./1.sh libc-static && make A=%s ARCH=riscv64 run' %cmdApp)
     logging.info("res=" + res)
     assert res
+
 
 
 @allure.feature("特性（对应敏捷开发中的feature）")
