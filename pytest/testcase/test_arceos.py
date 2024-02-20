@@ -18,6 +18,7 @@ from lib import db
 
 from config import *
 
+
 @allure.step("测试前置步骤一：SSH登录域控204")
 @pytest.fixture(scope='module', name='cmdRun', autouse=True)
 def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识别为自动化用例
@@ -29,14 +30,17 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 
 
 @allure.step("测试步骤一：执行测试")
-def step_01(cmdRun, cmdApp):
+def step_01(cmdRun, cmdApp, kernel_Type):
+    _cmd = ''
     if kernel_Type == "unikernel":
-        _, res = cmdRun.run_cmd('cd /mnt/d/DevRust/starry_ext4 && make A=%s ARCH=riscv64 run' %cmdApp)
+        _cmd = 'cd /mnt/d/DevRust/starry_ext4 && make A=%s ARCH=riscv64 run' %cmdApp
     else:
-        _, res = cmdRun.run_cmd('cd /mnt/d/DevRust/starry_ext4 && ./1.sh libc-static && make A=%s ARCH=riscv64 run' %cmdApp)
+        _cmd = 'cd /mnt/d/DevRust/starry_ext4 && ./1.sh libc-static && make A=%s ARCH=riscv64 run' %cmdApp
+    logging.info("kernel_type=" + kernel_Type)
+    logging.info("test_cmd=" + _cmd)
+    _, res = cmdRun.run_cmd(_cmd)
     logging.info("res=" + res)
     assert res
-
 
 
 @allure.feature("特性（对应敏捷开发中的feature）")
@@ -44,14 +48,27 @@ def step_01(cmdRun, cmdApp):
 @allure.link(url="",name="用例对应需求的链接，若没有，可删除此行")
 @allure.story("故事（对应敏捷开发中的story)")
 @allure.severity('用例的级别，一般常用的级别为：blocker（阻塞缺陷），critical（严重缺陷），normal（一般缺陷），minor次要缺陷，trivial（轻微缺陷）')
-@allure.title("测试ArceOS基本功能")
+@allure.title("测试ArceOS 微内核 基本功能")
 @allure.description("测试用例简要描述")
-@pytest.mark.parametrize("cmd_list", cmd_list)
+@pytest.mark.parametrize("uniCmdList", uniCmdList)
 @pytest.mark.repeat(1)
-def test_arceos(cmdRun, cmd_list):
+def test_arceos_unikernel(cmdRun, uniCmdList):
     """测试内核实时性指标"""
-    kpi = step_01(cmdRun, cmd_list)
+    kpi = step_01(cmdRun, uniCmdList, "unikernel")
 
+
+@allure.feature("特性（对应敏捷开发中的feature）")
+@allure.issue(url="",name="用例对应issuer的链接，若没有可删除此行")
+@allure.link(url="",name="用例对应需求的链接，若没有，可删除此行")
+@allure.story("故事（对应敏捷开发中的story)")
+@allure.severity('用例的级别，一般常用的级别为：blocker（阻塞缺陷），critical（严重缺陷），normal（一般缺陷），minor次要缺陷，trivial（轻微缺陷）')
+@allure.title("测试ArceOS 宏内核 基本功能")
+@allure.description("测试用例简要描述")
+@pytest.mark.parametrize("monoCmdList", monoCmdList)
+@pytest.mark.repeat(1)
+def test_arceos_monokernel(cmdRun, monoCmdList):
+    """测试内核实时性指标"""
+    kpi = step_01(cmdRun, monoCmdList, "monokernel")
 
 if __name__ == '__main__':
     pytest.main(['-sv', '--alluredir', 'report/result', 'testcase/test_arceos.py', '--clean-alluredir'])
