@@ -33,9 +33,9 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 def step_01(cmdRun, cmdApp, kernel_Type):
     _cmd = ''
     if kernel_Type == "unikernel":
-        _cmd = 'cd /mnt/d/DevRust/starry_ext4 && make A=%s ARCH=riscv64 run' %cmdApp
+        _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && make A=%s ARCH=riscv64 run' %cmdApp
     else:
-        _cmd = 'cd /mnt/d/DevRust/starry_ext4 && ./1.sh libc-static && make A=%s ARCH=riscv64 run' %cmdApp
+        _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh libc-static && make A=%s ARCH=riscv64 run' %cmdApp
     logging.info("kernel_type=" + kernel_Type)
     logging.info("test_cmd=" + _cmd)
     _, res = cmdRun.run_cmd(_cmd)
