@@ -1,0 +1,8 @@
+INFO     root:test_arceos.py:25 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:26 Setup for class with cmd
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && make A=apps/helloworld ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: helloworld, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/helloworld/Cargo.toml --features "axstd/log-level-warn"[0m
+/bin/sh: 1: cargo: not found
+make: *** [scripts/make/build.mk:36: _cargo_build] Error 127

@@ -1,0 +1,6 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && make A=apps/c/pthread/pipe ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: pipe, Arch: riscv64, Platform: riscv64-qemu-virt, App type: c
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  -p axlibc --features "axfeat/log-level-warn axfeat/paging axlibc/alloc axlibc/multitask axlibc/pipe axlibc/fd"[0m
+/bin/sh: 1: cargo: not found
+make: *** [scripts/make/build.mk:36: _cargo_build] Error 127

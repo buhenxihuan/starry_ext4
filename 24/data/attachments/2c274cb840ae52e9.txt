@@ -1,0 +1,19 @@
+INFO     root:test_arceos.py:39 kernel_type=monokernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh libc-static && make A=apps/oscomp ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0743288 s, 1.0 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: oscomp, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-warn syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net"[0m
+/bin/sh: 1: cargo: not found
+make: *** [scripts/make/build.mk:36: _cargo_build] Error 127
+INFO     root:test_arceos.py:29 测试后置步骤：打印日志
