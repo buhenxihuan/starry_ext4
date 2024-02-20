@@ -1,14 +1,15 @@
-name: Test CI
+name: auto Test CI
 
 on: 
-  [pull_request]
+  schedule:
+    - cron: "*/10 * * * *"
 
 env:
   qemu-version: 7.1.0
   rust-toolchain: nightly
 
 jobs:
-  Fake-Test:
+  manual_test:
     name: Linux Application Image Test
     runs-on: ubuntu-22.04
     strategy:
@@ -46,9 +47,9 @@ jobs:
           cd qemu-${{ env.qemu-version }} && sudo make install
           qemu-system-${{ matrix.arch }} --version
 
-      - name: Prepare ext4fs-img
-        # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
-        run: ls -lh&& ./1.sh libc-static && ls -lh
+      # - name: Prepare ext4fs-img
+      #   # run: cargo libc-test --arch ${{ matrix.arch }} && cargo image --arch ${{ matrix.arch }}
+      #   run: ls -lh&& ./1.sh libc-static && ls -lh
           
       - if: matrix.arch == 'riscv64'
         uses: actions-rs/install@v0.1
@@ -56,19 +57,76 @@ jobs:
           crate: cargo-binutils
           version: latest
 
+      - name: Install dependence
+        run: |
+          sudo apt install openjdk-17-jdk
+          sudo apt install nodejs
+          wget https://registry.npmjs.org/allure-commandline/-/allure-commandline-2.24.1.tgz
+          sudo mkdir allure-com
+          sudo tar zxvf allure-commandline-2.24.1.tgz -C allure-com
+          ls -lh
+          sudo ln -s /home/runner/work/starry_ext4/starry_ext4/allure-com/package/bin/allure /usr/bin/allure
+          wget https://musl.cc/riscv64-linux-musl-cross.tgz
+          sudo tar xzvf riscv64-linux-musl-cross.tgz
+          sudo echo 'export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin' >> ~/.bashrc
+      
+      - name: install pytest
+        run: |
+          chmod -R 777 pytest/
+          cd pytest
+          export PATH=$PATH:/home/runner/.cargo/bin/
+          sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
+          sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
+         # sudo allure generate report/result -o report/html --clean
+
+
+
+
+      - name: load allure history
+        uses: actions/checkout@v3
+        if: always()
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+      
+      - name: build report
+        uses: simple-elf/allure-report-action@v1.7
+        if: always()
+        with:
+          gh_pages: gh-pages
+          allure_history: allure-history
+          allure_results: /home/runner/work/starry_ext4/starry_ext4/pytest/report/result
+
+      - name: Publish report
+        uses: peaceiris/actions-gh-pages@v3
+        if: always()
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+
+
+
+
+      # - name: archive
+      #   run: |
+      #     cd /home/runner/work/starry_ext4/starry_ext4/pytest/report
+      #     sudo tar czvf allure.log ./*
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
 
       # - name: upload result
       #   uses: actions/upload-artifact@v1
       #   with:
-      #     name: disk.img
-      #     path: ${{ github.workspace }}/disk.img
+      #     name: allure.log
+      #     path: ${{ github.workspace }}/pytest/report/allure.log
 
-      - name: Run tests
-        # # if: github.event_name != 'schedule'
-        # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
-        run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run
+      # - name: Run tests
+      #   # # if: github.event_name != 'schedule'
+      #   # run: make ARCH=${{ matrix.arch }} FEATURES=img run LOG=info
+      #   run: make A=apps/oscomp ARCH=riscv64 FEATURES=img run LOG=debug
       # - name: Run full tests
       #   if: github.event_name == 'schedule'
       #   run: cd tests && python3 linux_libc_test-qemu.py --arch ${{ matrix.arch }}
