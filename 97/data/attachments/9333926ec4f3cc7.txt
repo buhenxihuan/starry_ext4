@@ -1,0 +1,986 @@
+INFO     root:test_arceos.py:25 测试前置步骤一：初始化cmd库
+INFO     root:test_arceos.py:26 Setup for class with cmd
+INFO     root:test_arceos.py:39 kernel_type=monokernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh libc-static && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/oscomp ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0727241 s, 1.0 GB/s
+mke2fs 1.46.5 (30-Dec-2021)
+Discarding device blocks:     0/18432           done                            
+Creating filesystem with 18432 4k blocks and 18432 inodes
+
+Allocating group tables: 0/1   done                            
+Writing inode tables: 0/1   done                            
+Creating journal (1024 blocks): done
+Writing superblocks and filesystem accounting information: 0/1   done
+
+    [92;1mBuilding[0m App: oscomp, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-warn syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net"[0m
+info: syncing channel updates for 'nightly-2023-11-30-x86_64-unknown-linux-gnu'
+info: latest update on 2023-11-30, rust version 1.76.0-nightly (b10cfcd65 2023-11-29)
+info: downloading component 'cargo'
+info: downloading component 'clippy'
+info: downloading component 'llvm-tools'
+info: downloading component 'rust-src'
+info: downloading component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: downloading component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: downloading component 'rust-std'
+info: downloading component 'rust-std' for 'x86_64-unknown-none'
+info: downloading component 'rustc'
+info: downloading component 'rustfmt'
+info: installing component 'cargo'
+info: installing component 'clippy'
+info: installing component 'llvm-tools'
+info: installing component 'rust-src'
+info: installing component 'rust-std' for 'aarch64-unknown-none-softfloat'
+info: installing component 'rust-std' for 'riscv64gc-unknown-none-elf'
+info: installing component 'rust-std'
+info: installing component 'rust-std' for 'x86_64-unknown-none'
+info: installing component 'rustc'
+info: installing component 'rustfmt'
+    Updating git repository `https://github.com/c0per/smoltcp`
+    Updating git repository `https://github.com/rcore-os/bitmap-allocator.git`
+    Updating crates.io index
+    Updating git repository `https://github.com/lhw2002426/bcm2835-sdhci.git`
+    Updating git repository `https://github.com/KuangjuX/ixgbe-driver.git`
+    Updating git repository `https://github.com/rcore-os/virtio-drivers.git`
+    Updating git repository `https://github.com/mexus/numeric-enum-macro`
+    Updating git repository `https://github.com/rafalh/rust-fatfs`
+ Downloading crates ...
+  Downloaded hash32 v0.2.1
+  Downloaded lazy_static v1.4.0
+  Downloaded indexmap v2.0.0
+  Downloaded bit_field v0.10.2
+  Downloaded bit v0.1.1
+  Downloaded num_enum v0.5.11
+  Downloaded bitflags v1.3.2
+  Downloaded byteorder v1.4.3
+  Downloaded x2apic v0.4.2
+  Downloaded xmas-elf v0.9.0
+  Downloaded zerocopy-derive v0.7.26
+  Downloaded zerocopy v0.7.26
+  Downloaded x86 v0.52.0
+  Downloaded syn v1.0.109
+  Downloaded winnow v0.5.14
+  Downloaded volatile v0.4.6
+  Downloaded version_check v0.9.4
+  Downloaded thiserror-impl v1.0.47
+  Downloaded spin v0.9.8
+  Downloaded spin v0.5.2
+  Downloaded raw-cpuid v11.0.1
+  Downloaded proc-macro-error v1.0.4
+  Downloaded managed v0.8.0
+  Downloaded embedded-hal v0.2.7
+  Downloaded defmt-parser v0.3.3
+  Downloaded defmt v0.3.5
+  Downloaded heapless v0.7.16
+  Downloaded zero v0.1.3
+  Downloaded x86_64 v0.14.10
+  Downloaded void v1.0.2
+  Downloaded unicode-width v0.1.10
+  Downloaded unicode-ident v1.0.11
+  Downloaded toml_edit v0.19.14
+  Downloaded toml_datetime v0.6.3
+  Downloaded tock-registers v0.8.1
+  Downloaded svgbobdoc v0.3.0
+  Downloaded sbi-spec v0.0.4
+  Downloaded sbi-rt v0.0.2
+  Downloaded rustversion v1.0.14
+  Downloaded rustc_version v0.4.0
+  Downloaded quote v1.0.33
+  Downloaded paste v1.0.14
+  Downloaded hashbrown v0.14.0
+  Downloaded nb v0.1.3
+  Downloaded cfg-if v1.0.0
+  Downloaded log v0.4.19
+  Downloaded libc v0.2.147
+  Downloaded thiserror v1.0.47
+  Downloaded syn v2.0.39
+  Downloaded static_assertions v1.1.0
+  Downloaded stable_deref_trait v1.2.0
+  Downloaded serde v1.0.185
+  Downloaded scopeguard v1.2.0
+  Downloaded rlsf v0.2.1
+  Downloaded riscv v0.10.1
+  Downloaded raw-cpuid v10.7.0
+  Downloaded rand_core v0.6.4
+  Downloaded rand v0.8.5
+  Downloaded proc-macro2 v1.0.69
+  Downloaded num_enum_derive v0.5.11
+  Downloaded equivalent v1.0.1
+  Downloaded nb v1.1.0
+  Downloaded defmt-macros v0.3.6
+  Downloaded memchr v2.5.0
+  Downloaded base64 v0.13.1
+  Downloaded lock_api v0.4.10
+  Downloaded critical-section v1.1.2
+  Downloaded autocfg v1.1.0
+  Downloaded const-default v1.0.0
+  Downloaded semver v1.0.18
+  Downloaded proc-macro-error-attr v1.0.4
+  Downloaded aarch64-cpu v9.3.1
+  Downloaded bitflags v2.4.0
+   Compiling proc-macro2 v1.0.69
+   Compiling unicode-ident v1.0.11
+   Compiling log v0.4.19
+   Compiling equivalent v1.0.1
+   Compiling bitflags v2.4.0
+   Compiling serde v1.0.185
+   Compiling hashbrown v0.14.0
+   Compiling cfg-if v1.0.0
+   Compiling toml_datetime v0.6.3
+   Compiling winnow v0.5.14
+   Compiling autocfg v1.1.0
+   Compiling quote v1.0.33
+   Compiling indexmap v2.0.0
+   Compiling syn v2.0.39
+   Compiling syn v1.0.109
+   Compiling axerrno v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axerrno)
+   Compiling lock_api v0.4.10
+   Compiling toml_edit v0.19.14
+   Compiling scopeguard v1.2.0
+   Compiling unicode-width v0.1.10
+   Compiling base64 v0.13.1
+   Compiling spin v0.9.8
+   Compiling bit_field v0.10.2
+   Compiling svgbobdoc v0.3.0
+   Compiling nb v1.1.0
+   Compiling const-default v1.0.0
+   Compiling tock-registers v0.8.1
+   Compiling memory_addr v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/memory_addr)
+   Compiling aarch64-cpu v9.3.1
+   Compiling axconfig v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axconfig)
+   Compiling crate_interface v0.1.1 (/home/runner/work/starry_ext4/starry_ext4/crates/crate_interface)
+   Compiling rlsf v0.2.1
+   Compiling nb v0.1.3
+   Compiling bitmap-allocator v0.1.0 (https://github.com/rcore-os/bitmap-allocator.git?rev=88e871a#88e871a5)
+   Compiling axfs_vfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_vfs)
+   Compiling percpu v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu)
+   Compiling static_assertions v1.1.0
+   Compiling void v1.0.2
+   Compiling riscv v0.10.1
+   Compiling spin v0.5.2
+   Compiling kernel_guard v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/kernel_guard)
+   Compiling spinlock v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/spinlock)
+   Compiling byteorder v1.4.3
+   Compiling lazy_static v1.4.0
+   Compiling embedded-hal v0.2.7
+   Compiling sbi-spec v0.0.4
+   Compiling allocator v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/allocator)
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling percpu_macros v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/percpu_macros)
+   Compiling critical-section v1.1.2
+   Compiling axalloc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axalloc)
+   Compiling sbi-rt v0.0.2
+   Compiling axfs_ramfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_ramfs)
+   Compiling axlog v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axlog)
+   Compiling page_table_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table_entry)
+   Compiling ratio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/ratio)
+   Compiling handler_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/handler_table)
+   Compiling lazy_init v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/lazy_init)
+   Compiling zerocopy-derive v0.7.26
+   Compiling driver_common v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_common)
+   Compiling numeric-enum-macro v0.2.0 (https://github.com/mexus/numeric-enum-macro#20aef288)
+   Compiling linked_list v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/linked_list)
+   Compiling page_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table)
+   Compiling scheduler v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/scheduler)
+   Compiling driver_block v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_block)
+   Compiling driver_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_net)
+   Compiling timer_list v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/timer_list)
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling axsignal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axsignal)
+   Compiling axtask v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axtask)
+   Compiling rand_core v0.6.4
+   Compiling semver v1.0.18
+   Compiling rand v0.8.5
+   Compiling axsync v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axsync)
+   Compiling axio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axio)
+   Compiling zerocopy v0.7.26
+   Compiling capability v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/capability)
+   Compiling axfs_devfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_devfs)
+   Compiling ext4fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/ext4fs)
+   Compiling rustc_version v0.4.0
+warning: unused import: `bitflags::bitflags`
+  --> crates/ext4fs/src/lib.rs:10:5
+   |
+10 | use bitflags::bitflags;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `RefCell`, `UnsafeCell`
+  --> crates/ext4fs/src/lib.rs:11:18
+   |
+11 | use core::cell::{RefCell, UnsafeCell};
+   |                  ^^^^^^^  ^^^^^^^^^^
+
+warning: unused import: `core::marker::PhantomData`
+  --> crates/ext4fs/src/lib.rs:12:5
+   |
+12 | use core::marker::PhantomData;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `alloc::vec::IntoIter`
+ --> crates/ext4fs/src/defs.rs:6:5
+  |
+6 | use alloc::vec::IntoIter;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+warning: type `ext4_lblk_t` should have an upper camel case name
+   --> crates/ext4fs/src/defs.rs:497:10
+    |
+497 | pub type ext4_lblk_t = u32;
+    |          ^^^^^^^^^^^ help: convert the identifier to upper camel case: `Ext4LblkT`
+    |
+    = note: `#[warn(non_camel_case_types)]` on by default
+
+warning: type `ext4_fsblk_t` should have an upper camel case name
+   --> crates/ext4fs/src/defs.rs:498:10
+    |
+498 | pub type ext4_fsblk_t = u64;
+    |          ^^^^^^^^^^^^ help: convert the identifier to upper camel case: `Ext4FsblkT`
+
+warning: unused import: `core::mem::size_of`
+ --> crates/ext4fs/src/ext4.rs:3:5
+  |
+3 | use core::mem::size_of;
+  |     ^^^^^^^^^^^^^^^^^^
+
+warning: function cannot return without recursing
+   --> crates/ext4fs/src/defs.rs:503:5
+    |
+503 |     fn default() -> Self {
+    |     ^^^^^^^^^^^^^^^^^^^^ cannot return without recursing
+504 |         Self{
+505 |             ..Default::default()
+    |               ------------------ recursive call site
+    |
+    = help: a `loop` may express intention better if this is on purpose
+    = note: `#[warn(unconditional_recursion)]` on by default
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:512:13
+    |
+512 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:531:13
+    |
+531 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:548:13
+    |
+548 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:564:13
+    |
+564 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `ee_block`
+   --> crates/ext4fs/src/lib.rs:130:21
+    |
+130 |                 let ee_block = extent.ee_block;
+    |                     ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_block`
+
+warning: unused variable: `ee_len`
+   --> crates/ext4fs/src/lib.rs:131:21
+    |
+131 |                 let ee_len = extent.ee_len;
+    |                     ^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_len`
+
+warning: unused variable: `ee_start_hi`
+   --> crates/ext4fs/src/lib.rs:132:21
+    |
+132 |                 let ee_start_hi = extent.ee_start_hi;
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_start_hi`
+
+warning: unused variable: `ee_start_lo`
+   --> crates/ext4fs/src/lib.rs:133:21
+    |
+133 |                 let ee_start_lo = extent.ee_start_lo;
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_start_lo`
+
+warning: unused variable: `first_level`
+   --> crates/ext4fs/src/lib.rs:121:9
+    |
+121 |         first_level: bool,
+    |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_first_level`
+
+warning: unused variable: `dsc_per_block`
+   --> crates/ext4fs/src/lib.rs:160:13
+    |
+160 |         let dsc_per_block = dsc_cnt;
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_dsc_per_block`
+
+warning: unused variable: `first_meta_bg`
+   --> crates/ext4fs/src/lib.rs:162:13
+    |
+162 |         let first_meta_bg = super_block.first_meta_bg;
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_first_meta_bg`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:199:13
+    |
+199 |         let mut inode_table_blk_num = self.ext4_get_block_group(group, super_block);
+    |             ----^^^^^^^^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:201:13
+    |
+201 |         let mut offset = inode_table_blk_num * BLOCK_SIZE + index * inode_size;
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `e`
+   --> crates/ext4fs/src/lib.rs:217:13
+    |
+217 |         let e = &extents[0];
+    |             ^ help: if this is intentional, prefix it with an underscore: `_e`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:251:13
+    |
+251 |         let mut depth = extent_header.eh_depth;
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `orig_path`
+   --> crates/ext4fs/src/lib.rs:294:9
+    |
+294 |         orig_path: &mut Ext4ExtentPath,
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_orig_path`
+
+warning: unused variable: `max_blocks`
+   --> crates/ext4fs/src/lib.rs:330:9
+    |
+330 |         max_blocks: u32,
+    |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_max_blocks`
+
+warning: unused variable: `extent_create`
+   --> crates/ext4fs/src/lib.rs:332:9
+    |
+332 |         extent_create: bool,
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_extent_create`
+
+warning: unused variable: `extent_create`
+   --> crates/ext4fs/src/lib.rs:361:9
+    |
+361 |         extent_create: bool,
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_extent_create`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:363:13
+    |
+363 |         let mut current_block: ext4_fsblk_t;
+    |             ----^^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `mp`
+   --> crates/ext4fs/src/lib.rs:445:13
+    |
+445 |         let mp = &ext4_file.mp;
+    |             ^^ help: if this is intentional, prefix it with an underscore: `_mp`
+
+warning: value assigned to `len` is never read
+   --> crates/ext4fs/src/lib.rs:460:17
+    |
+460 |         let mut len = 0;
+    |                 ^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `name`
+   --> crates/ext4fs/src/lib.rs:475:17
+    |
+475 |             let name = get_name(
+    |                 ^^^^ help: if this is intentional, prefix it with an underscore: `_name`
+
+   Compiling zero v0.1.3
+warning: unnecessary `unsafe` block
+   --> crates/ext4fs/src/lib.rs:263:21
+    |
+263 |         let mut r = unsafe { ext4_last_extent(eh) };
+    |                     ^^^^^^ unnecessary `unsafe` block
+    |
+    = note: `#[warn(unused_unsafe)]` on by default
+
+   Compiling virtio-drivers v0.7.1 (https://github.com/rcore-os/virtio-drivers.git?rev=4b60f5d#4b60f5d3)
+   Compiling xmas-elf v0.9.0
+   Compiling heapless v0.7.16
+   Compiling hash32 v0.2.1
+warning: `ext4fs` (lib) generated 32 warnings (run `cargo fix --lib -p ext4fs` to apply 27 suggestions)
+   Compiling smoltcp v0.10.0 (https://github.com/c0per/smoltcp?branch=starryos#a2e59192)
+   Compiling stable_deref_trait v1.2.0
+   Compiling managed v0.8.0
+   Compiling bitflags v1.3.2
+   Compiling num_enum_derive v0.5.11
+   Compiling driver_virtio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_virtio)
+   Compiling axfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axfs)
+warning: unused import: `core::num`
+ --> modules/axfs/src/fs/ext4fs.rs:4:5
+  |
+4 | use core::num;
+  |     ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `VfsError`
+ --> modules/axfs/src/fs/ext4fs.rs:7:29
+  |
+7 | use axfs_vfs::{VfsDirEntry, VfsError, VfsNodePerm, VfsResult};
+  |                             ^^^^^^^^
+
+warning: unused import: `Ext4Fs`
+  --> modules/axfs/src/fs/ext4fs.rs:11:27
+   |
+11 | use ext4fs::{BlockDevice, Ext4Fs, BLOCK_SIZE, *};
+   |                           ^^^^^^
+
+warning: unused import: `mounts`
+  --> modules/axfs/src/root.rs:15:32
+   |
+15 | use crate::{api::FileType, fs, mounts};
+   |                                ^^^^^^
+
+   Compiling num_enum v0.5.11
+warning: unused variable: `flags`
+   --> modules/axfs/src/fs/ext4fs.rs:160:13
+    |
+160 |         let flags = ext4_file.flags;
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_flags`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: value assigned to `len` is never read
+   --> modules/axfs/src/fs/ext4fs.rs:172:17
+    |
+172 |         let mut len = 0;
+    |                 ^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: variable does not need to be mutable
+   --> modules/axfs/src/root.rs:177:9
+    |
+177 |     let mut root_dir = RootDirectory::new(main_fs);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: method `position` is never used
+  --> modules/axfs/src/dev.rs:34:12
+   |
+12 | impl Disk {
+   | --------- method in this implementation
+...
+34 |     pub fn position(&self) -> u64 {
+   |            ^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: function `devfs` is never used
+ --> modules/axfs/src/mounts.rs:7:15
+  |
+7 | pub(crate) fn devfs() -> Arc<fs::devfs::DeviceFileSystem> {
+  |               ^^^^^
+
+warning: function `ramfs` is never used
+  --> modules/axfs/src/mounts.rs:37:15
+   |
+37 | pub(crate) fn ramfs() -> Arc<fs::ramfs::RamFileSystem> {
+   |               ^^^^^
+
+warning: function `procfs` is never used
+  --> modules/axfs/src/mounts.rs:42:15
+   |
+42 | pub(crate) fn procfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^^
+
+warning: function `sysfs` is never used
+  --> modules/axfs/src/mounts.rs:76:15
+   |
+76 | pub(crate) fn sysfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^
+
+warning: associated function `new` is never used
+  --> modules/axfs/src/root.rs:33:12
+   |
+32 | impl MountPoint {
+   | --------------- associated function in this implementation
+33 |     pub fn new(path: &'static str, fs: Arc<dyn VfsOps>) -> Self {
+   |            ^^^
+
+warning: method `mount` is never used
+  --> modules/axfs/src/root.rs:52:12
+   |
+44 | impl RootDirectory {
+   | ------------------ method in this implementation
+...
+52 |     pub fn mount(&mut self, path: &'static str, fs: Arc<dyn VfsOps>) -> AxResult {
+   |            ^^^^^
+
+   Compiling axmem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axprocess)
+warning: `axfs` (lib) generated 14 warnings (run `cargo fix --lib -p axfs` to apply 6 suggestions)
+   Compiling axnet v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axnet)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_fs)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_mem)
+   Compiling syscall_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_net)
+   Compiling syscall_task v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_task)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_entry)
+warning: the item `riscv` is imported redundantly
+   --> ulib/axstarry/syscall_entry/src/fake_shell.rs:264:13
+    |
+264 |         use riscv;
+    |             ^^^^^ the item `riscv` is already defined here
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `alloc::format`
+  --> ulib/axstarry/syscall_entry/src/test.rs:3:5
+   |
+3  | use alloc::format;
+   |     ^^^^^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FilePath`, `create_link`
+  --> ulib/axstarry/syscall_entry/src/test.rs:10:23
+   |
+10 | use axprocess::link::{create_link, FilePath};
+   |                       ^^^^^^^^^^^  ^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FileFlags`, `new_file`
+  --> ulib/axstarry/syscall_entry/src/test.rs:16:39
+   |
+16 | use syscall_utils::{init_current_dir, new_file, FileFlags};
+   |                                       ^^^^^^^^  ^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: `syscall_entry` (lib) generated 4 warnings (run `cargo fix --lib -p syscall_entry` to apply 3 suggestions)
+   Compiling oscomp v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/oscomp)
+    Finished release [optimized] target(s) in 25.04s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/oscomp/oscomp_riscv64-qemu-virt.elf --strip-all -O binary apps/oscomp/oscomp_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/oscomp/oscomp_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+========== START entry-static.exe argv ==========
+Pass!
+========== END entry-static.exe argv ==========
+========== START entry-static.exe basename ==========
+Pass!
+========== END entry-static.exe basename ==========
+========== START entry-static.exe clocale_mbfuncs ==========
+Pass!
+========== END entry-static.exe clocale_mbfuncs ==========
+========== START entry-static.exe clock_gettime ==========
+Pass!
+========== END entry-static.exe clock_gettime ==========
+========== START entry-static.exe crypt ==========
+Pass!
+========== END entry-static.exe crypt ==========
+========== START entry-static.exe dirname ==========
+Pass!
+========== END entry-static.exe dirname ==========
+========== START entry-static.exe env ==========
+Pass!
+========== END entry-static.exe env ==========
+========== START entry-static.exe fnmatch ==========
+Pass!
+========== END entry-static.exe fnmatch ==========
+========== START entry-static.exe iconv_open ==========
+Pass!
+========== END entry-static.exe iconv_open ==========
+========== START entry-static.exe inet_pton ==========
+Pass!
+========== END entry-static.exe inet_pton ==========
+========== START entry-static.exe mbc ==========
+Pass!
+========== END entry-static.exe mbc ==========
+========== START entry-static.exe memstream ==========
+Pass!
+========== END entry-static.exe memstream ==========
+========== START entry-static.exe pthread_cancel_points ==========
+[37m[ 15.792826 0:9 axprocess::signal:128] [33mcpu: 0, task: 9, handler signal: 33[m
+[m[37m[ 15.805436 0:9 axprocess::signal:128] [33mcpu: 0, task: 9, handler signal: 33[m
+[m[37m[ 15.841161 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 15.845131 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 15.859232 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[m[37m[ 15.863224 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[m[37m[ 15.877256 0:12 axprocess::signal:128] [33mcpu: 0, task: 12, handler signal: 33[m
+[m[37m[ 15.882981 0:12 axprocess::signal:128] [33mcpu: 0, task: 12, handler signal: 33[m
+[m[37m[ 15.904939 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 33[m
+[m[37m[ 15.910158 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 33[m
+[m[37m[ 15.936104 0:16 axprocess::signal:128] [33mcpu: 0, task: 16, handler signal: 33[m
+[m[37m[ 15.942226 0:16 axprocess::signal:128] [33mcpu: 0, task: 16, handler signal: 33[m
+[m[37m[ 15.962545 0:17 axprocess::signal:128] [33mcpu: 0, task: 17, handler signal: 33[m
+[m[37m[ 15.970724 0:17 axprocess::signal:128] [33mcpu: 0, task: 17, handler signal: 33[m
+[m[37m[ 15.992921 0:17 axfs::fops:144] [33m[AxError::IsADirectory][m
+[msrc/functional/pthread_cancel-points.c:144: res != PTHREAD_CANCELED failed (shm_open, canceled thread exit status)
+FAIL pthread_cancel_points [signal Hangup]
+========== END entry-static.exe pthread_cancel_points ==========
+========== START entry-static.exe pthread_cancel ==========
+[37m[ 16.475502 0:9 axprocess::signal:128] [33mcpu: 0, task: 9, handler signal: 33[m
+[m[37m[ 16.500931 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 16.508074 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 16.528017 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[m[37m[ 16.534628 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[mPass!
+========== END entry-static.exe pthread_cancel ==========
+========== START entry-static.exe pthread_cond ==========
+Pass!
+========== END entry-static.exe pthread_cond ==========
+========== START entry-static.exe pthread_tsd ==========
+Pass!
+========== END entry-static.exe pthread_tsd ==========
+========== START entry-static.exe qsort ==========
+Pass!
+========== END entry-static.exe qsort ==========
+========== START entry-static.exe random ==========
+Pass!
+========== END entry-static.exe random ==========
+========== START entry-static.exe search_hsearch ==========
+Pass!
+========== END entry-static.exe search_hsearch ==========
+========== START entry-static.exe search_insque ==========
+Pass!
+========== END entry-static.exe search_insque ==========
+========== START entry-static.exe search_lsearch ==========
+Pass!
+========== END entry-static.exe search_lsearch ==========
+========== START entry-static.exe search_tsearch ==========
+Pass!
+========== END entry-static.exe search_tsearch ==========
+========== START entry-static.exe setjmp ==========
+Pass!
+========== END entry-static.exe setjmp ==========
+========== START entry-static.exe snprintf ==========
+Pass!
+========== END entry-static.exe snprintf ==========
+========== START entry-static.exe socket ==========
+Pass!
+========== END entry-static.exe socket ==========
+========== START entry-static.exe sscanf ==========
+Pass!
+========== END entry-static.exe sscanf ==========
+========== START entry-static.exe sscanf_long ==========
+Pass!
+========== END entry-static.exe sscanf_long ==========
+========== START entry-static.exe strftime ==========
+Pass!
+========== END entry-static.exe strftime ==========
+========== START entry-static.exe string ==========
+Pass!
+========== END entry-static.exe string ==========
+========== START entry-static.exe string_memcpy ==========
+Pass!
+========== END entry-static.exe string_memcpy ==========
+========== START entry-static.exe string_memmem ==========
+Pass!
+========== END entry-static.exe string_memmem ==========
+========== START entry-static.exe string_memset ==========
+Pass!
+========== END entry-static.exe string_memset ==========
+========== START entry-static.exe string_strchr ==========
+Pass!
+========== END entry-static.exe string_strchr ==========
+========== START entry-static.exe string_strcspn ==========
+Pass!
+========== END entry-static.exe string_strcspn ==========
+========== START entry-static.exe string_strstr ==========
+Pass!
+========== END entry-static.exe string_strstr ==========
+========== START entry-static.exe strptime ==========
+Pass!
+========== END entry-static.exe strptime ==========
+========== START entry-static.exe strtod ==========
+Pass!
+========== END entry-static.exe strtod ==========
+========== START entry-static.exe strtod_simple ==========
+Pass!
+========== END entry-static.exe strtod_simple ==========
+========== START entry-static.exe strtof ==========
+Pass!
+========== END entry-static.exe strtof ==========
+========== START entry-static.exe strtol ==========
+Pass!
+========== END entry-static.exe strtol ==========
+========== START entry-static.exe strtold ==========
+Pass!
+========== END entry-static.exe strtold ==========
+========== START entry-static.exe swprintf ==========
+Pass!
+========== END entry-static.exe swprintf ==========
+========== START entry-static.exe tgmath ==========
+Pass!
+========== END entry-static.exe tgmath ==========
+========== START entry-static.exe time ==========
+Pass!
+========== END entry-static.exe time ==========
+========== START entry-static.exe tls_align ==========
+Pass!
+========== END entry-static.exe tls_align ==========
+========== START entry-static.exe udiv ==========
+Pass!
+========== END entry-static.exe udiv ==========
+========== START entry-static.exe wcsstr ==========
+Pass!
+========== END entry-static.exe wcsstr ==========
+========== START entry-static.exe wcstol ==========
+Pass!
+========== END entry-static.exe wcstol ==========
+========== START entry-static.exe pleval ==========
+Pass!
+========== END entry-static.exe pleval ==========
+========== START entry-static.exe daemon_failure ==========
+[37m[ 35.219316 0:8 axprocess::signal:128] [33mcpu: 0, task: 8, handler signal: 17[m
+[mPass!
+========== END entry-static.exe daemon_failure ==========
+========== START entry-static.exe dn_expand_empty ==========
+Pass!
+========== END entry-static.exe dn_expand_empty ==========
+========== START entry-static.exe dn_expand_ptr_0 ==========
+Pass!
+========== END entry-static.exe dn_expand_ptr_0 ==========
+========== START entry-static.exe fgets_eof ==========
+Pass!
+========== END entry-static.exe fgets_eof ==========
+========== START entry-static.exe fgetwc_buffering ==========
+Pass!
+========== END entry-static.exe fgetwc_buffering ==========
+========== START entry-static.exe fpclassify_invalid_ld80 ==========
+Pass!
+========== END entry-static.exe fpclassify_invalid_ld80 ==========
+========== START entry-static.exe iconv_roundtrips ==========
+Pass!
+========== END entry-static.exe iconv_roundtrips ==========
+========== START entry-static.exe inet_ntop_v4mapped ==========
+Pass!
+========== END entry-static.exe inet_ntop_v4mapped ==========
+========== START entry-static.exe inet_pton_empty_last_field ==========
+Pass!
+========== END entry-static.exe inet_pton_empty_last_field ==========
+========== START entry-static.exe iswspace_null ==========
+Pass!
+========== END entry-static.exe iswspace_null ==========
+========== START entry-static.exe lrand48_signextend ==========
+Pass!
+========== END entry-static.exe lrand48_signextend ==========
+========== START entry-static.exe malloc_0 ==========
+Pass!
+========== END entry-static.exe malloc_0 ==========
+========== START entry-static.exe mbsrtowcs_overflow ==========
+Pass!
+========== END entry-static.exe mbsrtowcs_overflow ==========
+========== START entry-static.exe memmem_oob_read ==========
+Pass!
+========== END entry-static.exe memmem_oob_read ==========
+========== START entry-static.exe memmem_oob ==========
+Pass!
+========== END entry-static.exe memmem_oob ==========
+========== START entry-static.exe mkdtemp_failure ==========
+Pass!
+========== END entry-static.exe mkdtemp_failure ==========
+========== START entry-static.exe mkstemp_failure ==========
+Pass!
+========== END entry-static.exe mkstemp_failure ==========
+========== START entry-static.exe printf_1e9_oob ==========
+Pass!
+========== END entry-static.exe printf_1e9_oob ==========
+========== START entry-static.exe printf_fmt_g_round ==========
+Pass!
+========== END entry-static.exe printf_fmt_g_round ==========
+========== START entry-static.exe printf_fmt_g_zeros ==========
+Pass!
+========== END entry-static.exe printf_fmt_g_zeros ==========
+========== START entry-static.exe printf_fmt_n ==========
+Pass!
+========== END entry-static.exe printf_fmt_n ==========
+========== START entry-static.exe pthread_robust_detach ==========
+Pass!
+========== END entry-static.exe pthread_robust_detach ==========
+========== START entry-static.exe pthread_cancel_sem_wait ==========
+[37m[ 43.549920 0:9 axprocess::signal:128] [33mcpu: 0, task: 9, handler signal: 33[m
+[m[37m[ 43.553958 0:9 axprocess::signal:128] [33mcpu: 0, task: 9, handler signal: 33[m
+[m[37m[ 43.578057 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 43.581595 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 33[m
+[m[37m[ 43.596552 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[m[37m[ 43.601361 0:11 axprocess::signal:128] [33mcpu: 0, task: 11, handler signal: 33[m
+[m[37m[ 43.616120 0:12 axprocess::signal:128] [33mcpu: 0, task: 12, handler signal: 33[m
+[m[37m[ 43.620981 0:12 axprocess::signal:128] [33mcpu: 0, task: 12, handler signal: 33[m
+[mPass!
+========== END entry-static.exe pthread_cancel_sem_wait ==========
+========== START entry-static.exe pthread_cond_smasher ==========
+Pass!
+========== END entry-static.exe pthread_cond_smasher ==========
+========== START entry-static.exe pthread_condattr_setclock ==========
+Pass!
+========== END entry-static.exe pthread_condattr_setclock ==========
+========== START entry-static.exe pthread_exit_cancel ==========
+Pass!
+========== END entry-static.exe pthread_exit_cancel ==========
+========== START entry-static.exe pthread_once_deadlock ==========
+Pass!
+========== END entry-static.exe pthread_once_deadlock ==========
+========== START entry-static.exe pthread_rwlock_ebusy ==========
+Pass!
+========== END entry-static.exe pthread_rwlock_ebusy ==========
+========== START entry-static.exe putenv_doublefree ==========
+Pass!
+========== END entry-static.exe putenv_doublefree ==========
+========== START entry-static.exe regex_backref_0 ==========
+Pass!
+========== END entry-static.exe regex_backref_0 ==========
+========== START entry-static.exe regex_bracket_icase ==========
+Pass!
+========== END entry-static.exe regex_bracket_icase ==========
+========== START entry-static.exe regex_ere_backref ==========
+Pass!
+========== END entry-static.exe regex_ere_backref ==========
+========== START entry-static.exe regex_escaped_high_byte ==========
+Pass!
+========== END entry-static.exe regex_escaped_high_byte ==========
+========== START entry-static.exe regex_negated_range ==========
+Pass!
+========== END entry-static.exe regex_negated_range ==========
+========== START entry-static.exe regexec_nosub ==========
+Pass!
+========== END entry-static.exe regexec_nosub ==========
+========== START entry-static.exe rewind_clear_error ==========
+Pass!
+========== END entry-static.exe rewind_clear_error ==========
+========== START entry-static.exe rlimit_open_files ==========
+Pass!
+========== END entry-static.exe rlimit_open_files ==========
+========== START entry-static.exe scanf_bytes_consumed ==========
+Pass!
+========== END entry-static.exe scanf_bytes_consumed ==========
+========== START entry-static.exe scanf_match_literal_eof ==========
+Pass!
+========== END entry-static.exe scanf_match_literal_eof ==========
+========== START entry-static.exe scanf_nullbyte_char ==========
+Pass!
+========== END entry-static.exe scanf_nullbyte_char ==========
+========== START entry-static.exe setvbuf_unget ==========
+Pass!
+========== END entry-static.exe setvbuf_unget ==========
+========== START entry-static.exe sigprocmask_internal ==========
+Pass!
+========== END entry-static.exe sigprocmask_internal ==========
+========== START entry-static.exe sscanf_eof ==========
+Pass!
+========== END entry-static.exe sscanf_eof ==========
+========== START entry-static.exe statvfs ==========
+Pass!
+========== END entry-static.exe statvfs ==========
+========== START entry-static.exe strverscmp ==========
+Pass!
+========== END entry-static.exe strverscmp ==========
+========== START entry-static.exe uselocale_0 ==========
+Pass!
+========== END entry-static.exe uselocale_0 ==========
+========== START entry-static.exe wcsncpy_read_overflow ==========
+Pass!
+========== END entry-static.exe wcsncpy_read_overflow ==========
+========== START entry-static.exe wcsstr_false_negative ==========
+Pass!
+========== END entry-static.exe wcsstr_false_negative ==========
