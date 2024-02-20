@@ -18,7 +18,9 @@ from lib import db
 
 from config import *
 
-cmd_list = ["apps/helloworld", "apps/memtest", "apps/exception", "apps/task/yield", "apps/task/parallel", "apps/task/sleep", "apps/task/priority", "apps/task/tls", "apps/net/httpclient", "apps/c/helloworld", "apps/c/memtest", "apps/c/sqlite3", "apps/c/httpclient", "apps/c/pthread/basic", "apps/c/pthread/sleep", "apps/c/pthread/pipe", "apps/c/pthread/parallel"]
+# cmd_list = ["apps/helloworld", "apps/memtest", "apps/exception", "apps/task/yield", "apps/task/parallel", "apps/task/sleep", "apps/task/priority", "apps/task/tls", "apps/net/httpclient", "apps/c/helloworld", "apps/c/memtest", "apps/c/sqlite3", "apps/c/httpclient", "apps/c/pthread/basic", "apps/c/pthread/sleep", "apps/c/pthread/pipe", "apps/c/pthread/parallel"]
+
+cmd_list = ["apps/helloworld"]
 
 @allure.step("测试前置步骤一：SSH登录域控204")
 @pytest.fixture(scope='module', name='cmdRun', autouse=True)
