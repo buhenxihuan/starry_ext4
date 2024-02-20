@@ -1,0 +1,138 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/c/memtest ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: memtest, Arch: riscv64, Platform: riscv64-qemu-virt, App type: c
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  -p axlibc --features "axfeat/log-level-warn axfeat/paging axlibc/alloc"[0m
+   Compiling const-default v1.0.0
+   Compiling bitmap-allocator v0.1.0 (https://github.com/rcore-os/bitmap-allocator.git?rev=88e871a#88e871a5)
+   Compiling page_table v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/page_table)
+   Compiling arceos_posix_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_posix_api)
+   Compiling rlsf v0.2.1
+   Compiling axlibc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc)
+   Compiling allocator v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/allocator)
+   Compiling axalloc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axalloc)
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling axtask v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axtask)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axsync v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axsync)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+    Finished release [optimized] target(s) in 2.29s
+CFLAGS changed, rebuild
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/assert.o ulib/axlibc/c/assert.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/c/ctype.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/c/dirent.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/c/dlfcn.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/env.o ulib/axlibc/c/env.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/c/fcntl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/c/flock.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/c/fnmatch.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/c/glob.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/c/ioctl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/c/libgen.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/c/libm.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/c/locale.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/log.o ulib/axlibc/c/log.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/math.o ulib/axlibc/c/math.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/c/mmap.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/network.o ulib/axlibc/c/network.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/c/poll.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/c/pow.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/c/printf.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/c/pthread.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/c/pwd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/c/resource.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/c/sched.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/select.o ulib/axlibc/c/select.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/c/signal.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/c/socket.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/c/stat.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/c/stdio.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/c/stdlib.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/string.o ulib/axlibc/c/string.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/c/syslog.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/time.o ulib/axlibc/c/time.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/c/unistd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/c/utsname.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/wait.o ulib/axlibc/c/wait.c[0m
+[37mriscv64-linux-musl-ar[0m [90mrcs ulib/axlibc/build_riscv64/libc.a ulib/axlibc/build_riscv64/assert.o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/build_riscv64/env.o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/build_riscv64/log.o ulib/axlibc/build_riscv64/math.o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/build_riscv64/network.o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/build_riscv64/select.o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/build_riscv64/string.o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/build_riscv64/time.o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/build_riscv64/wait.o[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_ALLOC -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany  -c -o apps/c/memtest/memtest.o apps/c/memtest/memtest.c[0m
+    [96;1mLinking[0m apps/c/memtest/memtest_riscv64-qemu-virt.elf
+[37mrust-lld -flavor gnu[0m [90m-nostdlib -static -no-pie --gc-sections -T/home/runner/work/starry_ext4/starry_ext4/modules/axhal/linker_riscv64-qemu-virt.lds ulib/axlibc/build_riscv64/libc.a target/riscv64gc-unknown-none-elf/release/libaxlibc.a apps/c/memtest/memtest.o -o apps/c/memtest/memtest_riscv64-qemu-virt.elf[0m
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/c/memtest/memtest_riscv64-qemu-virt.elf --strip-all -O binary apps/c/memtest/memtest_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/c/memtest/memtest_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+Running memory tests...
+top of heap=0xffffffc080275018
+72(+8)Byte allocated: p=0xffffffc0802750d8
+allocate 8(+8)Byte for 9 times:
+allocated addr=0xffffffc080275038
+allocated addr=0xffffffc080275058
+allocated addr=0xffffffc080275138
+allocated addr=0xffffffc080275158
+allocated addr=0xffffffc080275178
+allocated addr=0xffffffc080275198
+allocated addr=0xffffffc0802751b8
+allocated addr=0xffffffc0802751d8
+allocated addr=0xffffffc0802751f8
+Memory tests run OK!
