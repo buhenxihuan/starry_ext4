@@ -76,7 +76,7 @@ jobs:
           export PATH=$PATH:/home/runner/.cargo/bin/
           sudo pip3 install -r ./requirements.txt -i http://mirrors.aliyun.com/pypi/simple --trusted-host mirrors.aliyun.com
           sudo python3 -m pytest -sv --alluredir report/result testcase/test_arceos.py --clean-alluredir
-          sudo allure generate report/result -o report/html --clean
+         # sudo allure generate report/result -o report/html --clean
 
 
 
@@ -95,7 +95,7 @@ jobs:
         with:
           gh_pages: gh-pages
           allure_history: allure-history
-          allure_results: /home/runner/work/starry_ext4/starry_ext4/pytest/report
+          allure_results: /home/runner/work/starry_ext4/starry_ext4/pytest/report/result
 
       - name: Publish report
         uses: peaceiris/actions-gh-pages@v3
