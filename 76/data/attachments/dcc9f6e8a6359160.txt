@@ -1,0 +1,97 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/task/priority ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: priority, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/task/priority/Cargo.toml --features "axstd/log-level-warn"[0m
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling axstd v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstd)
+   Compiling arceos-priority v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/task/priority)
+    Finished release [optimized] target(s) in 0.82s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/task/priority/priority_riscv64-qemu-virt.elf --strip-all -O binary apps/task/priority/priority_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/task/priority/priority_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+[37m[  0.345160 0:2 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[m[37m[  4.707734 0:4 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[mpart 0: ThreadId(4) [0, 40)
+part 0: ThreadId(4) finished
+[37m[  5.597053 0:5 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[mpart 1: ThreadId(5) [0, 40)
+part 1: ThreadId(5) finished
+[37m[  6.477067 0:6 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[mpart 2: ThreadId(6) [0, 40)
+part 2: ThreadId(6) finished
+[37m[  7.356588 0:7 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[mpart 3: ThreadId(7) [0, 40)
+part 3: ThreadId(7) finished
+[37m[  8.237180 0:8 arceos_api::imp::task:78] [33m[AxError::BadState] ax_set_current_priority: failed to set task priority[m
+[mpart 4: ThreadId(8) [0, 4)
+part 4: ThreadId(8) finished
+sum = 3318102132
+leave time:
+task 0 = 895ms
+task 1 = 1779ms
+task 2 = 2658ms
+task 3 = 3539ms
+task 4 = 4419ms
+Priority tests run OK!
