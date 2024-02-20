@@ -1,0 +1,6 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Tue Feb 20 06:55:50 GMT 2024","Tue Feb 20 06:55:51 GMT 2024","717","testcase","test_arceos","","","","测试ArceOS基本功能","测试用例简要描述"
+"passed","Tue Feb 20 06:55:49 GMT 2024","Tue Feb 20 06:55:50 GMT 2024","1133","testcase","test_arceos","","","","测试ArceOS基本功能","测试用例简要描述"
+"passed","Tue Feb 20 06:55:51 GMT 2024","Tue Feb 20 06:55:54 GMT 2024","2793","testcase","test_arceos","","","","测试ArceOS基本功能","测试用例简要描述"
+"passed","Tue Feb 20 06:55:21 GMT 2024","Tue Feb 20 06:55:49 GMT 2024","28353","testcase","test_arceos","","","","测试ArceOS基本功能","测试用例简要描述"
+"passed","Tue Feb 20 06:55:54 GMT 2024","Tue Feb 20 06:56:06 GMT 2024","11975","testcase","test_arceos","","","","测试ArceOS基本功能","测试用例简要描述"
