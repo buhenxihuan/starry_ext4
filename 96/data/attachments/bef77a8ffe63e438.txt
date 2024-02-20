@@ -1,0 +1,594 @@
+INFO     root:test_arceos.py:39 kernel_type=unikernel
+INFO     root:test_arceos.py:40 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=apps/c/sqlite3 ARCH=riscv64 run
+INFO     root:test_arceos.py:42 res=[92;1mBuilding[0m App: sqlite3, Arch: riscv64, Platform: riscv64-qemu-virt, App type: c
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  -p axlibc --features "axfeat/log-level-warn axfeat/paging axlibc/fp_simd axlibc/alloc axlibc/fs axlibc/fd"[0m
+   Compiling axhal v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axhal)
+   Compiling zerocopy-derive v0.7.26
+   Compiling byteorder v1.4.3
+   Compiling driver_common v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_common)
+   Compiling driver_block v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_block)
+   Compiling axfs_vfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_vfs)
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling rand_core v0.6.4
+   Compiling axfs_ramfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_ramfs)
+   Compiling rand v0.8.5
+   Compiling axtask v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axtask)
+   Compiling axsync v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axsync)
+   Compiling axio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axio)
+   Compiling capability v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/capability)
+   Compiling ext4fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/ext4fs)
+warning: unused import: `bitflags::bitflags`
+  --> crates/ext4fs/src/lib.rs:10:5
+   |
+10 | use bitflags::bitflags;
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused imports: `RefCell`, `UnsafeCell`
+  --> crates/ext4fs/src/lib.rs:11:18
+   |
+11 | use core::cell::{RefCell, UnsafeCell};
+   |                  ^^^^^^^  ^^^^^^^^^^
+
+warning: unused import: `core::marker::PhantomData`
+  --> crates/ext4fs/src/lib.rs:12:5
+   |
+12 | use core::marker::PhantomData;
+   |     ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning: unused import: `alloc::vec::IntoIter`
+ --> crates/ext4fs/src/defs.rs:6:5
+  |
+6 | use alloc::vec::IntoIter;
+  |     ^^^^^^^^^^^^^^^^^^^^
+
+warning: type `ext4_lblk_t` should have an upper camel case name
+   --> crates/ext4fs/src/defs.rs:497:10
+    |
+497 | pub type ext4_lblk_t = u32;
+    |          ^^^^^^^^^^^ help: convert the identifier to upper camel case: `Ext4LblkT`
+    |
+    = note: `#[warn(non_camel_case_types)]` on by default
+
+warning: type `ext4_fsblk_t` should have an upper camel case name
+   --> crates/ext4fs/src/defs.rs:498:10
+    |
+498 | pub type ext4_fsblk_t = u64;
+    |          ^^^^^^^^^^^^ help: convert the identifier to upper camel case: `Ext4FsblkT`
+
+warning: unused import: `core::mem::size_of`
+ --> crates/ext4fs/src/ext4.rs:3:5
+  |
+3 | use core::mem::size_of;
+  |     ^^^^^^^^^^^^^^^^^^
+
+   Compiling axfs_devfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/axfs_devfs)
+   Compiling arceos_posix_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_posix_api)
+   Compiling zerocopy v0.7.26
+warning: function cannot return without recursing
+   --> crates/ext4fs/src/defs.rs:503:5
+    |
+503 |     fn default() -> Self {
+    |     ^^^^^^^^^^^^^^^^^^^^ cannot return without recursing
+504 |         Self{
+505 |             ..Default::default()
+    |               ------------------ recursive call site
+    |
+    = help: a `loop` may express intention better if this is on purpose
+    = note: `#[warn(unconditional_recursion)]` on by default
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:512:13
+    |
+512 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:531:13
+    |
+531 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:548:13
+    |
+548 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `size`
+   --> crates/ext4fs/src/defs.rs:564:13
+    |
+564 |         let size = size_of::<Self>();
+    |             ^^^^ help: if this is intentional, prefix it with an underscore: `_size`
+
+warning: unused variable: `ee_block`
+   --> crates/ext4fs/src/lib.rs:130:21
+    |
+130 |                 let ee_block = extent.ee_block;
+    |                     ^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_block`
+
+warning: unused variable: `ee_len`
+   --> crates/ext4fs/src/lib.rs:131:21
+    |
+131 |                 let ee_len = extent.ee_len;
+    |                     ^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_len`
+
+warning: unused variable: `ee_start_hi`
+   --> crates/ext4fs/src/lib.rs:132:21
+    |
+132 |                 let ee_start_hi = extent.ee_start_hi;
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_start_hi`
+
+warning: unused variable: `ee_start_lo`
+   --> crates/ext4fs/src/lib.rs:133:21
+    |
+133 |                 let ee_start_lo = extent.ee_start_lo;
+    |                     ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_ee_start_lo`
+
+warning: unused variable: `first_level`
+   --> crates/ext4fs/src/lib.rs:121:9
+    |
+121 |         first_level: bool,
+    |         ^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_first_level`
+
+warning: unused variable: `dsc_per_block`
+   --> crates/ext4fs/src/lib.rs:160:13
+    |
+160 |         let dsc_per_block = dsc_cnt;
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_dsc_per_block`
+
+warning: unused variable: `first_meta_bg`
+   --> crates/ext4fs/src/lib.rs:162:13
+    |
+162 |         let first_meta_bg = super_block.first_meta_bg;
+    |             ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_first_meta_bg`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:199:13
+    |
+199 |         let mut inode_table_blk_num = self.ext4_get_block_group(group, super_block);
+    |             ----^^^^^^^^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:201:13
+    |
+201 |         let mut offset = inode_table_blk_num * BLOCK_SIZE + index * inode_size;
+    |             ----^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `e`
+   --> crates/ext4fs/src/lib.rs:217:13
+    |
+217 |         let e = &extents[0];
+    |             ^ help: if this is intentional, prefix it with an underscore: `_e`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:251:13
+    |
+251 |         let mut depth = extent_header.eh_depth;
+    |             ----^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `orig_path`
+   --> crates/ext4fs/src/lib.rs:294:9
+    |
+294 |         orig_path: &mut Ext4ExtentPath,
+    |         ^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_orig_path`
+
+warning: unused variable: `max_blocks`
+   --> crates/ext4fs/src/lib.rs:330:9
+    |
+330 |         max_blocks: u32,
+    |         ^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_max_blocks`
+
+warning: unused variable: `extent_create`
+   --> crates/ext4fs/src/lib.rs:332:9
+    |
+332 |         extent_create: bool,
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_extent_create`
+
+warning: unused variable: `extent_create`
+   --> crates/ext4fs/src/lib.rs:361:9
+    |
+361 |         extent_create: bool,
+    |         ^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_extent_create`
+
+warning: variable does not need to be mutable
+   --> crates/ext4fs/src/lib.rs:363:13
+    |
+363 |         let mut current_block: ext4_fsblk_t;
+    |             ----^^^^^^^^^^^^^
+    |             |
+    |             help: remove this `mut`
+
+warning: unused variable: `mp`
+   --> crates/ext4fs/src/lib.rs:445:13
+    |
+445 |         let mp = &ext4_file.mp;
+    |             ^^ help: if this is intentional, prefix it with an underscore: `_mp`
+
+warning: value assigned to `len` is never read
+   --> crates/ext4fs/src/lib.rs:460:17
+    |
+460 |         let mut len = 0;
+    |                 ^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: unused variable: `name`
+   --> crates/ext4fs/src/lib.rs:475:17
+    |
+475 |             let name = get_name(
+    |                 ^^^^ help: if this is intentional, prefix it with an underscore: `_name`
+
+warning: unnecessary `unsafe` block
+   --> crates/ext4fs/src/lib.rs:263:21
+    |
+263 |         let mut r = unsafe { ext4_last_extent(eh) };
+    |                     ^^^^^^ unnecessary `unsafe` block
+    |
+    = note: `#[warn(unused_unsafe)]` on by default
+
+   Compiling axlibc v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc)
+warning: `ext4fs` (lib) generated 32 warnings (run `cargo fix --lib -p ext4fs` to apply 27 suggestions)
+   Compiling virtio-drivers v0.7.1 (https://github.com/rcore-os/virtio-drivers.git?rev=4b60f5d#4b60f5d3)
+   Compiling driver_virtio v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/crates/driver_virtio)
+   Compiling axfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axfs)
+warning: unused import: `core::num`
+ --> modules/axfs/src/fs/ext4fs.rs:4:5
+  |
+4 | use core::num;
+  |     ^^^^^^^^^
+  |
+  = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `VfsError`
+ --> modules/axfs/src/fs/ext4fs.rs:7:29
+  |
+7 | use axfs_vfs::{VfsDirEntry, VfsError, VfsNodePerm, VfsResult};
+  |                             ^^^^^^^^
+
+warning: unused import: `Ext4Fs`
+  --> modules/axfs/src/fs/ext4fs.rs:11:27
+   |
+11 | use ext4fs::{BlockDevice, Ext4Fs, BLOCK_SIZE, *};
+   |                           ^^^^^^
+
+warning: unused import: `mounts`
+  --> modules/axfs/src/root.rs:15:32
+   |
+15 | use crate::{api::FileType, fs, mounts};
+   |                                ^^^^^^
+
+warning: unused variable: `flags`
+   --> modules/axfs/src/fs/ext4fs.rs:160:13
+    |
+160 |         let flags = ext4_file.flags;
+    |             ^^^^^ help: if this is intentional, prefix it with an underscore: `_flags`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: value assigned to `len` is never read
+   --> modules/axfs/src/fs/ext4fs.rs:172:17
+    |
+172 |         let mut len = 0;
+    |                 ^^^
+    |
+    = help: maybe it is overwritten before being read?
+    = note: `#[warn(unused_assignments)]` on by default
+
+warning: variable does not need to be mutable
+   --> modules/axfs/src/root.rs:177:9
+    |
+177 |     let mut root_dir = RootDirectory::new(main_fs);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: method `position` is never used
+  --> modules/axfs/src/dev.rs:34:12
+   |
+12 | impl Disk {
+   | --------- method in this implementation
+...
+34 |     pub fn position(&self) -> u64 {
+   |            ^^^^^^^^
+   |
+   = note: `#[warn(dead_code)]` on by default
+
+warning: function `devfs` is never used
+ --> modules/axfs/src/mounts.rs:7:15
+  |
+7 | pub(crate) fn devfs() -> Arc<fs::devfs::DeviceFileSystem> {
+  |               ^^^^^
+
+warning: function `ramfs` is never used
+  --> modules/axfs/src/mounts.rs:37:15
+   |
+37 | pub(crate) fn ramfs() -> Arc<fs::ramfs::RamFileSystem> {
+   |               ^^^^^
+
+warning: function `procfs` is never used
+  --> modules/axfs/src/mounts.rs:42:15
+   |
+42 | pub(crate) fn procfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^^
+
+warning: function `sysfs` is never used
+  --> modules/axfs/src/mounts.rs:76:15
+   |
+76 | pub(crate) fn sysfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^
+
+warning: associated function `new` is never used
+  --> modules/axfs/src/root.rs:33:12
+   |
+32 | impl MountPoint {
+   | --------------- associated function in this implementation
+33 |     pub fn new(path: &'static str, fs: Arc<dyn VfsOps>) -> Self {
+   |            ^^^
+
+warning: method `mount` is never used
+  --> modules/axfs/src/root.rs:52:12
+   |
+44 | impl RootDirectory {
+   | ------------------ method in this implementation
+...
+52 |     pub fn mount(&mut self, path: &'static str, fs: Arc<dyn VfsOps>) -> AxResult {
+   |            ^^^^^
+
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+warning: `axfs` (lib) generated 14 warnings (run `cargo fix --lib -p axfs` to apply 6 suggestions)
+    Finished release [optimized] target(s) in 4.61s
+CFLAGS changed, rebuild
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/assert.o ulib/axlibc/c/assert.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/c/ctype.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/c/dirent.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/c/dlfcn.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/env.o ulib/axlibc/c/env.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/c/fcntl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/c/flock.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/c/fnmatch.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/c/glob.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/c/ioctl.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/c/libgen.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/c/libm.c[0m
+In file included from ulib/axlibc/c/libm.c:5:
+ulib/axlibc/c/libm.h: In function ‘fp_force_evalf’:
+ulib/axlibc/c/libm.h:157:20: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  157 |     volatile float y;
+      |                    ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_eval’:
+ulib/axlibc/c/libm.h:166:21: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  166 |     volatile double y;
+      |                     ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_evall’:
+ulib/axlibc/c/libm.h:175:26: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  175 |     volatile long double y;
+      |                          ^
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/c/locale.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/log.o ulib/axlibc/c/log.c[0m
+In file included from ulib/axlibc/c/log.c:8:
+ulib/axlibc/c/libm.h: In function ‘fp_force_evalf’:
+ulib/axlibc/c/libm.h:157:20: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  157 |     volatile float y;
+      |                    ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_eval’:
+ulib/axlibc/c/libm.h:166:21: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  166 |     volatile double y;
+      |                     ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_evall’:
+ulib/axlibc/c/libm.h:175:26: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  175 |     volatile long double y;
+      |                          ^
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/math.o ulib/axlibc/c/math.c[0m
+In file included from ulib/axlibc/c/math.c:8:
+ulib/axlibc/c/libm.h: In function ‘fp_force_evalf’:
+ulib/axlibc/c/libm.h:157:20: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  157 |     volatile float y;
+      |                    ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_eval’:
+ulib/axlibc/c/libm.h:166:21: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  166 |     volatile double y;
+      |                     ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_evall’:
+ulib/axlibc/c/libm.h:175:26: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  175 |     volatile long double y;
+      |                          ^
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/c/mmap.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/network.o ulib/axlibc/c/network.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/c/poll.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/c/pow.c[0m
+In file included from ulib/axlibc/c/pow.c:9:
+ulib/axlibc/c/libm.h: In function ‘fp_force_evalf’:
+ulib/axlibc/c/libm.h:157:20: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  157 |     volatile float y;
+      |                    ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_eval’:
+ulib/axlibc/c/libm.h:166:21: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  166 |     volatile double y;
+      |                     ^
+ulib/axlibc/c/libm.h: In function ‘fp_force_evall’:
+ulib/axlibc/c/libm.h:175:26: warning: variable ‘y’ set but not used [-Wunused-but-set-variable]
+  175 |     volatile long double y;
+      |                          ^
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/c/printf.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/c/pthread.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/c/pwd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/c/resource.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/c/sched.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/select.o ulib/axlibc/c/select.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/c/signal.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/c/socket.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/c/stat.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/c/stdio.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/c/stdlib.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/string.o ulib/axlibc/c/string.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/c/syslog.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/time.o ulib/axlibc/c/time.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/c/unistd.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/c/utsname.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -c -o ulib/axlibc/build_riscv64/wait.o ulib/axlibc/c/wait.c[0m
+[37mriscv64-linux-musl-ar[0m [90mrcs ulib/axlibc/build_riscv64/libc.a ulib/axlibc/build_riscv64/assert.o ulib/axlibc/build_riscv64/ctype.o ulib/axlibc/build_riscv64/dirent.o ulib/axlibc/build_riscv64/dlfcn.o ulib/axlibc/build_riscv64/env.o ulib/axlibc/build_riscv64/fcntl.o ulib/axlibc/build_riscv64/flock.o ulib/axlibc/build_riscv64/fnmatch.o ulib/axlibc/build_riscv64/glob.o ulib/axlibc/build_riscv64/ioctl.o ulib/axlibc/build_riscv64/libgen.o ulib/axlibc/build_riscv64/libm.o ulib/axlibc/build_riscv64/locale.o ulib/axlibc/build_riscv64/log.o ulib/axlibc/build_riscv64/math.o ulib/axlibc/build_riscv64/mmap.o ulib/axlibc/build_riscv64/network.o ulib/axlibc/build_riscv64/poll.o ulib/axlibc/build_riscv64/pow.o ulib/axlibc/build_riscv64/printf.o ulib/axlibc/build_riscv64/pthread.o ulib/axlibc/build_riscv64/pwd.o ulib/axlibc/build_riscv64/resource.o ulib/axlibc/build_riscv64/sched.o ulib/axlibc/build_riscv64/select.o ulib/axlibc/build_riscv64/signal.o ulib/axlibc/build_riscv64/socket.o ulib/axlibc/build_riscv64/stat.o ulib/axlibc/build_riscv64/stdio.o ulib/axlibc/build_riscv64/stdlib.o ulib/axlibc/build_riscv64/string.o ulib/axlibc/build_riscv64/syslog.o ulib/axlibc/build_riscv64/time.o ulib/axlibc/build_riscv64/unistd.o ulib/axlibc/build_riscv64/utsname.o ulib/axlibc/build_riscv64/wait.o[0m
+echo "Download sqlite source code"
+Download sqlite source code
+wget https://sqlite.org/2023/sqlite-amalgamation-3410100.zip -P apps/c/sqlite3
+--2024-02-20 17:13:59--  https://sqlite.org/2023/sqlite-amalgamation-3410100.zip
+Resolving sqlite.org (sqlite.org)... 45.33.6.223, 2600:3c00::f03c:91ff:fe96:b959
+Connecting to sqlite.org (sqlite.org)|45.33.6.223|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 2622725 (2.5M) [application/zip]
+Saving to: ‘apps/c/sqlite3/sqlite-amalgamation-3410100.zip’
+
+     0K .......... .......... .......... .......... ..........  1%  735K 3s
+    50K .......... .......... .......... .......... ..........  3% 1.45M 3s
+   100K .......... .......... .......... .......... ..........  5%  129M 2s
+   150K .......... .......... .......... .......... ..........  7% 1.45M 2s
+   200K .......... .......... .......... .......... ..........  9%  151M 1s
+   250K .......... .......... .......... .......... .......... 11%  119M 1s
+   300K .......... .......... .......... .......... .......... 13%  161M 1s
+   350K .......... .......... .......... .......... .......... 15%  192M 1s
+   400K .......... .......... .......... .......... .......... 17% 1.47M 1s
+   450K .......... .......... .......... .......... .......... 19%  136M 1s
+   500K .......... .......... .......... .......... .......... 21%  170M 1s
+   550K .......... .......... .......... .......... .......... 23%  195M 1s
+   600K .......... .......... .......... .......... .......... 25%  194M 1s
+   650K .......... .......... .......... .......... .......... 27%  210M 0s
+   700K .......... .......... .......... .......... .......... 29%  223M 0s
+   750K .......... .......... .......... .......... .......... 31%  222M 0s
+   800K .......... .......... .......... .......... .......... 33% 1.54M 0s
+   850K .......... .......... .......... .......... .......... 35% 98.4M 0s
+   900K .......... .......... .......... .......... .......... 37%  199M 0s
+   950K .......... .......... .......... .......... .......... 39%  163M 0s
+  1000K .......... .......... .......... .......... .......... 40%  149M 0s
+  1050K .......... .......... .......... .......... .......... 42% 95.9M 0s
+  1100K .......... .......... .......... .......... .......... 44%  225M 0s
+  1150K .......... .......... .......... .......... .......... 46%  226M 0s
+  1200K .......... .......... .......... .......... .......... 48%  179M 0s
+  1250K .......... .......... .......... .......... .......... 50%  224M 0s
+  1300K .......... .......... .......... .......... .......... 52%  233M 0s
+  1350K .......... .......... .......... .......... .......... 54%  223M 0s
+  1400K .......... .......... .......... .......... .......... 56%  201M 0s
+  1450K .......... .......... .......... .......... .......... 58%  218M 0s
+  1500K .......... .......... .......... .......... .......... 60%  221M 0s
+  1550K .......... .......... .......... .......... .......... 62%  224M 0s
+  1600K .......... .......... .......... .......... .......... 64%  187M 0s
+  1650K .......... .......... .......... .......... .......... 66% 1.64M 0s
+  1700K .......... .......... .......... .......... .......... 68%  191M 0s
+  1750K .......... .......... .......... .......... .......... 70%  136M 0s
+  1800K .......... .......... .......... .......... .......... 72%  127M 0s
+  1850K .......... .......... .......... .......... .......... 74%  227M 0s
+  1900K .......... .......... .......... .......... .......... 76%  127M 0s
+  1950K .......... .......... .......... .......... .......... 78%  224M 0s
+  2000K .......... .......... .......... .......... .......... 80%  180M 0s
+  2050K .......... .......... .......... .......... .......... 81%  220M 0s
+  2100K .......... .......... .......... .......... .......... 83%  220M 0s
+  2150K .......... .......... .......... .......... .......... 85%  207M 0s
+  2200K .......... .......... .......... .......... .......... 87%  204M 0s
+  2250K .......... .......... .......... .......... .......... 89%  225M 0s
+  2300K .......... .......... .......... .......... .......... 91%  212M 0s
+  2350K .......... .......... .......... .......... .......... 93%  207M 0s
+  2400K .......... .......... .......... .......... .......... 95%  187M 0s
+  2450K .......... .......... .......... .......... .......... 97%  217M 0s
+  2500K .......... .......... .......... .......... .......... 99%  224M 0s
+  2550K .......... .                                          100%  158M=0.2s
+
+2024-02-20 17:13:59 (10.3 MB/s) - ‘apps/c/sqlite3/sqlite-amalgamation-3410100.zip’ saved [2622725/2622725]
+
+unzip apps/c/sqlite3/sqlite-amalgamation-3410100.zip -d apps/c/sqlite3 && rm -f apps/c/sqlite3/sqlite-amalgamation-3410100.zip
+Archive:  apps/c/sqlite3/sqlite-amalgamation-3410100.zip
+   creating: apps/c/sqlite3/sqlite-amalgamation-3410100/
+  inflating: apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3.c  
+  inflating: apps/c/sqlite3/sqlite-amalgamation-3410100/shell.c  
+  inflating: apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3.h  
+  inflating: apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3ext.h  
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -Iapps/c/sqlite3/sqlite-amalgamation-3410100 -w -DSQLITE_THREADSAFE=0 -DSQLITE_OMIT_FLOATING_POINT -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DEBUG -c -o apps/c/sqlite3/main.o apps/c/sqlite3/main.c[0m
+[37mriscv64-linux-musl-gcc[0m [90m-DAX_CONFIG_FP_SIMD -DAX_CONFIG_ALLOC -DAX_CONFIG_FS -DAX_CONFIG_FD -DAX_LOG_WARN -nostdinc -fno-builtin -ffreestanding -Wall -I/home/runner/work/starry_ext4/starry_ext4/ulib/axlibc/include -O3 -march=rv64gc -mabi=lp64d -mcmodel=medany -Iapps/c/sqlite3/sqlite-amalgamation-3410100 -w -DSQLITE_THREADSAFE=0 -DSQLITE_OMIT_FLOATING_POINT -DSQLITE_OMIT_LOAD_EXTENSION -DSQLITE_DEBUG -c -o apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3.o apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3.c[0m
+    [96;1mLinking[0m apps/c/sqlite3/sqlite3_riscv64-qemu-virt.elf
+[37mrust-lld -flavor gnu[0m [90m-nostdlib -static -no-pie --gc-sections -T/home/runner/work/starry_ext4/starry_ext4/modules/axhal/linker_riscv64-qemu-virt.lds ulib/axlibc/build_riscv64/libc.a target/riscv64gc-unknown-none-elf/release/libaxlibc.a /home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin/../lib/gcc/riscv64-linux-musl/11.2.1/libgcc.a apps/c/sqlite3/main.o apps/c/sqlite3/sqlite-amalgamation-3410100/sqlite3.o -o apps/c/sqlite3/sqlite3_riscv64-qemu-virt.elf[0m
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/c/sqlite3/sqlite3_riscv64-qemu-virt.elf --strip-all -O binary apps/c/sqlite3/sqlite3_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/c/sqlite3/sqlite3_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+sqlite version: 3.41.1
+sqlite open memory status 0 
+======== init user table ========
+sqlite exec:
+    create table user(id INTEGER PRIMARY KEY AUTOINCREMENT,username TEXT,password TEXT)
+[37m[  0.703111 0 axruntime::lang_items:5] [31mpanicked at crates/ext4fs/src/lib.rs:615:12:
+range end index 4096 out of range for slice of length 44[m
+[m
