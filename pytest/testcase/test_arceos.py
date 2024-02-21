@@ -35,7 +35,7 @@ def step_01(cmdRun, cmdApp, kernel_Type):
     if kernel_Type == "unikernel":
         _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp
     else:
-        _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh libc-static && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp
+        _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && ./1.sh sdcard && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp
     logging.info("kernel_type=" + kernel_Type)
     logging.info("test_cmd=" + _cmd)
     _, res = cmdRun.run_cmd(_cmd)
