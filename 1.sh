@@ -1,6 +1,6 @@
 #/bin/bash
 rm -rf disk.img
-dd if=/dev/zero of=disk.img bs=3M count=120
+dd if=/dev/zero of=disk.img bs=3M count=24
 # mkfs.ext4  disk.img
 mkfs.vfat -F 32 disk.img
 mkdir -p mnt
