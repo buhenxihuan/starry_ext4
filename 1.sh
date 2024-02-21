@@ -3,7 +3,7 @@ rm -rf disk.img
 dd if=/dev/zero of=disk.img bs=3M count=120
 mkfs.ext4  disk.img
 mkdir -p mnt
-sudo mount -o loop disk.img mnt
+sudo mount disk.img mnt
 # 根据命令行参数生成对应的测例
 #sudo cp -r ./testcases/junior/* ./mnt/
 #sudo cp -r ./testcases/libc-dynamic/* ./mnt/
