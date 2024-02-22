@@ -12,7 +12,6 @@ logging.info(BASE_DIR)
 sys.path.append(BASE_DIR)
 
 from lib import cmd
-from lib import ssh
 from lib import excel
 from lib import db
 
