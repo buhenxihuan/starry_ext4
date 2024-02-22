@@ -1,0 +1,376 @@
+INFO     root:test_arceos.py:58 kernel_type=monokernel
+INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && ./build_img.sh sdcard && make A=apps/oscomp ARCH=riscv64 TC=libc-static-9 run
+INFO     root:test_arceos.py:61 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0724626 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+--2024-02-22 08:02:10--  https://github.com/oscomp/testsuits-for-oskernel/releases/download/final-x86_64/testsuits-x86_64-linux-musl.tgz
+Resolving github.com (github.com)... 140.82.112.4
+Connecting to github.com (github.com)|140.82.112.4|:443... connected.
+HTTP request sent, awaiting response... 302 Found
+Location: https://objects.githubusercontent.com/github-production-release-asset-2e65be/358286238/72a08fa4-eb2c-4cfa-bbe1-b8f79ae5d834?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240222%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240222T080120Z&X-Amz-Expires=300&X-Amz-Signature=540fe6c767b558e125f04c2d67ad4382937c32566a501db661bb7a37e121e55e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=358286238&response-content-disposition=attachment%3B%20filename%3Dtestsuits-x86_64-linux-musl.tgz&response-content-type=application%2Foctet-stream [following]
+--2024-02-22 08:02:10--  https://objects.githubusercontent.com/github-production-release-asset-2e65be/358286238/72a08fa4-eb2c-4cfa-bbe1-b8f79ae5d834?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240222%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240222T080120Z&X-Amz-Expires=300&X-Amz-Signature=540fe6c767b558e125f04c2d67ad4382937c32566a501db661bb7a37e121e55e&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=358286238&response-content-disposition=attachment%3B%20filename%3Dtestsuits-x86_64-linux-musl.tgz&response-content-type=application%2Foctet-stream
+Resolving objects.githubusercontent.com (objects.githubusercontent.com)... 185.199.110.133, 185.199.109.133, 185.199.108.133, ...
+Connecting to objects.githubusercontent.com (objects.githubusercontent.com)|185.199.110.133|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 3556263 (3.4M) [application/octet-stream]
+Saving to: ‘testsuits-x86_64-linux-musl.tgz’
+
+     0K .......... .......... .......... .......... ..........  1% 8.89M 0s
+    50K .......... .......... .......... .......... ..........  2% 10.2M 0s
+   100K .......... .......... .......... .......... ..........  4% 33.2M 0s
+   150K .......... .......... .......... .......... ..........  5% 67.6M 0s
+   200K .......... .......... .......... .......... ..........  7% 15.5M 0s
+   250K .......... .......... .......... .......... ..........  8% 34.9M 0s
+   300K .......... .......... .......... .......... .......... 10%  101M 0s
+   350K .......... .......... .......... .......... .......... 11%  112M 0s
+   400K .......... .......... .......... .......... .......... 12% 76.2M 0s
+   450K .......... .......... .......... .......... .......... 14% 28.7M 0s
+   500K .......... .......... .......... .......... .......... 15% 60.5M 0s
+   550K .......... .......... .......... .......... .......... 17% 34.5M 0s
+   600K .......... .......... .......... .......... .......... 18%  197M 0s
+   650K .......... .......... .......... .......... .......... 20%  165M 0s
+   700K .......... .......... .......... .......... .......... 21%  202M 0s
+   750K .......... .......... .......... .......... .......... 23%  193M 0s
+   800K .......... .......... .......... .......... .......... 24%  195M 0s
+   850K .......... .......... .......... .......... .......... 25%  180M 0s
+   900K .......... .......... .......... .......... .......... 27%  193M 0s
+   950K .......... .......... .......... .......... .......... 28%  209M 0s
+  1000K .......... .......... .......... .......... .......... 30% 21.2M 0s
+  1050K .......... .......... .......... .......... .......... 31%  124M 0s
+  1100K .......... .......... .......... .......... .......... 33% 85.1M 0s
+  1150K .......... .......... .......... .......... .......... 34%  179M 0s
+  1200K .......... .......... .......... .......... .......... 35%  204M 0s
+  1250K .......... .......... .......... .......... .......... 37%  184M 0s
+  1300K .......... .......... .......... .......... .......... 38%  133M 0s
+  1350K .......... .......... .......... .......... .......... 40%  168M 0s
+  1400K .......... .......... .......... .......... .......... 41%  152M 0s
+  1450K .......... .......... .......... .......... .......... 43%  205M 0s
+  1500K .......... .......... .......... .......... .......... 44%  203M 0s
+  1550K .......... .......... .......... .......... .......... 46%  142M 0s
+  1600K .......... .......... .......... .......... .......... 47%  204M 0s
+  1650K .......... .......... .......... .......... .......... 48%  201M 0s
+  1700K .......... .......... .......... .......... .......... 50%  178M 0s
+  1750K .......... .......... .......... .......... .......... 51%  198M 0s
+  1800K .......... .......... .......... .......... .......... 53%  171M 0s
+  1850K .......... .......... .......... .......... .......... 54%  199M 0s
+  1900K .......... .......... .......... .......... .......... 56%  206M 0s
+  1950K .......... .......... .......... .......... .......... 57%  196M 0s
+  2000K .......... .......... .......... .......... .......... 59%  167M 0s
+  2050K .......... .......... .......... .......... .......... 60%  204M 0s
+  2100K .......... .......... .......... .......... .......... 61%  192M 0s
+  2150K .......... .......... .......... .......... .......... 63%  178M 0s
+  2200K .......... .......... .......... .......... .......... 64%  181M 0s
+  2250K .......... .......... .......... .......... .......... 66%  234M 0s
+  2300K .......... .......... .......... .......... .......... 67%  178M 0s
+  2350K .......... .......... .......... .......... .......... 69%  223M 0s
+  2400K .......... .......... .......... .......... .......... 70%  229M 0s
+  2450K .......... .......... .......... .......... .......... 71%  230M 0s
+  2500K .......... .......... .......... .......... .......... 73%  198M 0s
+  2550K .......... .......... .......... .......... .......... 74%  227M 0s
+  2600K .......... .......... .......... .......... .......... 76%  217M 0s
+  2650K .......... .......... .......... .......... .......... 77%  216M 0s
+  2700K .......... .......... .......... .......... .......... 79%  187M 0s
+  2750K .......... .......... .......... .......... .......... 80%  223M 0s
+  2800K .......... .......... .......... .......... .......... 82%  220M 0s
+  2850K .......... .......... .......... .......... .......... 83%  187M 0s
+  2900K .......... .......... .......... .......... .......... 84%  195M 0s
+  2950K .......... .......... .......... .......... .......... 86%  171M 0s
+  3000K .......... .......... .......... .......... .......... 87%  194M 0s
+  3050K .......... .......... .......... .......... .......... 89%  197M 0s
+  3100K .......... .......... .......... .......... .......... 90%  201M 0s
+  3150K .......... .......... .......... .......... .......... 92%  184M 0s
+  3200K .......... .......... .......... .......... .......... 93%  184M 0s
+  3250K .......... .......... .......... .......... .......... 95%  206M 0s
+  3300K .......... .......... .......... .......... .......... 96%  203M 0s
+  3350K .......... .......... .......... .......... .......... 97%  166M 0s
+  3400K .......... .......... .......... .......... .......... 99%  224M 0s
+  3450K .......... .......... ..                              100%  201M=0.04s
+
+2024-02-22 08:02:10 (85.5 MB/s) - ‘testsuits-x86_64-linux-musl.tgz’ saved [3556263/3556263]
+
+testsuits-x86_64-linux-musl/
+testsuits-x86_64-linux-musl/iperf_testcode.sh
+testsuits-x86_64-linux-musl/libc.so
+testsuits-x86_64-linux-musl/tls_init_dso.so
+testsuits-x86_64-linux-musl/pipe
+testsuits-x86_64-linux-musl/long
+testsuits-x86_64-linux-musl/run-dynamic.sh
+testsuits-x86_64-linux-musl/.gitkeep
+testsuits-x86_64-linux-musl/dhry2
+testsuits-x86_64-linux-musl/cyclictest_testcode.sh
+testsuits-x86_64-linux-musl/spawn
+testsuits-x86_64-linux-musl/lmbench_testcode.sh
+testsuits-x86_64-linux-musl/test_all.sh
+testsuits-x86_64-linux-musl/bin/
+testsuits-x86_64-linux-musl/bin/true
+testsuits-x86_64-linux-musl/syscall
+testsuits-x86_64-linux-musl/lua_testcode.sh
+testsuits-x86_64-linux-musl/lmbench_all
+testsuits-x86_64-linux-musl/run-static.sh
+testsuits-x86_64-linux-musl/busybox_testcode.sh
+testsuits-x86_64-linux-musl/file_io.lua
+testsuits-x86_64-linux-musl/lua
+testsuits-x86_64-linux-musl/copy-file-range-test-3
+testsuits-x86_64-linux-musl/iperf3
+testsuits-x86_64-linux-musl/test.sh
+testsuits-x86_64-linux-musl/hanoi
+testsuits-x86_64-linux-musl/iozone_testcode.sh
+testsuits-x86_64-linux-musl/interrupts-test-1
+testsuits-x86_64-linux-musl/tls_align_dso.so
+testsuits-x86_64-linux-musl/double
+testsuits-x86_64-linux-musl/copy-file-range-test-4
+testsuits-x86_64-linux-musl/arithoh
+testsuits-x86_64-linux-musl/runtest.exe
+testsuits-x86_64-linux-musl/iozone
+testsuits-x86_64-linux-musl/remove.lua
+testsuits-x86_64-linux-musl/whetstone-double
+testsuits-x86_64-linux-musl/float
+testsuits-x86_64-linux-musl/busybox_cmd.txt
+testsuits-x86_64-linux-musl/interrupts-test-2
+testsuits-x86_64-linux-musl/netperf
+testsuits-x86_64-linux-musl/multi.sh
+testsuits-x86_64-linux-musl/short
+testsuits-x86_64-linux-musl/entry-static.exe
+testsuits-x86_64-linux-musl/fstime
+testsuits-x86_64-linux-musl/cyclictest
+testsuits-x86_64-linux-musl/busybox
+testsuits-x86_64-linux-musl/date.lua
+testsuits-x86_64-linux-musl/netperf_testcode.sh
+testsuits-x86_64-linux-musl/time-test
+testsuits-x86_64-linux-musl/hello
+testsuits-x86_64-linux-musl/entry-dynamic.exe
+testsuits-x86_64-linux-musl/execl
+testsuits-x86_64-linux-musl/hackbench
+testsuits-x86_64-linux-musl/dlopen_dso.so
+testsuits-x86_64-linux-musl/dhry2reg
+testsuits-x86_64-linux-musl/looper
+testsuits-x86_64-linux-musl/libctest_testcode.sh
+testsuits-x86_64-linux-musl/tst.sh
+testsuits-x86_64-linux-musl/max_min.lua
+testsuits-x86_64-linux-musl/context1
+testsuits-x86_64-linux-musl/sort.lua
+testsuits-x86_64-linux-musl/netserver
+testsuits-x86_64-linux-musl/unixbench_testcode.sh
+testsuits-x86_64-linux-musl/copy-file-range-test-2
+testsuits-x86_64-linux-musl/register
+testsuits-x86_64-linux-musl/libc-bench
+testsuits-x86_64-linux-musl/round_num.lua
+testsuits-x86_64-linux-musl/int
+testsuits-x86_64-linux-musl/sin30.lua
+testsuits-x86_64-linux-musl/copy-file-range-test-1
+testsuits-x86_64-linux-musl/strings.lua
+testsuits-x86_64-linux-musl/random.lua
+testsuits-x86_64-linux-musl/tls_get_new-dtv_dso.so
+    [92;1mBuilding[0m App: oscomp, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-warn syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axnet)
+warning: unused import: `mounts`
+  --> modules/axfs/src/root.rs:15:32
+   |
+15 | use crate::{api::FileType, fs, mounts};
+   |                                ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: variable does not need to be mutable
+   --> modules/axfs/src/root.rs:177:9
+    |
+177 |     let mut root_dir = RootDirectory::new(main_fs);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: function `devfs` is never used
+ --> modules/axfs/src/mounts.rs:7:15
+  |
+7 | pub(crate) fn devfs() -> Arc<fs::devfs::DeviceFileSystem> {
+  |               ^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `ramfs` is never used
+  --> modules/axfs/src/mounts.rs:37:15
+   |
+37 | pub(crate) fn ramfs() -> Arc<fs::ramfs::RamFileSystem> {
+   |               ^^^^^
+
+warning: function `procfs` is never used
+  --> modules/axfs/src/mounts.rs:42:15
+   |
+42 | pub(crate) fn procfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^^
+
+warning: function `sysfs` is never used
+  --> modules/axfs/src/mounts.rs:76:15
+   |
+76 | pub(crate) fn sysfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^
+
+warning: associated function `new` is never used
+  --> modules/axfs/src/root.rs:33:12
+   |
+32 | impl MountPoint {
+   | --------------- associated function in this implementation
+33 |     pub fn new(path: &'static str, fs: Arc<dyn VfsOps>) -> Self {
+   |            ^^^
+
+warning: method `mount` is never used
+  --> modules/axfs/src/root.rs:52:12
+   |
+44 | impl RootDirectory {
+   | ------------------ method in this implementation
+...
+52 |     pub fn mount(&mut self, path: &'static str, fs: Arc<dyn VfsOps>) -> AxResult {
+   |            ^^^^^
+
+   Compiling axmem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axprocess)
+warning: `axfs` (lib) generated 8 warnings (run `cargo fix --lib -p axfs` to apply 2 suggestions)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_fs)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling syscall_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_net)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_mem)
+   Compiling syscall_task v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_task)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_entry)
+warning: the item `riscv` is imported redundantly
+   --> ulib/axstarry/syscall_entry/src/fake_shell.rs:264:13
+    |
+264 |         use riscv;
+    |             ^^^^^ the item `riscv` is already defined here
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `alloc::format`
+  --> ulib/axstarry/syscall_entry/src/test.rs:3:5
+   |
+3  | use alloc::format;
+   |     ^^^^^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FilePath`, `create_link`
+  --> ulib/axstarry/syscall_entry/src/test.rs:10:23
+   |
+10 | use axprocess::link::{create_link, FilePath};
+   |                       ^^^^^^^^^^^  ^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FileFlags`, `new_file`
+  --> ulib/axstarry/syscall_entry/src/test.rs:16:39
+   |
+16 | use syscall_utils::{init_current_dir, new_file, FileFlags};
+   |                                       ^^^^^^^^  ^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: `syscall_entry` (lib) generated 4 warnings (run `cargo fix --lib -p syscall_entry` to apply 3 suggestions)
+   Compiling oscomp v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/oscomp)
+    Finished release [optimized] target(s) in 8.73s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/oscomp/oscomp_riscv64-qemu-virt.elf --strip-all -O binary apps/oscomp/oscomp_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/oscomp/oscomp_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+[37m[  1.540656 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  1.564445 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  1.574470 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  1.714514 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  1.723359 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  1.732076 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  1.848135 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  1.858421 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  1.866964 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  1.978280 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  1.987238 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  1.995928 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  2.108773 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  2.118361 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  2.123406 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  2.232288 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  2.236821 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  2.241444 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m[37m[  2.350173 0:6 axmem:615] [31mPage fault address VA:0xa4 not found in memory set sepc: 4000911[m
+[m[37m[  2.354500 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 11[m
+[m[37m[  2.358531 0:6 axprocess::signal:90] [33mTerminate process: 5[m
+[m
