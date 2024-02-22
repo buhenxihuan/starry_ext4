@@ -1,0 +1,917 @@
+INFO     root:test_arceos.py:58 kernel_type=monokernel
+INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && ./build_img.sh sdcard && make A=apps/oscomp ARCH=riscv64 TC=all run
+INFO     root:test_arceos.py:61 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0735102 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+    [92;1mBuilding[0m App: oscomp, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-warn syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axnet)
+warning: unused import: `mounts`
+  --> modules/axfs/src/root.rs:15:32
+   |
+15 | use crate::{api::FileType, fs, mounts};
+   |                                ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: variable does not need to be mutable
+   --> modules/axfs/src/root.rs:177:9
+    |
+177 |     let mut root_dir = RootDirectory::new(main_fs);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: function `devfs` is never used
+ --> modules/axfs/src/mounts.rs:7:15
+  |
+7 | pub(crate) fn devfs() -> Arc<fs::devfs::DeviceFileSystem> {
+  |               ^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `ramfs` is never used
+  --> modules/axfs/src/mounts.rs:37:15
+   |
+37 | pub(crate) fn ramfs() -> Arc<fs::ramfs::RamFileSystem> {
+   |               ^^^^^
+
+warning: function `procfs` is never used
+  --> modules/axfs/src/mounts.rs:42:15
+   |
+42 | pub(crate) fn procfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^^
+
+warning: function `sysfs` is never used
+  --> modules/axfs/src/mounts.rs:76:15
+   |
+76 | pub(crate) fn sysfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^
+
+warning: associated function `new` is never used
+  --> modules/axfs/src/root.rs:33:12
+   |
+32 | impl MountPoint {
+   | --------------- associated function in this implementation
+33 |     pub fn new(path: &'static str, fs: Arc<dyn VfsOps>) -> Self {
+   |            ^^^
+
+warning: method `mount` is never used
+  --> modules/axfs/src/root.rs:52:12
+   |
+44 | impl RootDirectory {
+   | ------------------ method in this implementation
+...
+52 |     pub fn mount(&mut self, path: &'static str, fs: Arc<dyn VfsOps>) -> AxResult {
+   |            ^^^^^
+
+   Compiling axmem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axprocess)
+warning: `axfs` (lib) generated 8 warnings (run `cargo fix --lib -p axfs` to apply 2 suggestions)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_fs)
+   Compiling syscall_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_net)
+   Compiling syscall_task v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_task)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_entry)
+warning: the item `riscv` is imported redundantly
+   --> ulib/axstarry/syscall_entry/src/fake_shell.rs:264:13
+    |
+264 |         use riscv;
+    |             ^^^^^ the item `riscv` is already defined here
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `alloc::format`
+  --> ulib/axstarry/syscall_entry/src/test.rs:3:5
+   |
+3  | use alloc::format;
+   |     ^^^^^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FilePath`, `create_link`
+  --> ulib/axstarry/syscall_entry/src/test.rs:10:23
+   |
+10 | use axprocess::link::{create_link, FilePath};
+   |                       ^^^^^^^^^^^  ^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FileFlags`, `new_file`
+  --> ulib/axstarry/syscall_entry/src/test.rs:16:39
+   |
+16 | use syscall_utils::{init_current_dir, new_file, FileFlags};
+   |                                       ^^^^^^^^  ^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: `syscall_entry` (lib) generated 4 warnings (run `cargo fix --lib -p syscall_entry` to apply 3 suggestions)
+   Compiling oscomp v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/oscomp)
+    Finished release [optimized] target(s) in 8.83s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/oscomp/oscomp_riscv64-qemu-virt.elf --strip-all -O binary apps/oscomp/oscomp_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/oscomp/oscomp_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+./test_all.sh: line 1: busybox: not found
+time-test: time/iteration: 0.019ns total time: 477ms
+[37m[  2.676831 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./test_all.sh: line 3: busybox: not found
+[37m[  4.114555 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 17[m
+[m#### independent command test
+[37m[  4.372990 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "####: unknown operand
+testcase busybox echo "#### independent command test" success
+[37m[  4.796134 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -c: unknown operand
+testcase busybox ash -c exit success
+[37m[  5.220948 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -c: unknown operand
+testcase busybox sh -c exit success
+bbb
+[37m[  5.589657 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: /aaa/bbb: unknown operand
+testcase busybox basename /aaa/bbb success
+    January 1970
+Su Mo Tu We Th Fr Sa
+             1  2  3
+ 4  5  6  7  8  9 10
+11 12 13 14 15 16 17
+18 19 20 21 22 23 24
+25 26 27 28 29 30 31
+                     
+[37m[  5.996598 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox cal success
+[H[J[37m[  6.349935 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox clear success
+Thu Jan  1 00:00:06 UTC 1970
+[37m[  6.752533 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox date success
+Filesystem           1K-blocks      Used Available Use% Mounted on
+df: /proc/mounts: No such file or directory
+[37m[  7.217151 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+testcase busybox df fail
+/aaa
+[37m[  7.614885 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: /aaa/bbb: unknown operand
+testcase busybox dirname /aaa/bbb success
+[37m[  7.965246 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox dmesg success
+[37m[  8.365668 0:36 fatfs::dir:140] [31mIs a directory[m
+[m9867	.
+[37m[  8.939651 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox du success
+2
+[37m[  9.306497 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: 1: unknown operand
+testcase busybox expr 1 + 1 success
+[37m[  9.643678 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+testcase busybox false success
+[37m[  9.959728 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox true success
+[37m[ 10.388732 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+sh: ls: unknown operand
+testcase busybox which ls success
+YoimiyaOS
+[37m[ 10.741102 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox uname success
+ 00:00:11 up 0 min,  0 users,  load average: 0.00, 0.00, 0.00
+[37m[ 11.128319 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox uptime success
+abcn[37m[ 11.488011 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "abcn": unknown operand
+testcase busybox printf "abcn" success
+PID   USER     TIME  COMMAND
+ps: can't open '/proc': No such file or directory
+[37m[ 11.936664 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+testcase busybox ps fail
+/
+[37m[ 12.337498 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox pwd success
+              total        used        free      shared  buff/cache   available
+Mem:   free: can't open '/proc/meminfo': No such file or directory
+[37m[ 12.735165 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+testcase busybox free fail
+hwclock: can't open '/dev/misc/rtc': No such file or directory
+[37m[ 13.229049 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+testcase busybox hwclock fail
+[37m[ 13.566398 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: 10: unknown operand
+testcase busybox kill 10 success
+[37m[ 13.951855 0:62 fatfs::dir:140] [31mIs a directory[m
+[m[0;0marithoh[m                 [0;0mfstime[m                  [0;0mmulti.sh[m
+[0;0mbin[m                     [0;0mhackbench[m               [0;0mnetperf[m
+[0;0mbusybox[m                 [0;0mhanoi[m                   [0;0mnetperf_testcode.sh[m
+[0;0mbusybox_cmd.txt[m         [0;0mhello[m                   [0;0mnetserver[m
+[0;0mbusybox_testcode.sh[m     [0;0mint[m                     [0;0mpipe[m
+[0;0mcontext1[m                [0;0minterrupts-test-1[m       [0;0mrandom.lua[m
+[0;0mcopy-file-range-test-1[m  [0;0minterrupts-test-2[m       [0;0mregister[m
+[0;0mcopy-file-range-test-2[m  [0;0miozone[m                  [0;0mremove.lua[m
+[0;0mcopy-file-range-test-3[m  [0;0miozone_testcode.sh[m      [0;0mround_num.lua[m
+[0;0mcopy-file-range-test-4[m  [0;0miperf3[m                  [0;0mrun-dynamic.sh[m
+[0;0mcyclictest[m              [0;0miperf_testcode.sh[m       [0;0mrun-static.sh[m
+[0;0mcyclictest_testcode.sh[m  [0;0mlibc-bench[m              [0;0mruntest.exe[m
+[0;0mdate.lua[m                [0;0mlibc.so[m                 [0;0mshort[m
+[0;0mdhry2[m                   [0;0mlibctest_testcode.sh[m    [0;0msin30.lua[m
+[0;0mdhry2reg[m                [0;0mlmbench_all[m             [0;0msort.lua[m
+[0;0mdlopen_dso.so[m           [0;0mlmbench_testcode.sh[m     [0;0mspawn[m
+[0;0mdouble[m                  [0;0mlong[m                    [0;0mstrings.lua[m
+[0;0mentry-dynamic.exe[m       [0;0mlooper[m                  [0;0msyscall[m
+[0;0mentry-static.exe[m        [0;0mlua[m                     [0;0mtest.sh[m
+[0;0mexecl[m                   [0;0mlua_testcode.sh[m         [0;0mtest.txt[m
+[0;0mfile_io.lua[m             [0;0mmain[m
+[0;0mfloat[m                   [0;0mmax_min.lua[m
+[37m[ 14.610613 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mtestcase busybox ls success
+[37m[ 15.976600 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: 1: unknown operand
+testcase busybox sleep 1 success
+#### file opration test
+[37m[ 16.317545 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "####: unknown operand
+testcase busybox echo "#### file opration test" success
+[37m[ 16.679111 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox touch test.txt success
+[37m[ 17.060279 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "hello: unknown operand
+testcase busybox echo "hello world" > test.txt success
+hello world
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471[37m[ 17.871968 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox cat test.txt success
+l
+1
+[37m[ 18.270821 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -c: unknown operand
+testcase busybox cut -c 3 test.txt success
+0000000 062550 066154 020157 067567 066162 005144 031462 033461
+0000020 030464 030467 033464 030461 031462 032461 030461 032462
+0000040 033061 031061 030463 032067 033461 032061 030467 031061
+0000060 030463 030465 031061 030465 030466 031462 033461 030464
+0000100 030467 033464 030461 031462 032461 030461 032462 033061
+0000120 031061 030463 032067 033461 032061 030467 031061 030463
+0000140 030465 031061 030465 030466 031462 033461 030464 030467
+0000160 033464 030461 031462 032461 030461 032462 033061 031061
+0000200 030463 032067 033461 032061 030467 031061 030463 030465
+0000220 031061 030465 030466 031462 033461 030464 030467 033464
+0000240 030461 031462 032461 030461 032462 033061 031061 030463
+0000260 032067 033461 032061 030467 031061 030463 030465 031061
+0000300 030465 030466 031462 033461 030464 030467 033464 030461
+0000320 031462 032461 030461 032462 033061 031061 030463 032067
+0000340 033461 032061 030467 031061 030463 030465 031061 030465
+0000360 030466 031462 033461 030464 030467 033464 030461 031462
+0000400 032461 030461 032462 033061 031061 030463 032067 033461
+0000420 032061 030467 031061 030463 030465 031061 030465 030466
+0000440 031462 033461 030464 030467 033464 030461 031462 032461
+0000460 030461 032462 033061 031061 030463 032067 033461 032061
+0000500 030467 031061 030463 030465 031061 030465 030466 031462
+0000520 033461 030464 030467 033464 030461 031462 032461 030461
+0000540 032462 033061 031061 030463 032067 033461 032061 030467
+0000560 031061 030463 030465 031061 030465 030466 031462 033461
+0000600 030464 030467 033464 030461 031462 032461 030461 032462
+0000620 033061 031061 030463 032067 033461 032061 030467 031061
+0000640 030463 030465 031061 030465 030466 031462 033461 030464
+0000660 030467 033464 030461 031462 032461 030461 032462 033061
+0000700 031061 030463 032067 033461 032061 030467 031061 030463
+0000720 030465 031061 030465 030466 031462 033461 030464 030467
+0000740 033464 030461 031462 032461 030461 032462 033061 031061
+0000760 030463 032067 033461 032061 030467 031061 030463 030465
+0001000 031061 030465 030466 031462 033461 030464 030467 033464
+0001020 030461 031462 032461 030461 032462 033061 031061 030463
+0001040 032067 033461 032061 030467 031061 030463 030465 031061
+0001060 030465 030466 031462 033461 030464 030467 033464 030461
+0001100 031462 032461 030461 032462 033061 031061 030463 032067
+0001120 033461 032061 030467 031061 030463 030465 031061 030465
+0001140 030466 031462 033461 030464 030467 033464 030461 031462
+0001160 032461 030461 032462 033061 031061 030463 032067 033461
+0001200 032061 030467 031061 030463 030465 031061 030465 030466
+0001220 031462 033461 030464 030467 033464 030461 031462 032461
+0001240 030461 032462 033061 031061 030463 032067 033461 032061
+0001260 030467 031061 030463 030465 031061 030465 030466 031462
+0001300 033461 030464 030467 033464 030461 031462 032461 030461
+0001320 032462 033061 031061 030463 032067 033461 032061 030467
+0001340 031061 030463 030465 031061 030465 030466 031462 033461
+0001360 030464 030467 033464 030461 031462 032461 030461 032462
+0001400 033061 031061 030463 032067 033461 032061 030467 031061
+0001420 030463 030465 031061 030465 030466 031462 033461 030464
+0001440 030467 033464 030461 031462 032461 030461 032462 033061
+0001460 031061 030463 032067 033461 032061 030467 031061 030463
+0001500 030465 031061 030465 030466 031462 033461 030464 030467
+0001520 033464 030461 031462 032461 030461 032462 033061 031061
+0001540 030463 032067 033461 032061 030467 031061 030463 030465
+0001560 031061 030465 030466 031462 033461 030464 030467 033464
+0001600 030461 031462 032461 030461 032462 033061 031061 030463
+0001620 032067 033461 032061 030467 031061 030463 030465 031061
+0001640 030465 030466 031462 033461 030464 030467 033464 000061
+0001657
+[37m[ 18.863105 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox od test.txt success
+hello world
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471[37m[ 19.324963 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox head test.txt success
+hello world
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471[37m[ 19.781713 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox tail test.txt success
+00000000  68 65 6c 6c 6f 20 77 6f  72 6c 64 0a 32 33 31 37  |hello world.2317|
+00000010  34 31 37 31 34 37 31 31  32 33 31 35 31 31 32 35  |4171471123151125|
+00000020  31 36 31 32 33 31 37 34  31 37 31 34 37 31 31 32  |1612317417147112|
+00000030  33 31 35 31 31 32 35 31  36 31 32 33 31 37 34 31  |3151125161231741|
+00000040  37 31 34 37 31 31 32 33  31 35 31 31 32 35 31 36  |7147112315112516|
+00000050  31 32 33 31 37 34 31 37  31 34 37 31 31 32 33 31  |1231741714711231|
+00000060  35 31 31 32 35 31 36 31  32 33 31 37 34 31 37 31  |5112516123174171|
+00000070  34 37 31 31 32 33 31 35  31 31 32 35 31 36 31 32  |4711231511251612|
+00000080  33 31 37 34 31 37 31 34  37 31 31 32 33 31 35 31  |3174171471123151|
+00000090  31 32 35 31 36 31 32 33  31 37 34 31 37 31 34 37  |1251612317417147|
+000000a0  31 31 32 33 31 35 31 31  32 35 31 36 31 32 33 31  |1123151125161231|
+000000b0  37 34 31 37 31 34 37 31  31 32 33 31 35 31 31 32  |7417147112315112|
+000000c0  35 31 36 31 32 33 31 37  34 31 37 31 34 37 31 31  |5161231741714711|
+000000d0  32 33 31 35 31 31 32 35  31 36 31 32 33 31 37 34  |2315112516123174|
+000000e0  31 37 31 34 37 31 31 32  33 31 35 31 31 32 35 31  |1714711231511251|
+000000f0  36 31 32 33 31 37 34 31  37 31 34 37 31 31 32 33  |6123174171471123|
+00000100  31 35 31 31 32 35 31 36  31 32 33 31 37 34 31 37  |1511251612317417|
+00000110  31 34 37 31 31 32 33 31  35 31 31 32 35 31 36 31  |1471123151125161|
+00000120  32 33 31 37 34 31 37 31  34 37 31 31 32 33 31 35  |2317417147112315|
+00000130  31 31 32 35 31 36 31 32  33 31 37 34 31 37 31 34  |1125161231741714|
+00000140  37 31 31 32 33 31 35 31  31 32 35 31 36 31 32 33  |7112315112516123|
+00000150  31 37 34 31 37 31 34 37  31 31 32 33 31 35 31 31  |1741714711231511|
+00000160  32 35 31 36 31 32 33 31  37 34 31 37 31 34 37 31  |2516123174171471|
+00000170  31 32 33 31 35 31 31 32  35 31 36 31 32 33 31 37  |1231511251612317|
+00000180  34 31 37 31 34 37 31 31  32 33 31 35 31 31 32 35  |4171471123151125|
+00000190  31 36 31 32 33 31 37 34  31 37 31 34 37 31 31 32  |1612317417147112|
+000001a0  33 31 35 31 31 32 35 31  36 31 32 33 31 37 34 31  |3151125161231741|
+000001b0  37 31 34 37 31 31 32 33  31 35 31 31 32 35 31 36  |7147112315112516|
+000001c0  31 32 33 31 37 34 31 37  31 34 37 31 31 32 33 31  |1231741714711231|
+000001d0  35 31 31 32 35 31 36 31  32 33 31 37 34 31 37 31  |5112516123174171|
+000001e0  34 37 31 31 32 33 31 35  31 31 32 35 31 36 31 32  |4711231511251612|
+000001f0  33 31 37 34 31 37 31 34  37 31 31 32 33 31 35 31  |3174171471123151|
+00000200  31 32 35 31 36 31 32 33  31 37 34 31 37 31 34 37  |1251612317417147|
+00000210  31 31 32 33 31 35 31 31  32 35 31 36 31 32 33 31  |1123151125161231|
+00000220  37 34 31 37 31 34 37 31  31 32 33 31 35 31 31 32  |7417147112315112|
+00000230  35 31 36 31 32 33 31 37  34 31 37 31 34 37 31 31  |5161231741714711|
+00000240  32 33 31 35 31 31 32 35  31 36 31 32 33 31 37 34  |2315112516123174|
+00000250  31 37 31 34 37 31 31 32  33 31 35 31 31 32 35 31  |1714711231511251|
+00000260  36 31 32 33 31 37 34 31  37 31 34 37 31 31 32 33  |6123174171471123|
+00000270  31 35 31 31 32 35 31 36  31 32 33 31 37 34 31 37  |1511251612317417|
+00000280  31 34 37 31 31 32 33 31  35 31 31 32 35 31 36 31  |1471123151125161|
+00000290  32 33 31 37 34 31 37 31  34 37 31 31 32 33 31 35  |2317417147112315|
+000002a0  31 31 32 35 31 36 31 32  33 31 37 34 31 37 31 34  |1125161231741714|
+000002b0  37 31 31 32 33 31 35 31  31 32 35 31 36 31 32 33  |7112315112516123|
+000002c0  31 37 34 31 37 31 34 37  31 31 32 33 31 35 31 31  |1741714711231511|
+000002d0  32 35 31 36 31 32 33 31  37 34 31 37 31 34 37 31  |2516123174171471|
+000002e0  31 32 33 31 35 31 31 32  35 31 36 31 32 33 31 37  |1231511251612317|
+000002f0  34 31 37 31 34 37 31 31  32 33 31 35 31 31 32 35  |4171471123151125|
+00000300  31 36 31 32 33 31 37 34  31 37 31 34 37 31 31 32  |1612317417147112|
+00000310  33 31 35 31 31 32 35 31  36 31 32 33 31 37 34 31  |3151125161231741|
+00000320  37 31 34 37 31 31 32 33  31 35 31 31 32 35 31 36  |7147112315112516|
+00000330  31 32 33 31 37 34 31 37  31 34 37 31 31 32 33 31  |1231741714711231|
+00000340  35 31 31 32 35 31 36 31  32 33 31 37 34 31 37 31  |5112516123174171|
+00000350  34 37 31 31 32 33 31 35  31 31 32 35 31 36 31 32  |4711231511251612|
+00000360  33 31 37 34 31 37 31 34  37 31 31 32 33 31 35 31  |3174171471123151|
+00000370  31 32 35 31 36 31 32 33  31 37 34 31 37 31 34 37  |1251612317417147|
+00000380  31 31 32 33 31 35 31 31  32 35 31 36 31 32 33 31  |1123151125161231|
+00000390  37 34 31 37 31 34 37 31  31 32 33 31 35 31 31 32  |7417147112315112|
+000003a0  35 31 36 31 32 33 31 37  34 31 37 31 34 37 31     |516123174171471|
+000003af
+[37m[ 20.428345 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -C: unknown operand
+testcase busybox hexdump -C test.txt success
+7ebbbb2f657eb862e3965f56bcf59402  test.txt
+[37m[ 20.841320 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox md5sum test.txt success
+[37m[ 21.224647 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "ccccccc": unknown operand
+testcase busybox echo "ccccccc" >> test.txt success
+[37m[ 21.594600 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "bbbbbbb": unknown operand
+testcase busybox echo "bbbbbbb" >> test.txt success
+[37m[ 21.963759 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "aaaaaaa": unknown operand
+testcase busybox echo "aaaaaaa" >> test.txt success
+[37m[ 22.334122 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "2222222": unknown operand
+testcase busybox echo "2222222" >> test.txt success
+[37m[ 22.721946 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "1111111": unknown operand
+testcase busybox echo "1111111" >> test.txt success
+[37m[ 23.109511 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: "bbbbbbb": unknown operand
+testcase busybox echo "bbbbbbb" >> test.txt success
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471
+bbbbbbb
+rld
+[37m[ 23.965385 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox sort test.txt | ./busybox uniq success
+  File: test.txt
+  Size: 943       	Blocks: 2          IO Block: 0      regular file
+Device: 1h/1d	Inode: 1           Links: 1
+Access: (1060/----rw---T)  Uid: (    0/ UNKNOWN)   Gid: (    0/ UNKNOWN)
+Access: 1970-01-01 00:00:00.000000000 +0000
+Modify: 1970-01-01 00:00:00.000000000 +0000
+Change: 1970-01-01 00:00:00.000000000 +0000
+[37m[ 24.552352 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox stat test.txt success
+bbbbbbb
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471
+[37m[ 25.058969 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox strings test.txt success
+        2         3       943 test.txt
+[37m[ 25.471783 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox wc test.txt success
+[37m[ 25.856988 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -f: unknown operand
+testcase busybox [ -f test.txt ] success
+bbbbbbb
+rld
+2317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471123151125161231741714711231511251612317417147112315112516123174171471[37m[ 26.710823 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox more test.txt success
+[37m[ 27.125304 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test.txt: unknown operand
+testcase busybox rm test.txt success
+[37m[ 27.570305 0:114 fatfs::dir:140] [31mIs a directory[m
+[m[37m[ 27.592571 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: test_dir: unknown operand
+testcase busybox mkdir test_dir success
+mv: can't rename 'test_dir': Operation not permitted
+[37m[ 27.980100 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+sh: test_dir: unknown operand
+testcase busybox mv test_dir test success
+rmdir: 'test': Invalid argument
+[37m[ 28.382430 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[mHangup
+sh: test: unknown operand
+testcase busybox rmdir test success
+echo "hello world" > test.txt
+grep hello busybox_cmd.txt
+[37m[ 28.819235 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: hello: unknown operand
+testcase busybox grep hello busybox_cmd.txt success
+[37m[ 29.761074 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: busybox_cmd.txt: unknown operand
+testcase busybox cp busybox_cmd.txt busybox_cmd.bak success
+[37m[ 30.166709 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: busybox_cmd.bak: unknown operand
+testcase busybox rm busybox_cmd.bak success
+[37m[ 30.563392 0:126 fatfs::dir:140] [31mIs a directory[m
+[m./busybox_cmd.txt
+[37m[ 31.122158 0:126 fatfs::dir:140] [31mIs a directory[m
+[m[37m[ 31.145029 0:14 axprocess::signal:128] [33mcpu: 0, task: 14, handler signal: 17[m
+[msh: -name: unknown operand
+testcase busybox find -name "busybox_cmd.txt" success
+[37m[ 31.163293 0:10 axprocess::signal:128] [33mcpu: 0, task: 10, handler signal: 17[m
+[m[37m[ 31.176005 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./test_all.sh: line 5: busybox: not found
+./iozone_testcode.sh: line 2: busybox: not found
+./iozone_testcode.sh: line 3: iozone: not found
+./iozone_testcode.sh: line 4: busybox: not found
+./iozone_testcode.sh: line 5: iozone: not found
+./iozone_testcode.sh: line 6: busybox: not found
+./iozone_testcode.sh: line 7: iozone: not found
+./iozone_testcode.sh: line 8: busybox: not found
+./iozone_testcode.sh: line 9: iozone: not found
+./iozone_testcode.sh: line 10: busybox: not found
+./iozone_testcode.sh: line 11: iozone: not found
+./iozone_testcode.sh: line 12: busybox: not found
+./iozone_testcode.sh: line 13: iozone: not found
+./iozone_testcode.sh: line 14: busybox: not found
+./iozone_testcode.sh: line 15: iozone: not found
+./iozone_testcode.sh: line 16: busybox: not found
+./iozone_testcode.sh: line 17: iozone: not found
+[37m[ 33.161063 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnknown signal
+./test_all.sh: line 7: busybox: not found
+========== START entry-static.exe argv ==========
+Pass!
+========== END entry-static.exe argv ==========
+[37m[ 34.684448 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe basename ==========
+Pass!
+========== END entry-static.exe basename ==========
+[37m[ 35.181655 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe clocale_mbfuncs ==========
+Pass!
+========== END entry-static.exe clocale_mbfuncs ==========
+[37m[ 41.910435 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe clock_gettime ==========
+Pass!
+========== END entry-static.exe clock_gettime ==========
+[37m[ 42.405326 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe crypt ==========
+Pass!
+========== END entry-static.exe crypt ==========
+[37m[ 45.104177 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe dirname ==========
+Pass!
+========== END entry-static.exe dirname ==========
+[37m[ 45.618546 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe env ==========
+Pass!
+========== END entry-static.exe env ==========
+[37m[ 46.114274 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe fdopen ==========
+src/functional/fdopen.c:21: (fd = mkstemp(tmp)) > 2 failed (errno = 2)
+src/functional/fdopen.c:22: write(fd, "hello", 6)==6 failed (errno = 9)
+src/functional/fdopen.c:25: ftello(f)==6 failed (errno = 9)
+src/functional/fdopen.c:26: fseeko(f, 0, SEEK_SET)==0 failed (errno = 9)
+src/functional/fdopen.c:27: fgets(foo, sizeof foo, f) failed (errno = 9)
+src/functional/fdopen.c:29: fgets read back: ""; wanted: "hello"
+FAIL fdopen [signal Hangup]
+========== END entry-static.exe fdopen ==========
+[37m[ 46.709310 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe fnmatch ==========
+Pass!
+========== END entry-static.exe fnmatch ==========
+[37m[ 47.281286 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe fscanf ==========
+src/functional/fscanf.c:59: !!(f=writetemp("      42")) failed (failed to make temp file)
+src/functional/fscanf.c:70: !!(f=writetemp("[abc123]....x")) failed (failed to make temp file)
+src/functional/fscanf.c:84: !!(f=writetemp("0x1p 12")) failed (failed to make temp file)
+src/functional/fscanf.c:108: !!(f=writetemp("0x.1p4    012")) failed (failed to make temp file)
+src/functional/fscanf.c:121: !!(f=writetemp("0xx")) failed (failed to make temp file)
+FAIL fscanf [signal Hangup]
+========== END entry-static.exe fscanf ==========
+[37m[ 69.757642 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe fwscanf ==========
+src/functional/fwscanf.c:42: !!(f=writetemp("      42")) failed (failed to make temp file)
+src/functional/fwscanf.c:53: !!(f=writetemp("[abc123]....x")) failed (failed to make temp file)
+src/functional/fwscanf.c:67: !!(f=writetemp("0x1p 12")) failed (failed to make temp file)
+src/functional/fwscanf.c:91: !!(f=writetemp("0x.1p4    012")) failed (failed to make temp file)
+src/functional/fwscanf.c:104: !!(f=writetemp("0xx")) failed (failed to make temp file)
+FAIL fwscanf [signal Hangup]
+========== END entry-static.exe fwscanf ==========
+[37m[ 91.893276 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe iconv_open ==========
+Pass!
+========== END entry-static.exe iconv_open ==========
+[37m[ 92.414814 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe inet_pton ==========
+Pass!
+========== END entry-static.exe inet_pton ==========
+[37m[ 93.021767 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe mbc ==========
+Pass!
+========== END entry-static.exe mbc ==========
+[37m[ 93.626236 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe memstream ==========
+Pass!
+========== END entry-static.exe memstream ==========
+[37m[ 94.185599 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe pthread_cancel_points ==========
+[37m[ 94.720744 0:197 axprocess::signal:128] [33mcpu: 0, task: 197, handler signal: 33[m
+[m[37m[ 94.725674 0:197 axprocess::signal:128] [33mcpu: 0, task: 197, handler signal: 33[m
+[m[37m[ 94.759190 0:198 axprocess::signal:128] [33mcpu: 0, task: 198, handler signal: 33[m
+[m[37m[ 94.763045 0:198 axprocess::signal:128] [33mcpu: 0, task: 198, handler signal: 33[m
+[m[37m[ 94.776956 0:199 axprocess::signal:128] [33mcpu: 0, task: 199, handler signal: 33[m
+[m[37m[ 94.782177 0:199 axprocess::signal:128] [33mcpu: 0, task: 199, handler signal: 33[m
+[m[37m[ 94.797068 0:200 axprocess::signal:128] [33mcpu: 0, task: 200, handler signal: 33[m
+[m[37m[ 94.802544 0:200 axprocess::signal:128] [33mcpu: 0, task: 200, handler signal: 33[m
+[m[37m[ 94.824570 0:202 axprocess::signal:128] [33mcpu: 0, task: 202, handler signal: 33[m
+[m[37m[ 94.829531 0:202 axprocess::signal:128] [33mcpu: 0, task: 202, handler signal: 33[m
+[m[37m[ 94.857519 0:204 axprocess::signal:128] [33mcpu: 0, task: 204, handler signal: 33[m
+[m[37m[ 94.863077 0:204 axprocess::signal:128] [33mcpu: 0, task: 204, handler signal: 33[m
+[m[37m[ 94.882707 0:205 axprocess::signal:128] [33mcpu: 0, task: 205, handler signal: 33[m
+[m[37m[ 94.886585 0:205 axprocess::signal:128] [33mcpu: 0, task: 205, handler signal: 33[m
+[msrc/functional/pthread_cancel-points.c:144: res != PTHREAD_CANCELED failed (shm_open, canceled thread exit status)
+FAIL pthread_cancel_points [signal Hangup]
+========== END entry-static.exe pthread_cancel_points ==========
+[37m[ 94.997697 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe pthread_cancel ==========
+[37m[ 95.581958 0:210 axprocess::signal:128] [33mcpu: 0, task: 210, handler signal: 33[m
+[m[37m[ 95.604556 0:211 axprocess::signal:128] [33mcpu: 0, task: 211, handler signal: 33[m
+[m[37m[ 95.608232 0:211 axprocess::signal:128] [33mcpu: 0, task: 211, handler signal: 33[m
+[m[37m[ 95.627495 0:212 axprocess::signal:128] [33mcpu: 0, task: 212, handler signal: 33[m
+[m[37m[ 95.632107 0:212 axprocess::signal:128] [33mcpu: 0, task: 212, handler signal: 33[m
+[mPass!
+========== END entry-static.exe pthread_cancel ==========
+[37m[ 95.655212 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe pthread_cond ==========
+Pass!
+========== END entry-static.exe pthread_cond ==========
+[37m[ 96.291206 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe pthread_tsd ==========
+Pass!
+========== END entry-static.exe pthread_tsd ==========
+[37m[ 96.820667 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe qsort ==========
+Pass!
+========== END entry-static.exe qsort ==========
+[37m[ 97.423065 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe random ==========
+Pass!
+========== END entry-static.exe random ==========
+[37m[ 97.927601 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe search_hsearch ==========
+Pass!
+========== END entry-static.exe search_hsearch ==========
+[37m[ 98.484069 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe search_insque ==========
+Pass!
+========== END entry-static.exe search_insque ==========
+[37m[ 99.042395 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe search_lsearch ==========
+Pass!
+========== END entry-static.exe search_lsearch ==========
+[37m[ 99.532273 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe search_tsearch ==========
+Pass!
+========== END entry-static.exe search_tsearch ==========
+[37m[100.031415 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe setjmp ==========
+Pass!
+========== END entry-static.exe setjmp ==========
+[37m[100.530754 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe snprintf ==========
+Pass!
+========== END entry-static.exe snprintf ==========
+[37m[101.173459 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe socket ==========
+Pass!
+========== END entry-static.exe socket ==========
+[37m[101.885929 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe sscanf ==========
+Pass!
+========== END entry-static.exe sscanf ==========
+[37m[102.449665 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe sscanf_long ==========
+Pass!
+========== END entry-static.exe sscanf_long ==========
+[37m[104.886937 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe stat ==========
+src/functional/stat.c:27: stat("/dev/null",&st)==0 failed: errno = No such file or directory
+FAIL stat [signal Hangup]
+========== END entry-static.exe stat ==========
+[37m[110.036492 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strftime ==========
+Pass!
+========== END entry-static.exe strftime ==========
+[37m[110.728495 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string ==========
+Pass!
+========== END entry-static.exe string ==========
+[37m[111.265059 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_memcpy ==========
+Pass!
+========== END entry-static.exe string_memcpy ==========
+[37m[112.015569 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_memmem ==========
+Pass!
+========== END entry-static.exe string_memmem ==========
+[37m[112.547075 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_memset ==========
+Pass!
+========== END entry-static.exe string_memset ==========
+[37m[113.667709 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_strchr ==========
+Pass!
+========== END entry-static.exe string_strchr ==========
+[37m[114.178626 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_strcspn ==========
+Pass!
+========== END entry-static.exe string_strcspn ==========
+[37m[114.709768 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe string_strstr ==========
+Pass!
+========== END entry-static.exe string_strstr ==========
+[37m[115.263685 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strptime ==========
+Pass!
+========== END entry-static.exe strptime ==========
+[37m[115.832686 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strtod ==========
+Pass!
+========== END entry-static.exe strtod ==========
+[37m[116.368350 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strtod_simple ==========
+Pass!
+========== END entry-static.exe strtod_simple ==========
+[37m[116.951418 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strtof ==========
+Pass!
+========== END entry-static.exe strtof ==========
+[37m[117.521200 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strtol ==========
+Pass!
+========== END entry-static.exe strtol ==========
+[37m[118.101230 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe strtold ==========
+Pass!
+========== END entry-static.exe strtold ==========
+[37m[118.671376 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe swprintf ==========
+Pass!
+========== END entry-static.exe swprintf ==========
+[37m[119.241839 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe tgmath ==========
+Pass!
+========== END entry-static.exe tgmath ==========
+[37m[119.781915 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe time ==========
+Pass!
+========== END entry-static.exe time ==========
+[37m[120.316019 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe tls_align ==========
+Pass!
+========== END entry-static.exe tls_align ==========
+[37m[120.880228 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe udiv ==========
+Pass!
+========== END entry-static.exe udiv ==========
+[37m[121.420423 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe ungetc ==========
+src/functional/ungetc.c:22: !(f = tmpfile()) failed (failed to create temp file 1!=0 (No such file or directory))
+FAIL ungetc [signal Hangup]
+========== END entry-static.exe ungetc ==========
+[37m[126.217736 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe utime ==========
+[37m[126.746088 0:360 syscall_fs::imp::ctl:475] [31mSet time failed: file /dev/null/invalid doesn't exist![m
+[msrc/functional/utime.c:26: f = tmpfile() failed: FAIL utime [signal Hangup]
+========== END entry-static.exe utime ==========
+[37m[131.113864 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe wcsstr ==========
+Pass!
+========== END entry-static.exe wcsstr ==========
+[37m[131.637998 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe wcstol ==========
+Pass!
+========== END entry-static.exe wcstol ==========
+[37m[132.191858 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe pleval ==========
+Pass!
+========== END entry-static.exe pleval ==========
+[37m[132.949996 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe daemon_failure ==========
+[37m[133.592784 0:376 axprocess::signal:128] [33mcpu: 0, task: 376, handler signal: 17[m
+[mPass!
+========== END entry-static.exe daemon_failure ==========
+[37m[133.611622 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe dn_expand_empty ==========
+Pass!
+========== END entry-static.exe dn_expand_empty ==========
+[37m[134.122761 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe dn_expand_ptr_0 ==========
+Pass!
+========== END entry-static.exe dn_expand_ptr_0 ==========
+[37m[134.628704 0:132 axprocess::signal:128] [33mcpu: 0, task: 132, handler signal: 17[m
+[mHangup
+========== START entry-static.exe fflush_exit ==========
+src/regression/fflush-exit.c:24: (fd = mkstemp(tmp)) > 2 failed (errno: No such file or directory)
+[37m[135.331670 0:390 axprocess::signal:128] [33mcpu: 0, task: 390, handler signal: 17[m
+[msrc/regression/fflush-exit.c:33: WIFEXITED(status) && WEXITSTATUS(status) == 0 failed (errno: No error information)
+[37m[135.342754 0:390 axruntime::lang_items:5] [31mpanicked at ulib/axstarry/syscall_fs/src/imp/io.rs:375:50:
+index out of bounds: the len is 5 but the index is 18446744073709551615[m
+[m
+INFO     root:test_arceos.py:28 测试后置步骤：打印日志

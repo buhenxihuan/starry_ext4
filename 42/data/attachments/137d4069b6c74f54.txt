@@ -1,0 +1,657 @@
+INFO     root:test_arceos.py:58 kernel_type=monokernel
+INFO     root:test_arceos.py:59 test_cmd=cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && ./build_img.sh sdcard && make A=apps/oscomp ARCH=riscv64 TC=unixbench run
+INFO     root:test_arceos.py:61 res=24+0 records in
+24+0 records out
+75497472 bytes (75 MB, 72 MiB) copied, 0.0728264 s, 1.0 GB/s
+mkfs.fat 4.2 (2021-01-31)
+    [92;1mBuilding[0m App: oscomp, Arch: riscv64, Platform: riscv64-qemu-virt, App type: rust
+[37mcargo build[0m [90m--target riscv64gc-unknown-none-elf --target-dir /home/runner/work/starry_ext4/starry_ext4/target --release  --manifest-path apps/oscomp/Cargo.toml --features "syscall_entry/log-level-warn syscall_entry/syscall_fs syscall_entry/syscall_mem syscall_entry/syscall_task syscall_entry/futex syscall_entry/signal syscall_entry/img syscall_entry/syscall_net"[0m
+   Compiling axdriver v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axdriver)
+   Compiling axfs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axfs)
+   Compiling axnet v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axnet)
+warning: unused import: `mounts`
+  --> modules/axfs/src/root.rs:15:32
+   |
+15 | use crate::{api::FileType, fs, mounts};
+   |                                ^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: variable does not need to be mutable
+   --> modules/axfs/src/root.rs:177:9
+    |
+177 |     let mut root_dir = RootDirectory::new(main_fs);
+    |         ----^^^^^^^^
+    |         |
+    |         help: remove this `mut`
+    |
+    = note: `#[warn(unused_mut)]` on by default
+
+warning: function `devfs` is never used
+ --> modules/axfs/src/mounts.rs:7:15
+  |
+7 | pub(crate) fn devfs() -> Arc<fs::devfs::DeviceFileSystem> {
+  |               ^^^^^
+  |
+  = note: `#[warn(dead_code)]` on by default
+
+warning: function `ramfs` is never used
+  --> modules/axfs/src/mounts.rs:37:15
+   |
+37 | pub(crate) fn ramfs() -> Arc<fs::ramfs::RamFileSystem> {
+   |               ^^^^^
+
+warning: function `procfs` is never used
+  --> modules/axfs/src/mounts.rs:42:15
+   |
+42 | pub(crate) fn procfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^^
+
+warning: function `sysfs` is never used
+  --> modules/axfs/src/mounts.rs:76:15
+   |
+76 | pub(crate) fn sysfs() -> VfsResult<Arc<fs::ramfs::RamFileSystem>> {
+   |               ^^^^^
+
+warning: associated function `new` is never used
+  --> modules/axfs/src/root.rs:33:12
+   |
+32 | impl MountPoint {
+   | --------------- associated function in this implementation
+33 |     pub fn new(path: &'static str, fs: Arc<dyn VfsOps>) -> Self {
+   |            ^^^
+
+warning: method `mount` is never used
+  --> modules/axfs/src/root.rs:52:12
+   |
+44 | impl RootDirectory {
+   | ------------------ method in this implementation
+...
+52 |     pub fn mount(&mut self, path: &'static str, fs: Arc<dyn VfsOps>) -> AxResult {
+   |            ^^^^^
+
+   Compiling axmem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axmem)
+   Compiling syscall_utils v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_utils)
+   Compiling axprocess v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axprocess)
+warning: `axfs` (lib) generated 8 warnings (run `cargo fix --lib -p axfs` to apply 2 suggestions)
+   Compiling axruntime v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/modules/axruntime)
+   Compiling syscall_fs v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_fs)
+   Compiling axfeat v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/axfeat)
+   Compiling arceos_api v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/api/arceos_api)
+   Compiling syscall_task v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_task)
+   Compiling syscall_net v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_net)
+   Compiling syscall_mem v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_mem)
+   Compiling syscall_entry v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/ulib/axstarry/syscall_entry)
+warning: the item `riscv` is imported redundantly
+   --> ulib/axstarry/syscall_entry/src/fake_shell.rs:264:13
+    |
+264 |         use riscv;
+    |             ^^^^^ the item `riscv` is already defined here
+    |
+    = note: `#[warn(unused_imports)]` on by default
+
+warning: unused import: `alloc::format`
+  --> ulib/axstarry/syscall_entry/src/test.rs:3:5
+   |
+3  | use alloc::format;
+   |     ^^^^^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FilePath`, `create_link`
+  --> ulib/axstarry/syscall_entry/src/test.rs:10:23
+   |
+10 | use axprocess::link::{create_link, FilePath};
+   |                       ^^^^^^^^^^^  ^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: unused imports: `FileFlags`, `new_file`
+  --> ulib/axstarry/syscall_entry/src/test.rs:16:39
+   |
+16 | use syscall_utils::{init_current_dir, new_file, FileFlags};
+   |                                       ^^^^^^^^  ^^^^^^^^^
+   |
+help: consider adding a `#[cfg(test)]` to the containing module
+  --> ulib/axstarry/syscall_entry/src/lib.rs:14:1
+   |
+14 | mod test;
+   | ^^^^^^^^^
+
+warning: `syscall_entry` (lib) generated 4 warnings (run `cargo fix --lib -p syscall_entry` to apply 3 suggestions)
+   Compiling oscomp v0.1.0 (/home/runner/work/starry_ext4/starry_ext4/apps/oscomp)
+    Finished release [optimized] target(s) in 8.90s
+[37mrust-objcopy --binary-architecture=riscv64[0m [90mapps/oscomp/oscomp_riscv64-qemu-virt.elf --strip-all -O binary apps/oscomp/oscomp_riscv64-qemu-virt.bin[0m
+    [96;1mRunning[0m on qemu...
+[37mqemu-system-riscv64[0m [90m-m 4G -smp 1 -machine virt -bios default -kernel apps/oscomp/oscomp_riscv64-qemu-virt.bin -device virtio-blk-device,drive=disk0 -drive id=disk0,if=none,format=raw,file=disk.img -device virtio-net-device,netdev=net0 -netdev user,id=net0,hostfwd=tcp::5555-:5555,hostfwd=udp::5555-:5555 -nographic[0m
+
+OpenSBI v1.0
+   ____                    _____ ____ _____
+  / __ \                  / ____|  _ \_   _|
+ | |  | |_ __   ___ _ __ | (___ | |_) || |
+ | |  | | '_ \ / _ \ '_ \ \___ \|  _ < | |
+ | |__| | |_) |  __/ | | |____) | |_) || |_
+  \____/| .__/ \___|_| |_|_____/|____/_____|
+        | |
+        |_|
+
+Platform Name             : riscv-virtio,qemu
+Platform Features         : medeleg
+Platform HART Count       : 1
+Platform IPI Device       : aclint-mswi
+Platform Timer Device     : aclint-mtimer @ 10000000Hz
+Platform Console Device   : uart8250
+Platform HSM Device       : ---
+Platform Reboot Device    : sifive_test
+Platform Shutdown Device  : sifive_test
+Firmware Base             : 0x80000000
+Firmware Size             : 252 KB
+Runtime SBI Version       : 0.3
+
+Domain0 Name              : root
+Domain0 Boot HART         : 0
+Domain0 HARTs             : 0*
+Domain0 Region00          : 0x0000000002000000-0x000000000200ffff (I)
+Domain0 Region01          : 0x0000000080000000-0x000000008003ffff ()
+Domain0 Region02          : 0x0000000000000000-0xffffffffffffffff (R,W,X)
+Domain0 Next Address      : 0x0000000080200000
+Domain0 Next Arg1         : 0x00000000bfe00000
+Domain0 Next Mode         : S-mode
+Domain0 SysReset          : yes
+
+Boot HART ID              : 0
+Boot HART Domain          : root
+Boot HART ISA             : rv64imafdcsuh
+Boot HART Features        : scounteren,mcounteren,mcountinhibit,time
+Boot HART PMP Count       : 16
+Boot HART PMP Granularity : 4
+Boot HART PMP Address Bits: 54
+Boot HART MHPM Count      : 16
+Boot HART MIDELEG         : 0x0000000000001666
+Boot HART MEDELEG         : 0x0000000000f0b509
+
+       d8888                            .d88888b.   .d8888b.
+      d88888                           d88P" "Y88b d88P  Y88b
+     d88P888                           888     888 Y88b.
+    d88P 888 888d888  .d8888b  .d88b.  888     888  "Y888b.
+   d88P  888 888P"   d88P"    d8P  Y8b 888     888     "Y88b.
+  d88P   888 888     888      88888888 888     888       "888
+ d8888888888 888     Y88b.    Y8b.     Y88b. .d88P Y88b  d88P
+d88P     888 888      "Y8888P  "Y8888   "Y88888P"   "Y8888P"
+
+arch = riscv64
+platform = riscv64-qemu-virt
+target = riscv64gc-unknown-none-elf
+smp = 1
+build_mode = release
+log_level = warn
+
+[37m[ 12.292624 0:8 axprocess::signal:128] [33mcpu: 0, task: 8, handler signal: 14[m
+[mUnixbench DHRY2 test(lps): 3275678
+[37m[ 13.712673 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench WHETSTONE test(MFLOPS): 70.746
+[37m[ 27.743073 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 28.700306 0:24 axprocess::signal:128] [33mcpu: 0, task: 24, handler signal: 14[m
+[mUnixbench SYSCALL test(lps): 1217
+[37m[ 29.704692 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 37.610101 0:32 axprocess::signal:128] [33mcpu: 0, task: 32, handler signal: 14[m
+[m[37m[ 37.679312 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench CONTEXT test(lps): 3425
+[37m[ 37.785264 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 39.089935 0:44 axprocess::signal:128] [33mcpu: 0, task: 44, handler signal: 14[m
+[mUnixbench PIPE test(lps): 1995
+[37m[ 40.241217 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 41.850235 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 41.922738 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 41.994132 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.066104 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.138230 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.211150 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.282782 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.354262 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.427506 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.505438 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.588568 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.682550 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.761051 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.839067 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.915598 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 42.990503 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.067479 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.142592 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.216867 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.295270 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.372717 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.448146 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.523403 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.599330 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.673471 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.744144 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.814910 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.886769 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 43.958131 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.029870 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.102758 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.173495 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.244822 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.320869 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.402235 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.488664 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.566072 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.641339 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.720663 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.799184 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.879328 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 44.957892 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.035468 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.111357 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.190270 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.271349 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.350156 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.430580 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.504239 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.575053 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.646263 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.717685 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.789749 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.862425 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 45.933734 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.005537 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.078064 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.151440 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.228529 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.306451 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.385367 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.460196 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.537462 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.616586 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.693862 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.770681 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.849406 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 46.929286 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.008157 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.085130 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.160947 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.238618 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.310494 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.383496 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.454574 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.524027 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.590908 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.659332 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.727312 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.795122 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.863567 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 47.932166 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.001796 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.075301 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.148565 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.221929 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.293822 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.365469 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.437125 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.512361 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.585829 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.659513 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.732698 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.806763 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.879217 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 48.953759 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.025461 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.092254 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.160030 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.228569 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.296533 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.364108 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.431160 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.499843 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.568415 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.636939 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.706046 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.776834 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 17[m
+[m[37m[ 49.837663 0:52 axprocess::signal:128] [33mcpu: 0, task: 52, handler signal: 14[m
+[mUnixbench SPAWN test(lps): 108
+[37m[ 49.990864 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 50.023184 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench EXECL test(lps): 67
+[37m[ 61.117175 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[ 85.845809 0:286 axprocess::signal:128] [33mcpu: 0, task: 286, handler signal: 14[m
+[m[37m[102.248590 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_WRITE_SMALL test(KBps): 41
+[37m[102.383555 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[107.641922 0:294 axprocess::signal:128] [33mcpu: 0, task: 294, handler signal: 14[m
+[m[37m[112.171763 0:294 axprocess::signal:128] [33mcpu: 0, task: 294, handler signal: 14[m
+[m[37m[112.248721 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_READ_SMALL test(KBps): 2423
+[37m[112.339720 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[119.508260 0:302 axprocess::signal:128] [33mcpu: 0, task: 302, handler signal: 14[m
+[m[37m[139.861718 0:302 axprocess::signal:128] [33mcpu: 0, task: 302, handler signal: 14[m
+[m[37m[143.241957 0:302 axprocess::signal:128] [33mcpu: 0, task: 302, handler signal: 14[m
+[m[37m[143.315872 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_COPY_SMALL test(KBps): 925
+[37m[143.404450 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[168.489646 0:310 axprocess::signal:128] [33mcpu: 0, task: 310, handler signal: 14[m
+[m[37m[220.917127 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_WRITE_MIDDLE test(KBps): 55
+[37m[221.054562 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[226.471986 0:318 axprocess::signal:128] [33mcpu: 0, task: 318, handler signal: 14[m
+[m[37m[231.612155 0:318 axprocess::signal:128] [33mcpu: 0, task: 318, handler signal: 14[m
+[mUnixbench FS_READ_MIDDLE test(KBps): 7239
+[37m[231.777369 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[238.991757 0:326 axprocess::signal:128] [33mcpu: 0, task: 326, handler signal: 14[m
+[m[37m[313.651701 0:326 axprocess::signal:128] [33mcpu: 0, task: 326, handler signal: 14[m
+[m[37m[317.492394 0:326 axprocess::signal:128] [33mcpu: 0, task: 326, handler signal: 14[m
+[m[37m[317.572390 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_COPY_MIDDLE test(KBps): 2162
+[37m[317.664913 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[323.292513 0:334 axprocess::signal:128] [33mcpu: 0, task: 334, handler signal: 14[m
+[m[37m[324.590134 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_WRITE_BIG test(KBps): 4927
+[37m[324.726899 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[331.949138 0:342 axprocess::signal:128] [33mcpu: 0, task: 342, handler signal: 14[m
+[m[37m[619.592072 0:342 axprocess::signal:128] [33mcpu: 0, task: 342, handler signal: 14[m
+[mUnixbench FS_READ_BIG test(KBps): 8263
+[37m[619.753670 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[627.010939 0:350 axprocess::signal:128] [33mcpu: 0, task: 350, handler signal: 14[m
+[m[37m[996.632046 0:350 axprocess::signal:128] [33mcpu: 0, task: 350, handler signal: 14[m
+[m[37m[1019.716080 0:350 axprocess::signal:128] [33mcpu: 0, task: 350, handler signal: 14[m
+[m[37m[1019.798167 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[mUnixbench FS_COPY_BIG test(KBps): 436
+[37m[1019.886790 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1022.170749 0:366 axprocess::signal:128] [33mcpu: 0, task: 366, handler signal: 17[m
+[m[37m[1022.187451 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1022.805930 0:370 axprocess::signal:128] [33mcpu: 0, task: 370, handler signal: 17[m
+[m[37m[1022.821916 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1023.437190 0:374 axprocess::signal:128] [33mcpu: 0, task: 374, handler signal: 17[m
+[m[37m[1023.453389 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1024.090056 0:378 axprocess::signal:128] [33mcpu: 0, task: 378, handler signal: 17[m
+[m[37m[1024.116663 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1024.797442 0:382 axprocess::signal:128] [33mcpu: 0, task: 382, handler signal: 17[m
+[m[37m[1024.813686 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1025.438436 0:386 axprocess::signal:128] [33mcpu: 0, task: 386, handler signal: 17[m
+[m[37m[1025.454228 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1026.064467 0:390 axprocess::signal:128] [33mcpu: 0, task: 390, handler signal: 17[m
+[m[37m[1026.079113 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1026.690059 0:394 axprocess::signal:128] [33mcpu: 0, task: 394, handler signal: 17[m
+[m[37m[1026.706438 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1027.340637 0:398 axprocess::signal:128] [33mcpu: 0, task: 398, handler signal: 17[m
+[m[37m[1027.363478 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1028.049235 0:402 axprocess::signal:128] [33mcpu: 0, task: 402, handler signal: 17[m
+[m[37m[1028.066319 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1028.679767 0:406 axprocess::signal:128] [33mcpu: 0, task: 406, handler signal: 17[m
+[m[37m[1028.695189 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1029.305979 0:410 axprocess::signal:128] [33mcpu: 0, task: 410, handler signal: 17[m
+[m[37m[1029.320906 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1029.933557 0:414 axprocess::signal:128] [33mcpu: 0, task: 414, handler signal: 17[m
+[m[37m[1029.949368 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1030.580709 0:418 axprocess::signal:128] [33mcpu: 0, task: 418, handler signal: 17[m
+[m[37m[1030.599429 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1031.296598 0:422 axprocess::signal:128] [33mcpu: 0, task: 422, handler signal: 17[m
+[m[37m[1031.313198 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1031.926404 0:426 axprocess::signal:128] [33mcpu: 0, task: 426, handler signal: 17[m
+[m[37m[1031.940868 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1032.550244 0:430 axprocess::signal:128] [33mcpu: 0, task: 430, handler signal: 17[m
+[m[37m[1032.566587 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1033.192635 0:434 axprocess::signal:128] [33mcpu: 0, task: 434, handler signal: 17[m
+[m[37m[1033.207346 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 17[m
+[m[37m[1033.344690 0:358 axprocess::signal:128] [33mcpu: 0, task: 358, handler signal: 14[m
+[mUnixbench SHELL1 test(lpm): 18
+[37m[1033.478653 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1034.034158 0:438 axprocess::signal:128] [33mcpu: 0, task: 438, handler signal: 17[m
+[m[37m[1034.068885 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1036.972970 0:450 axprocess::signal:128] [33mcpu: 0, task: 450, handler signal: 17[m
+[m[37m[1037.005298 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1038.669737 0:468 axprocess::signal:128] [33mcpu: 0, task: 468, handler signal: 17[m
+[m[37m[1038.703961 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1040.352924 0:486 axprocess::signal:128] [33mcpu: 0, task: 486, handler signal: 17[m
+[m[37m[1040.385770 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1042.043730 0:504 axprocess::signal:128] [33mcpu: 0, task: 504, handler signal: 17[m
+[m[37m[1042.077449 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1043.729003 0:522 axprocess::signal:128] [33mcpu: 0, task: 522, handler signal: 17[m
+[m[37m[1043.762536 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1045.424835 0:540 axprocess::signal:128] [33mcpu: 0, task: 540, handler signal: 17[m
+[m[37m[1045.457934 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1047.110501 0:558 axprocess::signal:128] [33mcpu: 0, task: 558, handler signal: 17[m
+[m[37m[1047.144952 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1048.800692 0:576 axprocess::signal:128] [33mcpu: 0, task: 576, handler signal: 17[m
+[m[37m[1048.835968 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 14[m
+[m[37m[1048.841735 0:442 axprocess::signal:128] [33mcpu: 0, task: 442, handler signal: 17[m
+[mUnixbench SHELL8 test(lpm): 7
+[37m[1049.014020 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1053.299411 0:602 axprocess::signal:128] [33mcpu: 0, task: 602, handler signal: 17[m
+[m[37m[1053.352325 0:594 axprocess::signal:128] [33mcpu: 0, task: 594, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1056.307062 0:636 axprocess::signal:128] [33mcpu: 0, task: 636, handler signal: 17[m
+[m[37m[1056.363227 0:594 axprocess::signal:128] [33mcpu: 0, task: 594, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1059.333258 0:670 axprocess::signal:128] [33mcpu: 0, task: 670, handler signal: 17[m
+[m[37m[1059.385993 0:594 axprocess::signal:128] [33mcpu: 0, task: 594, handler signal: 17[m
+[m./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+./multi.sh: line 0: can't open '/dev/null': No such file or directory
+[37m[1062.342713 0:704 axprocess::signal:128] [33mcpu: 0, task: 704, handler signal: 17[m
+[m[37m[1062.395638 0:594 axprocess::signal:128] [33mcpu: 0, task: 594, handler signal: 14[m
+[m[37m[1062.401685 0:594 axprocess::signal:128] [33mcpu: 0, task: 594, handler signal: 17[m
+[mUnixbench SHELL16 test(lpm): 3
+[37m[1062.570018 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1073.301804 0:738 axprocess::signal:128] [33mcpu: 0, task: 738, handler signal: 14[m
+[mUnixbench ARITHOH test(lps): 396654954
+[37m[1074.542554 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1085.201775 0:746 axprocess::signal:128] [33mcpu: 0, task: 746, handler signal: 14[m
+[mUnixbench SHORT test(lps): 9903642
+[37m[1086.191056 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1096.821783 0:754 axprocess::signal:128] [33mcpu: 0, task: 754, handler signal: 14[m
+[mUnixbench INT test(lps): 9953755
+[37m[1097.813270 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1108.451782 0:762 axprocess::signal:128] [33mcpu: 0, task: 762, handler signal: 14[m
+[mUnixbench LONG test(lps): 9952415
+[37m[1109.478998 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1120.131868 0:770 axprocess::signal:128] [33mcpu: 0, task: 770, handler signal: 14[m
+[mUnixbench FLOAT test(lps): 9946957
+[37m[1121.127365 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1131.761784 0:778 axprocess::signal:128] [33mcpu: 0, task: 778, handler signal: 14[m
+[mUnixbench DOUBLE test(lps): 9949235
+[37m[1132.762880 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1143.401985 0:786 axprocess::signal:128] [33mcpu: 0, task: 786, handler signal: 14[m
+[mUnixbench HANOI test(lps): 35922
+[37m[1144.433817 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1146.151124 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1146.315783 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1146.478149 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1146.639521 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1146.800813 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1146.963099 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.126857 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.290467 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.454887 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.615721 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.777307 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1147.949867 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.120754 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.289684 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.456707 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.624384 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.790227 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1148.951477 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.113499 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.273624 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.435637 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.597503 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.760428 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1149.923637 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.084862 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.246338 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.408467 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.572819 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.744545 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1150.913921 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.084143 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.254561 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.422990 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.593840 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.757377 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1151.919732 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.083536 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.244972 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.405465 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.565945 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.727691 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1152.891540 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1153.058668 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1153.224368 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1153.388595 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 17[m
+[m[37m[1153.452014 0:794 axprocess::signal:128] [33mcpu: 0, task: 794, handler signal: 14[m
+[mUnixbench EXEC test(lps): 45
+[37m[1153.609263 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m[37m[1153.736831 0:6 axprocess::signal:128] [33mcpu: 0, task: 6, handler signal: 17[m
+[m
