@@ -1,13 +1,17 @@
-test_file_name="testsuits-x86_64-linux-musl"
-
-rm disk.img
+#/bin/bash
+rm -rf disk.img
 dd if=/dev/zero of=disk.img bs=3M count=24
+# mkfs.ext4  disk.img
 mkfs.vfat -F 32 disk.img
-mkdir -p tmp_mnt
-sudo mount disk.img tmp_mnt
-wget "https://github.com/oscomp/testsuits-for-oskernel/releases/download/final-x86_64/$test_file_name.tgz"
-tar zxvf "$test_file_name.tgz" 
-sudo cp -r "$test_file_name"/* ./tmp_mnt/
-sudo umount tmp_mnt
-rm -rf tmp_mnt "$test_file_name.tgz" "$test_file_name"/
+mkdir -p mnt
+sudo mount disk.img mnt
+# 根据命令行参数生成对应的测例
+#sudo cp -r ./testcases/junior/* ./mnt/
+#sudo cp -r ./testcases/libc-dynamic/* ./mnt/
+sudo cp -r ./testcases/$1/* ./mnt/
+# sudo cp -r ./testcases/ostrain/* ./mnt/
+# sudo cp -r ./testcases/redis/* ./mnt/
+# sudo cp -r ./testcases/sdcard/* ./mnt/
+sudo umount mnt
+rm -rf mnt
 sudo chmod 777 disk.img
