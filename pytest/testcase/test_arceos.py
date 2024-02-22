@@ -61,6 +61,21 @@ def step_01_mono(cmdRun, cmdTc):
     logging.info("res=" + res)
     assert res
 
+
+@allure.feature("特性（对应敏捷开发中的feature）")
+@allure.issue(url="",name="用例对应issuer的链接，若没有可删除此行")
+@allure.link(url="",name="用例对应需求的链接，若没有，可删除此行")
+@allure.story("故事（对应敏捷开发中的story)")
+@allure.severity('用例的级别，一般常用的级别为：blocker（阻塞缺陷），critical（严重缺陷），normal（一般缺陷），minor次要缺陷，trivial（轻微缺陷）')
+@allure.title("测试ArceOS 宏内核 基本功能")
+@allure.description("测试用例简要描述")
+@pytest.mark.parametrize("monoTcList", monoTcList)
+@pytest.mark.repeat(1)
+def test_arceos_monokernel(cmdRun, monoTcList):
+    """测试内核实时性指标"""
+    kpi = step_01_mono(cmdRun, monoTcList)
+
+
 @allure.feature("特性（对应敏捷开发中的feature）")
 @allure.issue(url="",name="用例对应issuer的链接，若没有可删除此行")
 @allure.link(url="",name="用例对应需求的链接，若没有，可删除此行")
@@ -75,18 +90,7 @@ def test_arceos_unikernel(cmdRun, uniCmdList):
     kpi = step_01_uni(cmdRun, uniCmdList)
 
 
-@allure.feature("特性（对应敏捷开发中的feature）")
-@allure.issue(url="",name="用例对应issuer的链接，若没有可删除此行")
-@allure.link(url="",name="用例对应需求的链接，若没有，可删除此行")
-@allure.story("故事（对应敏捷开发中的story)")
-@allure.severity('用例的级别，一般常用的级别为：blocker（阻塞缺陷），critical（严重缺陷），normal（一般缺陷），minor次要缺陷，trivial（轻微缺陷）')
-@allure.title("测试ArceOS 宏内核 基本功能")
-@allure.description("测试用例简要描述")
-@pytest.mark.parametrize("monoTcList", monoTcList)
-@pytest.mark.repeat(1)
-def test_arceos_monokernel(cmdRun, monoTcList):
-    """测试内核实时性指标"""
-    kpi = step_01_mono(cmdRun, monoTcList)
+
 
 
 

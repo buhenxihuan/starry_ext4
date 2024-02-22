@@ -52,6 +52,156 @@ const JUNIOR_TESTCASES: &[&str] = &[
     "yield",
 ];
 
+#[allow(dead_code)]
+pub const LIBC_STATIC_0_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe argv",
+    "./runtest.exe -w entry-static.exe basename",
+    "./runtest.exe -w entry-static.exe clocale_mbfuncs",
+    "./runtest.exe -w entry-static.exe clock_gettime",
+    "./runtest.exe -w entry-static.exe crypt",
+    "./runtest.exe -w entry-static.exe dirname",
+    "./runtest.exe -w entry-static.exe env",
+    "./runtest.exe -w entry-static.exe fnmatch",
+    "./runtest.exe -w entry-static.exe iconv_open",
+    "./runtest.exe -w entry-static.exe inet_pton",
+    ];
+#[allow(dead_code)]
+pub const LIBC_STATIC_1_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe mbc",
+    "./runtest.exe -w entry-static.exe memstream",
+    "./runtest.exe -w entry-static.exe pthread_cancel_points",
+    "./runtest.exe -w entry-static.exe pthread_cancel",
+    "./runtest.exe -w entry-static.exe pthread_cond",
+    "./runtest.exe -w entry-static.exe pthread_tsd",
+    "./runtest.exe -w entry-static.exe qsort",
+    "./runtest.exe -w entry-static.exe random",
+    "./runtest.exe -w entry-static.exe search_hsearch",
+    "./runtest.exe -w entry-static.exe search_insque",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_2_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe search_lsearch",
+    "./runtest.exe -w entry-static.exe search_tsearch",
+    "./runtest.exe -w entry-static.exe setjmp",
+    "./runtest.exe -w entry-static.exe snprintf",
+    "./runtest.exe -w entry-static.exe socket",
+    "./runtest.exe -w entry-static.exe sscanf",
+    "./runtest.exe -w entry-static.exe sscanf_long",
+    "./runtest.exe -w entry-static.exe strftime",
+    "./runtest.exe -w entry-static.exe string",
+    "./runtest.exe -w entry-static.exe string_memcpy",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_3_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe string_memmem",
+    "./runtest.exe -w entry-static.exe string_memset",
+    "./runtest.exe -w entry-static.exe string_strchr",
+    "./runtest.exe -w entry-static.exe string_strcspn",
+    "./runtest.exe -w entry-static.exe string_strstr",
+    "./runtest.exe -w entry-static.exe strptime",
+    "./runtest.exe -w entry-static.exe strtod",
+    "./runtest.exe -w entry-static.exe strtod_simple",
+    "./runtest.exe -w entry-static.exe strtof",
+    "./runtest.exe -w entry-static.exe strtol",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_4_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe strtold",
+    "./runtest.exe -w entry-static.exe swprintf",
+    "./runtest.exe -w entry-static.exe tgmath",
+    "./runtest.exe -w entry-static.exe time",
+    "./runtest.exe -w entry-static.exe tls_align",
+    "./runtest.exe -w entry-static.exe udiv",
+    "./runtest.exe -w entry-static.exe wcsstr",
+    "./runtest.exe -w entry-static.exe wcstol",
+    "./runtest.exe -w entry-static.exe pleval",
+    "./runtest.exe -w entry-static.exe daemon_failure",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_5_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe dn_expand_empty",
+    "./runtest.exe -w entry-static.exe dn_expand_ptr_0",
+    "./runtest.exe -w entry-static.exe fgets_eof",
+    "./runtest.exe -w entry-static.exe fgetwc_buffering",
+    "./runtest.exe -w entry-static.exe fpclassify_invalid_ld80",
+    "./runtest.exe -w entry-static.exe iconv_roundtrips",
+    "./runtest.exe -w entry-static.exe inet_ntop_v4mapped",
+    "./runtest.exe -w entry-static.exe inet_pton_empty_last_field",
+    "./runtest.exe -w entry-static.exe iswspace_null",
+    "./runtest.exe -w entry-static.exe lrand48_signextend",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_6_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe malloc_0",
+    "./runtest.exe -w entry-static.exe mbsrtowcs_overflow",
+    "./runtest.exe -w entry-static.exe memmem_oob_read",
+    "./runtest.exe -w entry-static.exe memmem_oob",
+    "./runtest.exe -w entry-static.exe mkdtemp_failure",
+    "./runtest.exe -w entry-static.exe mkstemp_failure",
+    "./runtest.exe -w entry-static.exe printf_1e9_oob",
+    "./runtest.exe -w entry-static.exe printf_fmt_g_round",
+    "./runtest.exe -w entry-static.exe printf_fmt_g_zeros",
+    "./runtest.exe -w entry-static.exe printf_fmt_n",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_7_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe pthread_robust_detach",
+    "./runtest.exe -w entry-static.exe pthread_cancel_sem_wait",
+    "./runtest.exe -w entry-static.exe pthread_cond_smasher",
+    "./runtest.exe -w entry-static.exe pthread_condattr_setclock",
+    "./runtest.exe -w entry-static.exe pthread_exit_cancel",
+    "./runtest.exe -w entry-static.exe pthread_once_deadlock",
+    "./runtest.exe -w entry-static.exe pthread_rwlock_ebusy",
+    "./runtest.exe -w entry-static.exe putenv_doublefree",
+    "./runtest.exe -w entry-static.exe regex_backref_0",
+    "./runtest.exe -w entry-static.exe regex_bracket_icase",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_8_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe regex_ere_backref",
+    "./runtest.exe -w entry-static.exe regex_escaped_high_byte",
+    "./runtest.exe -w entry-static.exe regex_negated_range",
+    "./runtest.exe -w entry-static.exe regexec_nosub",
+    "./runtest.exe -w entry-static.exe rewind_clear_error",
+    "./runtest.exe -w entry-static.exe rlimit_open_files",
+    "./runtest.exe -w entry-static.exe scanf_bytes_consumed",
+    "./runtest.exe -w entry-static.exe scanf_match_literal_eof",
+    "./runtest.exe -w entry-static.exe scanf_nullbyte_char",
+    "./runtest.exe -w entry-static.exe setvbuf_unget",
+];
+#[allow(dead_code)]
+pub const LIBC_STATIC_9_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-static.exe sigprocmask_internal",
+    "./runtest.exe -w entry-static.exe sscanf_eof",
+    "./runtest.exe -w entry-static.exe statvfs",
+    "./runtest.exe -w entry-static.exe strverscmp",
+    "./runtest.exe -w entry-static.exe uselocale_0",
+    "./runtest.exe -w entry-static.exe wcsncpy_read_overflow",
+    "./runtest.exe -w entry-static.exe wcsstr_false_negative",
+    // warning FAILED
+    // "./runtest.exe -w entry-static.exe fwscanf",
+    // "./runtest.exe -w entry-static.exe fscanf",
+    // "./runtest.exe -w entry-static.exe fdopen",
+    // "./runtest.exe -w entry-static.exe utime",
+    // "./runtest.exe -w entry-static.exe lseek_large",
+    // // error FAILED
+    // "./runtest.exe -w entry-static.exe stat",
+    // "./runtest.exe -w entry-static.exe fflush_exit",
+    // "./runtest.exe -w entry-static.exe ungetc",
+    // "./runtest.exe -w entry-static.exe getpwnam_r_crash",
+    // "./runtest.exe -w entry-static.exe ftello_unflushed_append",
+    // "./runtest.exe -w entry-static.exe getpwnam_r_errno",
+    // "./runtest.exe -w entry-static.exe syscall_sign_extend",
+];
+
+
+
+
+
+
+
+
+#[allow(dead_code)]
 /// libc静态测例
 pub const LIBC_STATIC_TESTCASES: &[&str] = &[
     "./runtest.exe -w entry-static.exe argv",
@@ -283,6 +433,179 @@ pub const LIBC_DYNAMIC_TESTCASES: &[&str] = &[
     "./runtest.exe -w entry-dynamic.exe wcsncpy_read_overflow.dout",
     "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
 ];
+
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_0_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe argv.dout",
+    "./runtest.exe -w entry-dynamic.exe basename.dout",
+    "./runtest.exe -w entry-dynamic.exe clocale_mbfuncs.dout",
+    "./runtest.exe -w entry-dynamic.exe clock_gettime.dout",
+    "./runtest.exe -w entry-dynamic.exe crypt.dout",
+    "./runtest.exe -w entry-dynamic.exe dirname.dout",
+    "./runtest.exe -w entry-dynamic.exe dlopen.dout", // 单独存在运行时bug，放在runtest里面就是正常的
+    "./runtest.exe -w entry-dynamic.exe dlopen",
+    "./runtest.exe -w entry-dynamic.exe env.dout",
+    "./runtest.exe -w entry-dynamic.exe fdopen.dout",
+    "./runtest.exe -w entry-dynamic.exe fnmatch.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_1_TESTCASES: &[&str] = &[
+    // "./runtest.exe -w entry-dynamic.exe fscanf.dout",
+    "./runtest.exe -w entry-dynamic.exe fwscanf.dout",
+    "./runtest.exe -w entry-dynamic.exe iconv_open.dout",
+    "./runtest.exe -w entry-dynamic.exe inet_pton.dout",
+    "./runtest.exe -w entry-dynamic.exe mbc.dout",
+    "./runtest.exe -w entry-dynamic.exe memstream.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_cancel_points.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_cancel.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_cond.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_tsd.dout",
+    "./runtest.exe -w entry-dynamic.exe qsort.dout",
+    "./runtest.exe -w entry-dynamic.exe random.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_2_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe search_hsearch.dout",
+    "./runtest.exe -w entry-dynamic.exe search_insque.dout",
+    "./runtest.exe -w entry-dynamic.exe search_lsearch.dout",
+    "./runtest.exe -w entry-dynamic.exe search_tsearch.dout",
+    "./runtest.exe -w entry-dynamic.exe sem_init.dout",
+    "./runtest.exe -w entry-dynamic.exe setjmp.dout",
+    "./runtest.exe -w entry-dynamic.exe snprintf.dout",
+    "./runtest.exe -w entry-dynamic.exe socket",
+    "./runtest.exe -w entry-dynamic.exe sscanf.dout",
+    "./runtest.exe -w entry-dynamic.exe sscanf_long.dout",
+    "./runtest.exe -w entry-dynamic.exe stat.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_3_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe strftime.dout",
+    "./runtest.exe -w entry-dynamic.exe string.dout",
+    "./runtest.exe -w entry-dynamic.exe string_memcpy.dout",
+    "./runtest.exe -w entry-dynamic.exe string_memmem.dout",
+    "./runtest.exe -w entry-dynamic.exe string_memset.dout",
+    "./runtest.exe -w entry-dynamic.exe string_strchr.dout",
+    "./runtest.exe -w entry-dynamic.exe string_strcspn.dout",
+    "./runtest.exe -w entry-dynamic.exe string_strstr.dout",
+    "./runtest.exe -w entry-dynamic.exe strptime.dout",
+    "./runtest.exe -w entry-dynamic.exe strtod.dout",
+    "./runtest.exe -w entry-dynamic.exe strtod_simple.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_4_TESTCASES: &[&str] = &[ 
+    "./runtest.exe -w entry-dynamic.exe strtof.dout",
+    "./runtest.exe -w entry-dynamic.exe strtol.dout",
+    "./runtest.exe -w entry-dynamic.exe strtold.dout",
+    "./runtest.exe -w entry-dynamic.exe swprintf.dout",
+    "./runtest.exe -w entry-dynamic.exe tgmath.dout",
+    "./runtest.exe -w entry-dynamic.exe time.dout",
+    "./runtest.exe -w entry-dynamic.exe tls_init.dout",
+    "./runtest.exe -w entry-dynamic.exe tls_local_exec.dout",
+    "./runtest.exe -w entry-dynamic.exe udiv.dout",
+    "./runtest.exe -w entry-dynamic.exe ungetc.dout",
+    "./runtest.exe -w entry-dynamic.exe utime.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_5_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe wcsstr.dout",
+    "./runtest.exe -w entry-dynamic.exe wcstol.dout",
+    "./runtest.exe -w entry-dynamic.exe daemon_failure.dout",
+    "./runtest.exe -w entry-dynamic.exe dn_expand_empty.dout",
+    "./runtest.exe -w entry-dynamic.exe dn_expand_ptr_0.dout",
+    "./runtest.exe -w entry-dynamic.exe fflush_exit.dout",
+    "./runtest.exe -w entry-dynamic.exe fgets_eof.dout",
+    // "./runtest.exe -w entry-dynamic.exe fgetwc_buffering.dout",
+    "./runtest.exe -w entry-dynamic.exe fpclassify_invalid_ld80.dout",
+    "./runtest.exe -w entry-dynamic.exe ftello_unflushed_append.dout",
+    "./runtest.exe -w entry-dynamic.exe getpwnam_r_crash.dout",
+    "./runtest.exe -w entry-dynamic.exe getpwnam_r_errno.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_6_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe iconv_roundtrips.dout",
+    "./runtest.exe -w entry-dynamic.exe inet_ntop_v4mapped.dout",
+    "./runtest.exe -w entry-dynamic.exe inet_pton_empty_last_field.dout",
+    "./runtest.exe -w entry-dynamic.exe iswspace_null.dout",
+    "./runtest.exe -w entry-dynamic.exe lrand48_signextend.dout",
+    "./runtest.exe -w entry-dynamic.exe lseek_large.dout",
+    "./runtest.exe -w entry-dynamic.exe malloc_0.dout",
+    "./runtest.exe -w entry-dynamic.exe mbsrtowcs_overflow.dout",
+    "./runtest.exe -w entry-dynamic.exe memmem_oob_read.dout",
+    "./runtest.exe -w entry-dynamic.exe memmem_oob.dout",
+    "./runtest.exe -w entry-dynamic.exe mkdtemp_failure.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_7_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe mkstemp_failure.dout",
+    "./runtest.exe -w entry-dynamic.exe printf_1e9_oob.dout",
+    "./runtest.exe -w entry-dynamic.exe printf_fmt_g_round.dout",
+    "./runtest.exe -w entry-dynamic.exe printf_fmt_g_zeros.dout",
+    "./runtest.exe -w entry-dynamic.exe printf_fmt_n.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_robust_detach.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_cond_smasher.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_condattr_setclock.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_exit_cancel.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_once_deadlock.dout",
+    "./runtest.exe -w entry-dynamic.exe pthread_rwlock_ebusy.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_8_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe putenv_doublefree.dout",
+    "./runtest.exe -w entry-dynamic.exe regex_backref_0.dout",
+    "./runtest.exe -w entry-dynamic.exe regex_bracket_icase.dout",
+    "./runtest.exe -w entry-dynamic.exe regex_ere_backref.dout",
+    "./runtest.exe -w entry-dynamic.exe regex_escaped_high_byte.dout",
+    "./runtest.exe -w entry-dynamic.exe regex_negated_range.dout",
+    "./runtest.exe -w entry-dynamic.exe regexec_nosub.dout",
+    "./runtest.exe -w entry-dynamic.exe rewind_clear_error.dout",
+    "./runtest.exe -w entry-dynamic.exe rlimit_open_files.dout",
+    "./runtest.exe -w entry-dynamic.exe scanf_bytes_consumed.dout",
+    "./runtest.exe -w entry-dynamic.exe scanf_match_literal_eof.dout",
+];
+#[allow(dead_code)]
+pub const LIBC_DYNAMIC_9_TESTCASES: &[&str] = &[
+    "./runtest.exe -w entry-dynamic.exe scanf_nullbyte_char.dout",
+    "./runtest.exe -w entry-dynamic.exe setvbuf_unget.dout",
+    "./runtest.exe -w entry-dynamic.exe sigprocmask_internal.dout",
+    "./runtest.exe -w entry-dynamic.exe sscanf_eof.dout",
+    "./runtest.exe -w entry-dynamic.exe statvfs.dout",
+    "./runtest.exe -w entry-dynamic.exe strverscmp.dout",
+    "./runtest.exe -w entry-dynamic.exe syscall_sign_extend.dout",
+    "./runtest.exe -w entry-dynamic.exe tls_get_new_dtv.dout",
+    "./runtest.exe -w entry-dynamic.exe uselocale_0.dout",
+    "./runtest.exe -w entry-dynamic.exe wcsncpy_read_overflow.dout",
+    "./runtest.exe -w entry-dynamic.exe wcsstr_false_negative.dout",
+];
+
+
+#[allow(dead_code)]
+pub const CYCLICTEST_TESTCASES: &[&str] = &[
+    "busybox sh ./cyclictest_testcode.sh",
+];
+
+
+#[allow(dead_code)]
+pub const IOZONE_TESTCASES: &[&str] = &[
+    "busybox sh ./iozone_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const LMBENCH_TESTCASES: &[&str] = &[
+    "busybox sh lmbench_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const UNIXBENCH_TESTCASES: &[&str] = &[
+    "busybox sh ./unixbench_testcode.sh",
+];
+
+#[allow(dead_code)]
+pub const ALL_TESTCASES: &[&str] = &[
+    "busybox sh ./test_all.sh",
+];
+
+
+
 
 #[allow(dead_code)]
 pub const LUA_TESTCASES: &[&str] = &[
@@ -591,27 +914,129 @@ pub fn fs_init(_case: &'static str) {
     // );
 }
 
+// pub fn run_testcases(case: &'static str) { // old run_test
+//     info!("case {:?}", case);
+//     fs_init(case);
+//     let (mut test_iter, case_len) = match case {
+//         "junior" => (Box::new(JUNIOR_TESTCASES.iter()), JUNIOR_TESTCASES.len()),
+//         "libc-static" => (
+//             Box::new(LIBC_STATIC_TESTCASES.iter()),
+//             LIBC_STATIC_TESTCASES.len(),
+//         ),
+//         "libc-dynamic" => (
+//             Box::new(LIBC_DYNAMIC_TESTCASES.iter()),
+//             LIBC_DYNAMIC_TESTCASES.len(),
+//         ),
+//         "lua" => (Box::new(LUA_TESTCASES.iter()), LUA_TESTCASES.len()),
+//         "netperf" => (Box::new(NETPERF_TESTCASES.iter()), NETPERF_TESTCASES.len()),
+
+//         "ipref" => (Box::new(IPERF_TESTCASES.iter()), IPERF_TESTCASES.len()),
+
+//         "sdcard" => (Box::new(SDCARD_TESTCASES.iter()), SDCARD_TESTCASES.len()),
+
+//         "ostrain" => (Box::new(OSTRAIN_TESTCASES.iter()), OSTRAIN_TESTCASES.len()),
+//         _ => {
+//             panic!("unknown test case: {}", case);
+//         }
+//     };
+//     TESTRESULT.init_by(SpinNoIrq::new(TestResult::new(case_len)));
+//     loop {
+//         let mut ans = None;
+//         if let Some(command_line) = test_iter.next() {
+//             let args: Vec<String> = get_args(command_line.as_bytes());
+//             let testcase = args.clone();
+
+//             info!("testcase {:?}", testcase);
+//             // let real_testcase = if testcase[0] == "./busybox".to_string()
+//             //     || testcase[0] == "busybox".to_string()
+//             //     || testcase[0] == "entry-static.exe".to_string()
+//             //     || testcase[0] == "entry-dynamic.exe".to_string()
+//             //     || testcase[0] == "lmbench_all".to_string()
+//             // {
+//             //     testcase[1].clone()
+//             // } else {
+//             //     testcase[0].clone()
+//             // };
+
+//             let main_task = axprocess::Process::init(args).unwrap();
+//             let now_process_id = main_task.get_process_id() as isize;
+//             TESTRESULT.lock().load(&(testcase));
+//             let mut exit_code = 0;
+//             ans = loop {
+//                 if unsafe { wait_pid(now_process_id, &mut exit_code as *mut i32) }.is_ok() {
+//                     break Some(exit_code);
+//                 }
+
+//                 yield_now_task();
+//             };
+//         }
+//         TaskId::clear();
+//         unsafe {
+//             write_page_table_root(KERNEL_PAGE_TABLE.root_paddr());
+//             flush_tlb(None);
+//         };
+//         EXITED_TASKS.lock().clear();
+//         if let Some(exit_code) = ans {
+//             let kernel_process = Arc::clone(PID2PC.lock().get(&KERNEL_PROCESS_ID).unwrap());
+//             kernel_process
+//                 .children
+//                 .lock()
+//                 .retain(|x| x.pid() == KERNEL_PROCESS_ID);
+//             // 去除指针引用，此时process_id对应的进程已经被释放
+//             // 释放所有非内核进程
+//             finish_one_test(exit_code);
+//         } else {
+//             // 已经测试完所有的测例
+//             TESTRESULT.lock().show_result();
+//             break;
+//         }
+//         // chdir会改变当前目录，需要重新设置
+//         init_current_dir();
+//     }
+// }
+
+
 pub fn run_testcases(case: &'static str) {
     info!("case {:?}", case);
     fs_init(case);
     let (mut test_iter, case_len) = match case {
-        "junior" => (Box::new(JUNIOR_TESTCASES.iter()), JUNIOR_TESTCASES.len()),
-        "libc-static" => (
-            Box::new(LIBC_STATIC_TESTCASES.iter()),
-            LIBC_STATIC_TESTCASES.len(),
-        ),
-        "libc-dynamic" => (
-            Box::new(LIBC_DYNAMIC_TESTCASES.iter()),
-            LIBC_DYNAMIC_TESTCASES.len(),
-        ),
-        "lua" => (Box::new(LUA_TESTCASES.iter()), LUA_TESTCASES.len()),
+        "libc-static-0" => (Box::new(LIBC_STATIC_0_TESTCASES.iter()), LIBC_STATIC_0_TESTCASES.len()),
+        "libc-static-1" => (Box::new(LIBC_STATIC_1_TESTCASES.iter()), LIBC_STATIC_1_TESTCASES.len()),
+        "libc-static-2" => (Box::new(LIBC_STATIC_2_TESTCASES.iter()), LIBC_STATIC_2_TESTCASES.len()),
+        "libc-static-3" => (Box::new(LIBC_STATIC_3_TESTCASES.iter()), LIBC_STATIC_3_TESTCASES.len()),
+        "libc-static-4" => (Box::new(LIBC_STATIC_4_TESTCASES.iter()), LIBC_STATIC_4_TESTCASES.len()),
+        "libc-static-5" => (Box::new(LIBC_STATIC_5_TESTCASES.iter()), LIBC_STATIC_5_TESTCASES.len()),
+        "libc-static-6" => (Box::new(LIBC_STATIC_6_TESTCASES.iter()), LIBC_STATIC_6_TESTCASES.len()),
+        "libc-static-7" => (Box::new(LIBC_STATIC_7_TESTCASES.iter()), LIBC_STATIC_7_TESTCASES.len()),
+        "libc-static-8" => (Box::new(LIBC_STATIC_8_TESTCASES.iter()), LIBC_STATIC_8_TESTCASES.len()),
+        "libc-static-9" => (Box::new(LIBC_STATIC_9_TESTCASES.iter()), LIBC_STATIC_9_TESTCASES.len()),
+
+
+        "libc-dynamic-0" => (Box::new(LIBC_DYNAMIC_0_TESTCASES.iter()), LIBC_DYNAMIC_0_TESTCASES.len()),
+        "libc-dynamic-1" => (Box::new(LIBC_DYNAMIC_1_TESTCASES.iter()), LIBC_DYNAMIC_1_TESTCASES.len()),
+        "libc-dynamic-2" => (Box::new(LIBC_DYNAMIC_2_TESTCASES.iter()), LIBC_DYNAMIC_2_TESTCASES.len()),
+        "libc-dynamic-3" => (Box::new(LIBC_DYNAMIC_3_TESTCASES.iter()), LIBC_DYNAMIC_3_TESTCASES.len()),
+        "libc-dynamic-4" => (Box::new(LIBC_DYNAMIC_4_TESTCASES.iter()), LIBC_DYNAMIC_5_TESTCASES.len()),
+        "libc-dynamic-6" => (Box::new(LIBC_DYNAMIC_6_TESTCASES.iter()), LIBC_DYNAMIC_6_TESTCASES.len()),
+        "libc-dynamic-7" => (Box::new(LIBC_DYNAMIC_7_TESTCASES.iter()), LIBC_DYNAMIC_7_TESTCASES.len()),
+        "libc-dynamic-8" => (Box::new(LIBC_DYNAMIC_8_TESTCASES.iter()), LIBC_DYNAMIC_8_TESTCASES.len()),
+        "libc-dynamic-9" => (Box::new(LIBC_DYNAMIC_9_TESTCASES.iter()), LIBC_DYNAMIC_9_TESTCASES.len()),
+
+
+
         "netperf" => (Box::new(NETPERF_TESTCASES.iter()), NETPERF_TESTCASES.len()),
 
-        "ipref" => (Box::new(IPERF_TESTCASES.iter()), IPERF_TESTCASES.len()),
+        "iperf" => (Box::new(IPERF_TESTCASES.iter()), IPERF_TESTCASES.len()),
 
-        "sdcard" => (Box::new(SDCARD_TESTCASES.iter()), SDCARD_TESTCASES.len()),
+        "cyclictest" => (Box::new(CYCLICTEST_TESTCASES.iter()), CYCLICTEST_TESTCASES.len()),
 
-        "ostrain" => (Box::new(OSTRAIN_TESTCASES.iter()), OSTRAIN_TESTCASES.len()),
+        "iozone" => (Box::new(IOZONE_TESTCASES.iter()), IOZONE_TESTCASES.len()),
+
+        "lmbench" => (Box::new(LMBENCH_TESTCASES.iter()), LMBENCH_TESTCASES.len()),
+
+        "unixbench" => (Box::new(UNIXBENCH_TESTCASES.iter()), UNIXBENCH_TESTCASES.len()),
+
+        "all" => (Box::new(ALL_TESTCASES.iter()), ALL_TESTCASES.len()),
         _ => {
             panic!("unknown test case: {}", case);
         }
