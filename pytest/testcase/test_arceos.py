@@ -42,14 +42,14 @@ def step_setup01():  # 步骤函数命名不能以test_开头，否则将被识�
 #     assert res
     
 
-@allure.step("测试步骤一：执行测试")
-def step_01_uni(cmdRun, cmdApp):
-    _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp
-    logging.info("kernel_type=unikernel")
-    logging.info("test_cmd=" + _cmd)
-    _, res = cmdRun.run_cmd(_cmd)
-    logging.info("res=" + res)
-    assert res
+# @allure.step("测试步骤一：执行测试")
+# def step_01_uni(cmdRun, cmdApp):
+#     _cmd = 'cd /home/runner/work/starry_ext4/starry_ext4 && export PATH=$PATH:/home/runner/.cargo/bin:/home/runner/work/starry_ext4/starry_ext4/riscv64-linux-musl-cross/bin && make A=%s ARCH=riscv64 run' %cmdApp
+#     logging.info("kernel_type=unikernel")
+#     logging.info("test_cmd=" + _cmd)
+#     _, res = cmdRun.run_cmd(_cmd)
+#     logging.info("res=" + res)
+#     assert res
 
 
 @allure.step("测试步骤一：执行测试")
