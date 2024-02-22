@@ -4,7 +4,7 @@ import pymysql
 import datetime
 
 cur_time=datetime.datetime.now().strftime('%Y%m%d%H%M%S')[2:]
-default_Kernel_Version_Id="*" %cur_time
+default_Kernel_Version_Id="*"
 default_Hardware_Platform_Id="*"
 default_Chip_Id="*"
 default_Sdk_Id="*"
